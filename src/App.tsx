@@ -37,25 +37,42 @@ const projects: Project[] = [
 ];
 
 function Nav() {
+  const [open, setOpen] = useState(false);
   return (
-    <nav className="nav">
+    <nav className={`nav ${open ? "open" : ""}`}>
       <div className="nav-inner">
         <div className="brand">Jason Shprintz</div>
-        <ul className="nav-links">
+        <button
+          className="mobile-toggle"
+          aria-label="Toggle menu"
+          aria-expanded={open}
+          onClick={() => setOpen((s) => !s)}
+        >
+          <span className="hamburger" />
+        </button>
+        <ul className={`nav-links ${open ? "open" : ""}`}>
           <li>
-            <a href="#about">About</a>
+            <a href="#about" onClick={() => setOpen(false)}>
+              About
+            </a>
           </li>
           <li>
-            <a href="#skills">Skills</a>
+            <a href="#skills" onClick={() => setOpen(false)}>
+              Skills
+            </a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#projects" onClick={() => setOpen(false)}>
+              Projects
+            </a>
           </li>
           <li>
-            <a href="#experience">Experience</a>
+            <a href="#experience" onClick={() => setOpen(false)}>
+              Experience
+            </a>
           </li>
           <li>
-            <a href="#contact" className="cta">
+            <a href="#contact" className="cta" onClick={() => setOpen(false)}>
               Contact
             </a>
           </li>
