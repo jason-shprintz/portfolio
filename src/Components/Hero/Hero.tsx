@@ -1,0 +1,79 @@
+import type { JSX } from "react";
+import * as S from "./styles";
+import { Button } from "../../styles";
+
+/**
+ * Renders the Hero section of the portfolio site, including the user's name, subtitle,
+ * lead description, call-to-action buttons, and a stylized avatar card with meta information.
+ *
+ * @returns {JSX.Element} The Hero header component.
+ */
+function Hero(): JSX.Element {
+  return (
+    <S.Hero id="home">
+      <S.HeroInner>
+        <S.HeroCopy>
+          <S.HeroTitle>Jason Shprintz</S.HeroTitle>
+          <S.Subtitle>
+            Software developer — building reliable, maintainable web apps
+          </S.Subtitle>
+          <S.Lead>
+            I build production-grade applications with a focus on performance,
+            clarity, and developer experience. Currently open to new roles.
+            Placeholder resume and contact details are below.
+          </S.Lead>
+          <S.HeroCtas>
+            <Button variant="primary" href="#projects">
+              See projects
+            </Button>
+            <Button href="#contact">Contact me</Button>
+          </S.HeroCtas>
+        </S.HeroCopy>
+        <S.HeroCard>
+          <S.Avatar
+            viewBox="0 0 120 120"
+            xmlns="src/assets/SDS_Headshots_JasonS-3.jpg"
+            role="img"
+          >
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stopColor="#646cff" />
+                <stop offset="1" stopColor="#61dafb" />
+              </linearGradient>
+            </defs>
+            <rect width="120" height="120" rx="18" fill="#0f1724" />
+            <g transform="translate(10,28)">
+              <circle cx="50" cy="22" r="18" fill="url(#g)" opacity="0.18" />
+              <circle
+                cx="50"
+                cy="22"
+                r="16"
+                fill="#111827"
+                stroke="url(#g)"
+                strokeWidth="2"
+              />
+              <rect
+                x="10"
+                y="58"
+                width="80"
+                height="10"
+                rx="4"
+                fill="#0b1220"
+              />
+              <rect x="10" y="72" width="60" height="6" rx="3" fill="#0b1220" />
+            </g>
+          </S.Avatar>
+          <S.HeroMeta>
+            <S.MetaName>Jason Shprintz</S.MetaName>
+            <S.MetaRole>Senior Software Engineer</S.MetaRole>
+            <S.SmallLink href="/resume.pdf" download>
+              Download resume
+            </S.SmallLink>
+          </S.HeroMeta>
+        </S.HeroCard>
+      </S.HeroInner>
+    </S.Hero>
+  );
+}
+
+export default Hero;
