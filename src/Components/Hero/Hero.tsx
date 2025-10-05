@@ -23,12 +23,10 @@ function Hero(): JSX.Element {
             Placeholder resume and contact details are below.
           </S.Lead>
           <S.HeroCtas>
-            <Button as="a" variant="primary" href="#projects">
+            <Button variant="primary" href="#projects">
               See projects
             </Button>
-            <Button as="a" href="#contact">
-              Contact me
-            </Button>
+            <Button href="#contact">Contact me</Button>
           </S.HeroCtas>
         </S.HeroCopy>
         <S.HeroCard>
