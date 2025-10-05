@@ -9,7 +9,7 @@ import { skills } from "../../data/skills";
  */
 function Skills(): JSX.Element {
   return (
-    <S.Ticker aria-label="Skills ticker" role="marquee">
+    <S.Ticker aria-label="Skills ticker" role="region" aria-live="off">
       <S.TickerTrack>
         <S.TickerGroup>
           {skills.map((s, i) => (
