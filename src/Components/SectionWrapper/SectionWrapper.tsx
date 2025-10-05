@@ -1,3 +1,5 @@
+import * as S from "./styles";
+
 /**
  * A wrapper component for sections of the portfolio.
  *
@@ -5,10 +7,8 @@
  * @param title - The title displayed at the top of the section.
  * @param children - The content to be rendered inside the section.
  *
- * @returns A styled section element containing a title and children.
+ * @returns A styled section element containing a title and its children.
  */
-import * as S from "./styles";
-
 function SectionWrapper({
   id,
   title,

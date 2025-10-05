@@ -2,15 +2,13 @@ import { useState, useRef, useEffect, type JSX } from "react";
 import * as S from "./styles";
 
 /**
- * Nav component renders the main navigation bar for the portfolio site.
+ * Navigation bar component for the portfolio site.
  *
- * Features:
- * - Displays the site brand.
- * - Provides a responsive navigation menu with a hamburger toggle for mobile devices.
- * - Contains navigation links to different sections of the page.
- * - Closes the menu when a navigation link is clicked.
+ * - Displays brand, social links, and navigation links.
+ * - Supports mobile menu toggle with accessible keyboard navigation.
+ * - Focus is trapped within the menu when open, and returns to the previously focused element when closed.
+ * - Handles Escape key to close the menu and Tab/Shift+Tab for focus cycling.
  *
- * @component
  * @returns {JSX.Element} The rendered navigation bar.
  */
 function Nav(): JSX.Element {

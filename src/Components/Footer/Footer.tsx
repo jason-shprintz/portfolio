@@ -1,12 +1,12 @@
 import type { JSX } from "react";
-
-/**
- * Renders the site footer containing copyright information and a technology stack placeholder.
- *
- * @returns {JSX.Element} The footer element for the website.
- */
 import * as S from "./styles";
 
+/**
+ * Renders the footer section of the website.
+ * Displays the current year and the author's name.
+ *
+ * @returns {JSX.Element} The footer component.
+ */
 function Footer(): JSX.Element {
   return (
     <S.Footer>

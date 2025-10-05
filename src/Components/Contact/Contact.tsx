@@ -1,8 +1,25 @@
 import { useState, type JSX } from "react";
-import * as L from "./styles";
+import * as S from "./styles";
 import { Button, Muted, SmallMuted } from "../../styles";
 
-/** Contact section using styled-components */
+/**
+ * Contact component displays contact information and options for reaching out.
+ *
+ * Features:
+ * - Shows an email address with options to send an email or copy it to clipboard.
+ * - Displays a message about availability for full-time and contract roles.
+ * - Provides links to LinkedIn and GitHub profiles.
+ *
+ * State:
+ * - `copied`: Indicates whether the email address has been copied to the clipboard.
+ *
+ * Usage:
+ * ```tsx
+ * <Contact />
+ * ```
+ *
+ * @returns {JSX.Element} The rendered contact card UI.
+ */
 function Contact(): JSX.Element {
   const [copied, setCopied] = useState(false);
   const email = "jshprintz@gmail.com";
@@ -17,11 +34,11 @@ function Contact(): JSX.Element {
   }
 
   return (
-    <L.ContactGrid>
-      <L.ContactCard>
+    <S.ContactGrid>
+      <S.ContactCard>
         <h3>Get in touch</h3>
         <Muted>I'm currently open to full-time and contract roles.</Muted>
-        <L.ContactRow>
+        <S.ContactRow>
           <Button variant="primary" href={`mailto:${email}`}>
             Email me
           </Button>
@@ -32,8 +49,8 @@ function Contact(): JSX.Element {
           >
             {copied ? "Copied!" : "Copy email"}
           </Button>
-        </L.ContactRow>
-        <L.ContactRow>
+        </S.ContactRow>
+        <S.ContactRow>
           <SmallMuted>
             Or connect on&nbsp;
             <a href="https://www.linkedin.com/in/jasonshprintz/">
@@ -50,9 +67,9 @@ function Contact(): JSX.Element {
               />
             </a>
           </SmallMuted>
-        </L.ContactRow>
-      </L.ContactCard>
-    </L.ContactGrid>
+        </S.ContactRow>
+      </S.ContactCard>
+    </S.ContactGrid>
   );
 }
 

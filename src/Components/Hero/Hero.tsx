@@ -3,10 +3,12 @@ import * as S from "./styles";
 import { Button } from "../../styles";
 
 /**
- * Renders the Hero section of the portfolio site, including the user's name, subtitle,
- * lead description, call-to-action buttons, and a stylized avatar card with meta information.
+ * Renders the hero section of the portfolio site, introducing Jason Shprintz.
  *
- * @returns {JSX.Element} The Hero header component.
+ * Displays the developer's name, role, a brief description, and call-to-action buttons.
+ * Includes an avatar image, meta information, and a link to download the resume.
+ *
+ * @returns {JSX.Element} The hero section component.
  */
 function Hero(): JSX.Element {
   return (

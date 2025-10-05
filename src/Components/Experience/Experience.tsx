@@ -3,6 +3,14 @@ import * as S from "./styles";
 import { Muted } from "../../styles";
 import { experience } from "../../data/experience";
 
+/**
+ * Renders a list of professional experiences.
+ *
+ * Each experience displays the company/job image, name, title, time period, and description.
+ * The experiences are styled using styled components from the `S` namespace.
+ *
+ * @returns {JSX.Element} The rendered experience list component.
+ */
 function Experience(): JSX.Element {
   return (
     <S.ExperienceList>
