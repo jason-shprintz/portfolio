@@ -23,46 +23,19 @@ function Hero(): JSX.Element {
             Placeholder resume and contact details are below.
           </S.Lead>
           <S.HeroCtas>
-            <Button variant="primary" href="#projects">
+            {/* <Button variant="primary" href="#projects">
               See projects
-            </Button>
+            </Button> */}
             <Button href="#contact">Contact me</Button>
           </S.HeroCtas>
         </S.HeroCopy>
         <S.HeroCard>
-          <S.Avatar
-            viewBox="0 0 120 120"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-          >
-            <defs>
-              <linearGradient id="g" x1="0" x2="1">
-                <stop offset="0" stopColor="#646cff" />
-                <stop offset="1" stopColor="#61dafb" />
-              </linearGradient>
-            </defs>
-            <rect width="120" height="120" rx="18" fill="#0f1724" />
-            <g transform="translate(10,28)">
-              <circle cx="50" cy="22" r="18" fill="url(#g)" opacity="0.18" />
-              <circle
-                cx="50"
-                cy="22"
-                r="16"
-                fill="#111827"
-                stroke="url(#g)"
-                strokeWidth="2"
-              />
-              <rect
-                x="10"
-                y="58"
-                width="80"
-                height="10"
-                rx="4"
-                fill="#0b1220"
-              />
-              <rect x="10" y="72" width="60" height="6" rx="3" fill="#0b1220" />
-            </g>
-          </S.Avatar>
+          <S.AvatarWrapper>
+            <S.Avatar
+              src={"src/assets/headshot_cropped.png"}
+              alt="Jason Shprintz headshot"
+            />
+          </S.AvatarWrapper>
           <S.HeroMeta>
             <S.MetaName>Jason Shprintz</S.MetaName>
             <S.MetaRole>Senior Software Engineer</S.MetaRole>

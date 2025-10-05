@@ -20,6 +20,11 @@ export const NavInner = styled.div`
 `;
 
 export const Brand = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
   font-weight: 700;
   font-size: 1.05rem;
 `;
@@ -129,4 +134,20 @@ export const CtaLink = styled.a`
     text-align: center;
     width: 100%;
   }
+`;
+
+export const NavSocial = styled.div`
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  transform: scale(0.7);
+`;
+
+export const NavSocialLink = styled.a`
+  margin: 0;
+  padding: 0;
 `;

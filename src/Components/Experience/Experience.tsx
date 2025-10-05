@@ -1,31 +1,32 @@
 import type { JSX } from "react";
-import * as L from "./styles";
+import * as S from "./styles";
 import { Muted } from "../../styles";
+import { experience } from "../../data/experience";
 
 function Experience(): JSX.Element {
   return (
-    <L.ExperienceList>
-      <L.ExpItem>
-        <L.ExpLeft>
-          <strong>Acme Co.</strong>
-          <Muted>Senior Engineer · 2021 — Present</Muted>
-        </L.ExpLeft>
-        <L.ExpRight>
-          Led a team building internal tools and customer-facing web apps.
-          Improved performance and cut deployment times by 40%.
-        </L.ExpRight>
-      </L.ExpItem>
+    <S.ExperienceList>
+      {experience.map((job) => {
+        return (
+          <S.ExpItemContainer key={job.name}>
+            <S.ExpItem>
+              <S.ExpLeft>
+                <S.JobContainer>
+                  <S.JobImg src={job.imgSrc} alt={job.name} />
+                  <strong>{job.name}</strong>
+                </S.JobContainer>
 
-      <L.ExpItem>
-        <L.ExpLeft>
-          <strong>Widget Labs</strong>
-          <Muted>Software Engineer · 2018 — 2021</Muted>
-        </L.ExpLeft>
-        <L.ExpRight>
-          Built scalable APIs and integrations used by 100k+ end users.
-        </L.ExpRight>
-      </L.ExpItem>
-    </L.ExperienceList>
+                <Muted>{job.title}</Muted>
+                <Muted>{job.time}</Muted>
+              </S.ExpLeft>
+              <S.ExpRight style={{ backgroundColor: "hotpink" }}>
+                {job.description}
+              </S.ExpRight>
+            </S.ExpItem>
+          </S.ExpItemContainer>
+        );
+      })}
+    </S.ExperienceList>
   );
 }
 

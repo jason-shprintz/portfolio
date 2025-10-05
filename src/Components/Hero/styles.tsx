@@ -85,12 +85,29 @@ export const HeroCard = styled.div`
     animation-delay: 90ms;
   }
 `;
-export const Avatar = styled.svg`
-  width: 86px;
+
+export const AvatarWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 83px;
+  height: 91px;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to top,
+    #646cff,
+    #0091ff,
+    #00adff,
+    #00c5ff,
+    #61dafb
+  );
+`;
+
+export const Avatar = styled.img`
   height: 86px;
   border-radius: 10px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  padding: 6px;
 `;
 export const HeroMeta = styled.div`
   color: white;
