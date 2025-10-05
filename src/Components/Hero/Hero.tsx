@@ -1,4 +1,6 @@
 import type { JSX } from "react";
+import * as S from "./styles";
+import { Button } from "../../styles";
 
 /**
  * Renders the Hero section of the portfolio site, including the user's name, subtitle,
@@ -8,30 +10,27 @@ import type { JSX } from "react";
  */
 function Hero(): JSX.Element {
   return (
-    <header className="hero" id="home">
-      <div className="hero-inner">
-        <div className="hero-copy">
-          <h1>Jason Shprintz</h1>
-          <p className="subtitle">
+    <S.Hero id="home">
+      <S.HeroInner>
+        <S.HeroCopy>
+          <S.HeroTitle>Jason Shprintz</S.HeroTitle>
+          <S.Subtitle>
             Software developer — building reliable, maintainable web apps
-          </p>
-          <p className="lead">
+          </S.Subtitle>
+          <S.Lead>
             I build production-grade applications with a focus on performance,
             clarity, and developer experience. Currently open to new roles.
             Placeholder resume and contact details are below.
-          </p>
-          <div className="hero-ctas">
-            <a className="button primary" href="#projects">
+          </S.Lead>
+          <S.HeroCtas>
+            <Button variant="primary" href="#projects">
               See projects
-            </a>
-            <a className="button" href="#contact">
-              Contact me
-            </a>
-          </div>
-        </div>
-        <div className="hero-card">
-          <svg
-            className="avatar"
+            </Button>
+            <Button href="#contact">Contact me</Button>
+          </S.HeroCtas>
+        </S.HeroCopy>
+        <S.HeroCard>
+          <S.Avatar
             viewBox="0 0 120 120"
             xmlns="http://www.w3.org/2000/svg"
             role="img"
@@ -63,17 +62,17 @@ function Hero(): JSX.Element {
               />
               <rect x="10" y="72" width="60" height="6" rx="3" fill="#0b1220" />
             </g>
-          </svg>
-          <div className="hero-meta">
-            <div className="meta-name">Jason Shprintz</div>
-            <div className="meta-role">Senior Software Engineer</div>
-            <a className="small-link" href="/resume.pdf" download>
+          </S.Avatar>
+          <S.HeroMeta>
+            <S.MetaName>Jason Shprintz</S.MetaName>
+            <S.MetaRole>Senior Software Engineer</S.MetaRole>
+            <S.SmallLink href="/resume.pdf" download>
               Download resume
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
+            </S.SmallLink>
+          </S.HeroMeta>
+        </S.HeroCard>
+      </S.HeroInner>
+    </S.Hero>
   );
 }
 

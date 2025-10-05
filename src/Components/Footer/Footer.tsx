@@ -5,13 +5,15 @@ import type { JSX } from "react";
  *
  * @returns {JSX.Element} The footer element for the website.
  */
+import * as S from "./styles";
+
 function Footer(): JSX.Element {
   return (
-    <footer className="site-footer">
-      <div className="footer-inner">
+    <S.Footer>
+      <S.FooterInner>
         <div>© {new Date().getFullYear()} Jason Shprintz</div>
-      </div>
-    </footer>
+      </S.FooterInner>
+    </S.Footer>
   );
 }
 
