@@ -4,7 +4,7 @@ import Nav from "./Components/Nav/Nav";
 import Hero from "./Components/Hero/Hero";
 import SectionWrapper from "./Components/SectionWrapper/SectionWrapper";
 import Skills from "./Components/Skills/Skills";
-import Projects from "./Components/Projects/Projects";
+// import Projects from "./Components/Projects/Projects";
 import Experience from "./Components/Experience/Experience";
 import type { JSX } from "react";
 import { GlobalStyle, AppRoot } from "../src/styles";
@@ -46,10 +46,10 @@ function App(): JSX.Element {
         <SectionWrapper id="skills" title="Skills">
           <Skills />
         </SectionWrapper>
-
+        {/* 
         <SectionWrapper id="projects" title="Selected projects">
           <Projects />
-        </SectionWrapper>
+        </SectionWrapper> */}
 
         <SectionWrapper id="experience" title="Experience">
           <Experience />
