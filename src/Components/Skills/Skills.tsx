@@ -3,18 +3,31 @@ import * as S from "./styles";
 import { skills } from "../../data/skills";
 
 /**
- * Renders a grid of skill icons using the provided `skills` array.
- * Each skill is displayed as an image with its corresponding `src` and `alt` attributes.
- *
- * @returns {JSX.Element} The rendered skills grid component.
+ * Stock-ticker style continuous marquee for skills.
+ * - Duplicates the items to create a seamless loop.
+ * - Pauses animation if the user prefers reduced motion.
  */
 function Skills(): JSX.Element {
   return (
-    <S.SkillsGrid>
-      {skills.map((s) => (
-        <img key={s.alt} src={s.src} alt={s.alt} />
-      ))}
-    </S.SkillsGrid>
+    <S.Ticker aria-label="Skills ticker" role="region" aria-live="off">
+      <S.TickerTrack>
+        <S.TickerGroup>
+          {skills.map((s, i) => (
+            <S.TickerItem key={`a-${s.alt}-${i}`}>
+              <img src={s.src} alt={s.alt} loading="lazy" />
+            </S.TickerItem>
+          ))}
+        </S.TickerGroup>
+
+        <S.TickerGroup aria-hidden="true">
+          {skills.map((s, i) => (
+            <S.TickerItem key={`b-${s.alt}-${i}`}>
+              <img src={s.src} alt="" loading="lazy" />
+            </S.TickerItem>
+          ))}
+        </S.TickerGroup>
+      </S.TickerTrack>
+    </S.Ticker>
   );
 }
 
