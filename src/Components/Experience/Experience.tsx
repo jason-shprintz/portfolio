@@ -28,8 +28,8 @@ function Experience(): JSX.Element {
                 <Muted>{job.time}</Muted>
               </S.ExpLeft>
               <S.ExpRight>
-                {job.description.map((des) => {
-                  return <p>* {des}</p>;
+                {job.description.map((des, idx) => {
+                  return <p key={idx}>* {des}</p>;
                 })}
               </S.ExpRight>
             </S.ExpItem>
