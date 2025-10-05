@@ -27,8 +27,10 @@ function Experience(): JSX.Element {
                 <Muted>{job.title}</Muted>
                 <Muted>{job.time}</Muted>
               </S.ExpLeft>
-              <S.ExpRight style={{ backgroundColor: "hotpink" }}>
-                {job.description}
+              <S.ExpRight>
+                {job.description.map((des, idx) => {
+                  return <p key={idx}>* {des}</p>;
+                })}
               </S.ExpRight>
             </S.ExpItem>
           </S.ExpItemContainer>

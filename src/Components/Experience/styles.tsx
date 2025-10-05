@@ -50,11 +50,11 @@ export const JobContainer = styled.div`
 export const JobImg = styled.img`
   height: 100%;
   border-radius: 10px;
-
   margin: 5px;
 `;
 
 export const ExpRight = styled.div`
+  width: 100%;
   padding: 5px;
   border-radius: 10px;
 `;
