@@ -8,7 +8,7 @@ function Experience(): JSX.Element {
     <S.ExperienceList>
       {experience.map((job) => {
         return (
-          <S.ExpItemContainer>
+          <S.ExpItemContainer key={job.name}>
             <S.ExpItem>
               <S.ExpLeft>
                 <S.JobContainer>
