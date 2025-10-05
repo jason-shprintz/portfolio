@@ -7,6 +7,8 @@
  *
  * @returns A styled section element containing a title and children.
  */
+import * as S from "./styles";
+
 function SectionWrapper({
   id,
   title,
@@ -17,12 +19,12 @@ function SectionWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="section">
+    <S.Section id={id}>
       <div className="section-inner">
-        <h2 className="section-title">{title}</h2>
+        <S.SectionTitle>{title}</S.SectionTitle>
         {children}
       </div>
-    </section>
+    </S.Section>
   );
 }
 

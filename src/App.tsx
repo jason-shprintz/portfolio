@@ -1,13 +1,13 @@
-import "./App.css";
-import Footer from "./Components/Footer";
-import Contact from "./Components/Contact";
-import Nav from "./Components/Nav";
-import Hero from "./Components/Hero";
-import SectionWrapper from "./Components/SectionWrapper";
-import Skills from "./Components/Skills";
-import Projects from "./Components/Projects";
-import Experience from "./Components/Experience";
+import Footer from "./Components/Footer/Footer";
+import Contact from "./Components/Contact/Contact";
+import Nav from "./Components/Nav/Nav";
+import Hero from "./Components/Hero/Hero";
+import SectionWrapper from "./Components/SectionWrapper/SectionWrapper";
+import Skills from "./Components/Skills/Skills";
+import Projects from "./Components/Projects/Projects";
+import Experience from "./Components/Experience/Experience";
 import type { JSX } from "react";
+import { GlobalStyle, AppRoot } from "../src/styles";
 
 /**
  * The main application component that renders the portfolio site layout.
@@ -19,7 +19,8 @@ import type { JSX } from "react";
  */
 function App(): JSX.Element {
   return (
-    <div className="app-root">
+    <AppRoot>
+      <GlobalStyle />
       <Nav />
       <main>
         <Hero />
@@ -52,7 +53,7 @@ function App(): JSX.Element {
         </SectionWrapper>
       </main>
       <Footer />
-    </div>
+    </AppRoot>
   );
 }
 
