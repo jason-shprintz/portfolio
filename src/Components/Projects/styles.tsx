@@ -24,11 +24,6 @@ export const ProjectCard = styled.article`
   }
 `;
 
-export const Muted = styled.p`
-  color: var(--muted);
-  margin-top: 0.35rem;
-`;
-
 export const TechRow = styled.div`
   margin-top: 0.6rem;
   display: flex;
