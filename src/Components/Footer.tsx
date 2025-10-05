@@ -10,7 +10,6 @@ function Footer(): JSX.Element {
     <footer className="site-footer">
       <div className="footer-inner">
         <div>© {new Date().getFullYear()} Jason Shprintz</div>
-        <div className="muted small">Placeholder: Built with React + Vite</div>
       </div>
     </footer>
   );

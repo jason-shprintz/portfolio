@@ -7,6 +7,7 @@ import SectionWrapper from "./Components/SectionWrapper";
 import Skills from "./Components/Skills";
 import Projects from "./Components/Projects";
 import Experience from "./Components/Experience";
+import type { JSX } from "react";
 
 /**
  * The main application component that renders the portfolio site layout.
@@ -16,7 +17,7 @@ import Experience from "./Components/Experience";
  *
  * @returns {JSX.Element} The root JSX element for the portfolio application.
  */
-function App() {
+function App(): JSX.Element {
   return (
     <div className="app-root">
       <Nav />
