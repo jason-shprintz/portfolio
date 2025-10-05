@@ -40,7 +40,9 @@ function Contact(): JSX.Element {
           </a>
           <button
             className="button"
-            onClick={copyEmail}
+            onClick={() => {
+              void copyEmail();
+            }}
             aria-label="Copy email"
           >
             {copied ? "Copied!" : "Copy email"}
