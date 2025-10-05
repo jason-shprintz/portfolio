@@ -20,10 +20,7 @@ function Contact(): JSX.Element {
     <L.ContactGrid>
       <L.ContactCard>
         <h3>Get in touch</h3>
-        <Muted>
-          I'm currently open to full-time and contract roles. Placeholder
-          contact info below.
-        </Muted>
+        <Muted>I'm currently open to full-time and contract roles.</Muted>
         <L.ContactRow>
           <Button variant="primary" href={`mailto:${email}`}>
             Email me
@@ -55,26 +52,6 @@ function Contact(): JSX.Element {
           </SmallMuted>
         </L.ContactRow>
       </L.ContactCard>
-
-      <L.ContactForm onSubmit={(e) => e.preventDefault()}>
-        <L.ContactLabel>
-          Name
-          <L.ContactInput placeholder="Your name" />
-        </L.ContactLabel>
-        <L.ContactLabel>
-          Email
-          <L.ContactInput placeholder="you@example.com" />
-        </L.ContactLabel>
-        <L.ContactLabel>
-          Message
-          <L.ContactTextarea placeholder="Quick message" />
-        </L.ContactLabel>
-        <div>
-          <Button variant="primary" type="submit">
-            Send (placeholder)
-          </Button>
-        </div>
-      </L.ContactForm>
     </L.ContactGrid>
   );
 }
