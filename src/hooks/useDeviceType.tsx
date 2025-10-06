@@ -17,7 +17,7 @@ type DeviceType = "mobile" | "tablet" | "desktop";
  *   // Render mobile-specific UI
  * }
  */
-const useDeviceType = () => {
+const useDeviceType = (): DeviceType => {
   const [deviceType, setDeviceType] = useState<DeviceType>("desktop");
 
   useEffect(() => {

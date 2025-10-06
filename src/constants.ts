@@ -9,3 +9,9 @@ export const MEDIA_QUERIES = {
   tablet: `@media (max-width: ${BREAKPOINTS.tablet}px)`,
   desktop: `@media (max-width: ${BREAKPOINTS.desktop}px)`,
 };
+
+export const DEVICE_TYPES = {
+  mobile: "mobile",
+  tablet: "tablet",
+  desktop: "desktop",
+};

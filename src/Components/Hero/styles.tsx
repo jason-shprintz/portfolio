@@ -1,28 +1,38 @@
 import styled from "styled-components";
+import { MEDIA_QUERIES } from "../../constants";
 
 export const Hero = styled.header`
   padding: 2.4rem 0;
 `;
 
 export const HeroInner = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 1.4rem;
-  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
 `;
 
-export const HeroCopy = styled.div``;
+export const HeroCopy = styled.div`
+  width: 60%;
+
+  ${MEDIA_QUERIES.desktop} {
+    width: 100%;
+  }
+`;
+
 export const HeroTitle = styled.h1`
   margin: 0 0 0.2rem 0;
   font-size: 2.2rem;
 `;
-export const Subtitle = styled.p`
-  color: var(--muted);
-  margin-top: 0.2rem;
-`;
+
 export const Lead = styled.p`
   margin-top: 1rem;
   color: var(--muted);
+
+  font-size: 1.1rem;
+
+  ${MEDIA_QUERIES.desktop} {
+    font-size: 1.4rem;
+  }
 `;
 export const HeroCtas = styled.div`
   margin-top: 1.15rem;
@@ -66,29 +76,6 @@ export const HeroCard = styled.div`
   align-items: center;
 `;
 
-export const AvatarWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 83px;
-  height: 91px;
-  border-radius: 10px;
-  background-image: linear-gradient(
-    to top,
-    #646cff,
-    #0091ff,
-    #00adff,
-    #00c5ff,
-    #61dafb
-  );
-`;
-
-export const Avatar = styled.img`
-  height: 86px;
-  border-radius: 10px;
-`;
 export const HeroMeta = styled.div`
   color: white;
 `;
@@ -103,4 +90,13 @@ export const MetaRole = styled.div`
 export const SmallLink = styled.a`
   color: var(--muted);
   font-size: 0.9rem;
+`;
+
+export const OpenRolesBadge = styled.span`
+  padding: 3px 5px;
+  background-color: green;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  color: white;
+  margin-left: 8px;
 `;

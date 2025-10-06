@@ -1,6 +1,9 @@
-import type { JSX } from "react";
+import { type JSX } from "react";
 import * as S from "./styles";
+import * as SharedS from "../../shared/styles";
 import { Button } from "../../styles";
+import { DEVICE_TYPES } from "../../constants";
+import useDeviceType from "../../hooks/useDeviceType";
 
 /**
  * Renders the hero section of the portfolio site, introducing Jason Shprintz.
@@ -11,18 +14,41 @@ import { Button } from "../../styles";
  * @returns {JSX.Element} The hero section component.
  */
 function Hero(): JSX.Element {
+  const isTablet: boolean = useDeviceType() === DEVICE_TYPES.tablet;
+
   return (
     <S.Hero id="home">
       <S.HeroInner>
+        {!isTablet && (
+          <S.HeroCard>
+            <SharedS.AvatarWrapper>
+              <SharedS.Avatar
+                src={"src/assets/headshot_cropped.png"}
+                alt="Jason Shprintz headshot"
+              />
+            </SharedS.AvatarWrapper>
+            <S.HeroMeta>
+              <S.MetaName>Jason Shprintz</S.MetaName>
+              <S.MetaRole>Senior Software Engineer</S.MetaRole>
+              <S.SmallLink href="/resume.pdf" download>
+                Download resume
+              </S.SmallLink>
+            </S.HeroMeta>
+          </S.HeroCard>
+        )}
         <S.HeroCopy>
-          <S.HeroTitle>Jason Shprintz</S.HeroTitle>
-          <S.Subtitle>
-            Software developer — building reliable, maintainable web apps
-          </S.Subtitle>
+          {isTablet && (
+            <>
+              <S.HeroTitle>Jason Shprintz</S.HeroTitle>
+              <SharedS.Subtitle>
+                Software developer — building reliable, maintainable web apps
+              </SharedS.Subtitle>
+            </>
+          )}
           <S.Lead>
             I build production-grade applications with a focus on performance,
-            clarity, and developer experience. Currently open to new roles.
-            Placeholder resume and contact details are below.
+            clarity, and developer experience.&nbsp;
+            <S.OpenRolesBadge>Currently open to new roles!</S.OpenRolesBadge>
           </S.Lead>
           <S.HeroCtas>
             {/* <Button variant="primary" href="#projects">
@@ -31,21 +57,6 @@ function Hero(): JSX.Element {
             <Button href="#contact">Contact me</Button>
           </S.HeroCtas>
         </S.HeroCopy>
-        <S.HeroCard>
-          <S.AvatarWrapper>
-            <S.Avatar
-              src={"src/assets/headshot_cropped.png"}
-              alt="Jason Shprintz headshot"
-            />
-          </S.AvatarWrapper>
-          <S.HeroMeta>
-            <S.MetaName>Jason Shprintz</S.MetaName>
-            <S.MetaRole>Senior Software Engineer</S.MetaRole>
-            <S.SmallLink href="/resume.pdf" download>
-              Download resume
-            </S.SmallLink>
-          </S.HeroMeta>
-        </S.HeroCard>
       </S.HeroInner>
     </S.Hero>
   );

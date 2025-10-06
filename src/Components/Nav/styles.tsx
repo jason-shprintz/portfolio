@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { MEDIA_QUERIES } from "../../constants";
+import { FlexCol, FlexRow } from "../../shared/styles";
 
 export const NavBar = styled.nav<{ open?: boolean }>`
   width: 100%;
@@ -22,16 +23,11 @@ export const NavInner = styled.div`
   padding: 0.75rem 1rem;
 `;
 
-export const Brand = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+export const Brand = styled(FlexRow)`
   justify-content: space-between;
 
   font-weight: 700;
   font-size: 1.05rem;
-
-
 `;
 
 export const MobileToggle = styled.button<{ open?: boolean }>`
@@ -147,18 +143,21 @@ export const CtaLink = styled.a`
   }
 `;
 
-export const NavSocial = styled.div`
+export const NavSocial = styled(FlexCol)`
   height: auto;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-
-  transform: scale(0.7);
+  margin-right: 25px;
 `;
 
 export const NavSocialLink = styled.a`
   margin: 0;
   padding: 0;
+`;
+
+export const NavTitleContainer = styled(FlexCol)`
+  align-items: flex-start;
+`;
+
+export const NavTitle = styled.h1`
+  margin: 0;
 `;

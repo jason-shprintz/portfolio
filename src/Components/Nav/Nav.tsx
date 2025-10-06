@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect, type JSX } from "react";
 import * as S from "./styles";
+import * as SharedS from "../../shared/styles";
+import useDeviceType from "../../hooks/useDeviceType";
+import { DEVICE_TYPES } from "../../constants";
 
 /**
  * Navigation bar component for the portfolio site.
@@ -15,6 +18,7 @@ function Nav(): JSX.Element {
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
+  const isTablet: boolean = useDeviceType() === DEVICE_TYPES.tablet;
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -70,7 +74,21 @@ function Nav(): JSX.Element {
               />
             </S.NavSocialLink>
           </S.NavSocial>
-          Jason Shprintz
+          {isTablet ? (
+            <SharedS.AvatarWrapper>
+              <SharedS.Avatar
+                src={"src/assets/headshot_cropped.png"}
+                alt="Jason Shprintz headshot"
+              />
+            </SharedS.AvatarWrapper>
+          ) : (
+            <S.NavTitleContainer>
+              <S.NavTitle>Jason Shprintz</S.NavTitle>
+              <SharedS.Subtitle>
+                Software developer — building reliable, maintainable web apps
+              </SharedS.Subtitle>
+            </S.NavTitleContainer>
+          )}
         </S.Brand>
         <S.MobileToggle
           onClick={() => setOpen((s) => !s)}
@@ -91,11 +109,11 @@ function Nav(): JSX.Element {
               Skills
             </S.NavLink>
           </li>
-          <li>
+          {/* <li>
             <S.NavLink href="#projects" onClick={() => setOpen(false)}>
               Projects
             </S.NavLink>
-          </li>
+          </li> */}
           <li>
             <S.NavLink href="#experience" onClick={() => setOpen(false)}>
               Experience
