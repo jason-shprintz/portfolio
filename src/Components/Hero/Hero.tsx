@@ -24,17 +24,14 @@ function Hero(): JSX.Element {
           <S.HeroCard>
             <SharedS.AvatarWrapper>
               <SharedS.Avatar
-                src={"src/assets/images/headshot_cropped.png"}
+                src={"assets/images/headshot_cropped.png"}
                 alt="Jason Shprintz headshot"
               />
             </SharedS.AvatarWrapper>
             <S.HeroMeta>
               <S.MetaName>Jason Shprintz</S.MetaName>
               <S.MetaRole>Senior Software Developer</S.MetaRole>
-              <S.SmallLink
-                href="src/assets/doc/Jason_Shprintz_Resume.pdf"
-                download
-              >
+              <S.SmallLink href="assets/doc/Jason_Shprintz_Resume.pdf" download>
                 Download Resume
               </S.SmallLink>
             </S.HeroMeta>

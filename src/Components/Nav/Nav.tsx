@@ -77,7 +77,7 @@ function Nav(): JSX.Element {
           {isTablet ? (
             <SharedS.AvatarWrapper>
               <SharedS.Avatar
-                src={"src/assets/images/headshot_cropped.png"}
+                src={"assets/images/headshot_cropped.png"}
                 alt="Jason Shprintz headshot"
               />
             </SharedS.AvatarWrapper>
