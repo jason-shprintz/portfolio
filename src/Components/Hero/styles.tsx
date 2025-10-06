@@ -1,43 +1,43 @@
 import styled from "styled-components";
+import { MEDIA_QUERIES } from "../../constants";
 
 export const Hero = styled.header`
   padding: 2.4rem 0;
 `;
 
 export const HeroInner = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 1.4rem;
-  align-items: center;
-  @media (max-width: 880px) {
-    grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+`;
+
+export const HeroCopy = styled.div`
+  width: 60%;
+
+  ${MEDIA_QUERIES.desktop} {
+    width: 100%;
   }
 `;
 
-export const HeroCopy = styled.div``;
 export const HeroTitle = styled.h1`
   margin: 0 0 0.2rem 0;
   font-size: 2.2rem;
-  @media (max-width: 720px) {
-    font-size: 1.6rem;
-    animation: fadeUp 560ms ease both;
-  }
 `;
-export const Subtitle = styled.p`
-  color: var(--muted);
-  margin-top: 0.2rem;
-`;
+
 export const Lead = styled.p`
   margin-top: 1rem;
   color: var(--muted);
+
+  font-size: 1.1rem;
+
+  ${MEDIA_QUERIES.desktop} {
+    font-size: 1.4rem;
+  }
 `;
 export const HeroCtas = styled.div`
   margin-top: 1.15rem;
   display: flex;
   gap: 0.6rem;
-  @media (max-width: 720px) {
-    flex-direction: column;
-  }
 `;
 
 export const Button = styled.a<{ asButton?: boolean }>`
@@ -61,54 +61,33 @@ export const Button = styled.a<{ asButton?: boolean }>`
   &:active {
     transform: translateY(1px);
   }
-  @media (max-width: 720px) {
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
 `;
 
 export const HeroCard = styled.div`
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
+  min-width: 350px;
+  background-image: linear-gradient(
+    to right bottom,
+    #0b1220,
+    #0f182b,
+    #141e36,
+    #1a2342,
+    #21284d,
+    #1f284c,
+    #1e284a,
+    #1c2849,
+    #14223a,
+    #101b2c,
+    #0c141d,
+    #05090e
   );
   padding: 1rem;
   border-radius: 12px;
+  box-shadow: -1px 1px 2px 1px black;
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  @media (max-width: 720px) {
-    justify-content: flex-start;
-    animation: fadeUp 680ms ease both;
-    animation-delay: 90ms;
-  }
 `;
 
-export const AvatarWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 83px;
-  height: 91px;
-  border-radius: 10px;
-  background-image: linear-gradient(
-    to top,
-    #646cff,
-    #0091ff,
-    #00adff,
-    #00c5ff,
-    #61dafb
-  );
-`;
-
-export const Avatar = styled.img`
-  height: 86px;
-  border-radius: 10px;
-`;
 export const HeroMeta = styled.div`
   color: white;
 `;
@@ -123,4 +102,50 @@ export const MetaRole = styled.div`
 export const SmallLink = styled.a`
   color: var(--muted);
   font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease,
+    transform 120ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    outline: none;
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.16);
+    color: white;
+    transform: scale(0.97) translateY(1px);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+`;
+
+export const OpenRolesBadge = styled.span`
+  padding: 3px 5px;
+  background-image: linear-gradient(
+    to right top,
+    #057d16,
+    #068419,
+    #088b1c,
+    #0a9320,
+    #0b9a23,
+    #1f9b24,
+    #2b9c25,
+    #359d26,
+    #439825,
+    #4e9326,
+    #568e27,
+    #5c8929
+  );
+  border-radius: 4px;
+  font-size: 1.2rem;
+  color: white;
+  margin-left: 8px;
 `;

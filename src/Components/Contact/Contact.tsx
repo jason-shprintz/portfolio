@@ -1,6 +1,7 @@
 import { useState, type JSX } from "react";
 import * as S from "./styles";
-import { Button, Muted, SmallMuted } from "../../styles";
+import { Button } from "../../styles";
+import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper";
 
 /**
  * Contact component displays contact information and options for reaching out.
@@ -29,47 +30,27 @@ function Contact(): JSX.Element {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // noop
+      console.error("Failed to copy email");
     }
   }
 
   return (
-    <S.ContactGrid>
+    <SectionWrapper id="contact" title="Contact">
       <S.ContactCard>
-        <h3>Get in touch</h3>
-        <Muted>I'm currently open to full-time and contract roles.</Muted>
         <S.ContactRow>
           <Button variant="primary" href={`mailto:${email}`}>
-            Email me
+            Email Me
           </Button>
           <Button
-            as="button"
+            variant="ghost"
             onClick={() => void copyEmail()}
-            aria-label="Copy email"
+            aria-label="Copy Email"
           >
-            {copied ? "Copied!" : "Copy email"}
+            {copied ? "Copied!" : "Copy Email"}
           </Button>
         </S.ContactRow>
-        <S.ContactRow>
-          <SmallMuted>
-            Or connect on&nbsp;
-            <a href="https://www.linkedin.com/in/jasonshprintz/">
-              <img
-                src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
-                alt="LinkedIn"
-              />
-            </a>
-            &nbsp;
-            <a href="https://github.com/jason-shprintz">
-              <img
-                src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
-                alt="GitHub"
-              />
-            </a>
-          </SmallMuted>
-        </S.ContactRow>
       </S.ContactCard>
-    </S.ContactGrid>
+    </SectionWrapper>
   );
 }
 

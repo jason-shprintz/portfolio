@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { MEDIA_QUERIES } from "../../constants";
+import { FlexCol, FlexRow } from "../../shared/styles";
 
 export const ExperienceList = styled.div`
   display: flex;
@@ -8,47 +10,54 @@ export const ExperienceList = styled.div`
 export const ExpItemContainer = styled.article`
   display: flex;
   gap: 1rem;
-  padding: 2px;
-  background-image: linear-gradient(
-    to top,
-    #646cff,
-    #0091ff,
-    #00adff,
-    #00c5ff,
-    #61dafb
-  );
-  border-radius: 10px;
+  padding: 1px;
 
-  @media (max-width: 720px) {
-    flex-direction: column;
-  }
+  border-radius: 10px;
 `;
 
 export const ExpItem = styled.div`
   display: flex;
-  background-color: black;
+  background-image: linear-gradient(
+    to right bottom,
+    #0b1220,
+    #0f182b,
+    #141e36,
+    #1a2342,
+    #21284d,
+    #1f284c,
+    #1e284a,
+    #1c2849,
+    #14223a,
+    #101b2c,
+    #0c141d,
+    #05090e
+  );
   border-radius: 10px;
+  box-shadow: -1px 1px 2px 1px black;
 `;
 
-export const ExpLeft = styled.div`
+export const ExpLeft = styled(FlexCol)`
   width: 500px;
   padding: 5px;
-  @media (max-width: 720px) {
-    width: 420px;
+  align-items: flex-start;
+`;
+
+export const JobContainer = styled(FlexRow)`
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+
+  font-size: 1.4rem;
+
+  ${MEDIA_QUERIES.desktop} {
+    font-size: 1.6rem;
   }
 `;
 
-export const JobContainer = styled.div`
-  width: auto;
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-`;
-
 export const JobImg = styled.img`
-  height: 100%;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
   border-radius: 10px;
   margin: 5px;
 `;
@@ -57,4 +66,10 @@ export const ExpRight = styled.div`
   width: 100%;
   padding: 5px;
   border-radius: 10px;
+  color: var(--muted);
+  font-size: 1.1rem;
+
+  ${MEDIA_QUERIES.desktop} {
+    font-size: 1.4rem;
+  }
 `;

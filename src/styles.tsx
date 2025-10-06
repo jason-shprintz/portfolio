@@ -1,9 +1,10 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { MEDIA_QUERIES } from "./constants";
 
 export const GlobalStyle = createGlobalStyle`
   :root {
     --bg: #0b1220;
-    --card: #08101a;
+    --card: #05090e;
     --muted: #9aa4b2;
     --accent: #646cff;
     --accent-2: #61dafb;
@@ -14,16 +15,34 @@ export const GlobalStyle = createGlobalStyle`
   @keyframes fadeUp { from { opacity:0; transform: translateY(8px)} to { opacity:1; transform: translateY(0)} }
   @keyframes menuIn { from { opacity:0; transform: translateY(-6px)} to { opacity:1; transform: translateY(0)} }
 
-  html, body, #root { height: 100%; }
+  html, body, #root { height: 100%; width: 100%;}
   body { margin:0; font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; line-height:1.5; background: var(--bg); color: rgba(255,255,255,0.87); -webkit-font-smoothing:antialiased }
   a { color: var(--accent); text-decoration: none }
   a:hover { color: #535bf2 }
 `;
 
 export const AppRoot = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  background-color: #0b1220;
+`;
+
+export const AppContainer = styled.div`
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: #0b1220;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+
+  ${MEDIA_QUERIES.desktop} {
+    font-size: 2rem;
+  }
 `;
 
 export const Button = styled.a<{
@@ -47,11 +66,6 @@ export const Button = styled.a<{
   &:active {
     transform: translateY(1px);
   }
-  @media (max-width: 720px) {
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
 `;
 
 export const CardActions = styled.div`
@@ -66,7 +80,7 @@ export const FormActions = styled.div`
 
 export const Muted = styled.p`
   color: var(--muted);
-  margin-top: 0.35rem;
+  font-size: 1.1rem;
 `;
 
 export const SmallMuted = styled.small`

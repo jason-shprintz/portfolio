@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
+import { MEDIA_QUERIES } from "../../constants";
+import { FlexCol, FlexRow } from "../../shared/styles";
 
 export const NavBar = styled.nav<{ open?: boolean }>`
+  width: 100%;
   position: sticky;
   top: 0;
   backdrop-filter: blur(6px);
@@ -9,7 +12,7 @@ export const NavBar = styled.nav<{ open?: boolean }>`
     rgba(11, 18, 28, 0.6),
     rgba(11, 18, 28, 0.2)
   );
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 10;
 `;
 
@@ -20,10 +23,7 @@ export const NavInner = styled.div`
   padding: 0.75rem 1rem;
 `;
 
-export const Brand = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+export const Brand = styled(FlexRow)`
   justify-content: space-between;
 
   font-weight: 700;
@@ -36,10 +36,12 @@ export const MobileToggle = styled.button<{ open?: boolean }>`
   border: 0;
   padding: 0.35rem;
   border-radius: 8px;
-  @media (max-width: 720px) {
+
+  ${MEDIA_QUERIES.mobile} {
     display: inline-flex;
     align-items: center;
   }
+
   .hamburger {
     display: block;
     width: 22px;
@@ -48,6 +50,7 @@ export const MobileToggle = styled.button<{ open?: boolean }>`
     position: relative;
     transition: background 200ms ease, transform 200ms ease;
   }
+
   .hamburger::before,
   .hamburger::after {
     content: "";
@@ -64,6 +67,7 @@ export const MobileToggle = styled.button<{ open?: boolean }>`
   .hamburger::after {
     top: 6px;
   }
+
   ${(p) =>
     p.open &&
     css`
@@ -88,7 +92,8 @@ export const NavLinks = styled.ul<{ open?: boolean }>`
   margin: 0;
   padding: 0;
   align-items: center;
-  @media (max-width: 720px) {
+
+  ${MEDIA_QUERIES.mobile} {
     position: absolute;
     right: 0;
     top: 64px;
@@ -118,7 +123,7 @@ export const NavLink = styled.a`
   &:hover {
     color: var(--accent);
   }
-  @media (max-width: 720px) {
+  ${MEDIA_QUERIES.mobile} {
     padding: 0.5rem 0.75rem;
     width: 100%;
   }
@@ -130,25 +135,29 @@ export const CtaLink = styled.a`
   padding: 0.45rem 0.7rem;
   border-radius: 8px;
   display: inline-block;
-  @media (max-width: 720px) {
+
+  ${MEDIA_QUERIES.mobile} {
     display: block;
     text-align: center;
     width: 100%;
   }
 `;
 
-export const NavSocial = styled.div`
+export const NavSocial = styled(FlexCol)`
   height: auto;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-
-  transform: scale(0.7);
+  margin-right: 25px;
 `;
 
 export const NavSocialLink = styled.a`
   margin: 0;
   padding: 0;
+`;
+
+export const NavTitleContainer = styled(FlexCol)`
+  align-items: flex-start;
+`;
+
+export const NavTitle = styled.h1`
+  margin: 0;
 `;

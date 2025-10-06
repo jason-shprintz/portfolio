@@ -21,10 +21,6 @@ export const TickerTrack = styled.div`
       transform: translate3d(-50%, 0, 0);
     }
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
 `;
 
 export const TickerItem = styled.div`

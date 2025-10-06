@@ -2,6 +2,7 @@ import { projects } from "../../data/projects";
 import * as S from "./styles";
 import { Button, Muted, CardActions } from "../../styles";
 import type { JSX } from "react";
+import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper";
 
 /**
  * Renders a grid of project cards, each displaying project details such as name, description, technologies used, and a link to view the project.
@@ -15,24 +16,26 @@ import type { JSX } from "react";
  */
 function Projects(): JSX.Element {
   return (
-    <S.ProjectsGrid>
-      {projects.map((p) => (
-        <S.ProjectCard key={p.id}>
-          <h3>{p.name}</h3>
-          <Muted>{p.description}</Muted>
-          <S.TechRow>
-            {p.tech.map((t) => (
-              <S.Tag key={t}>{t}</S.Tag>
-            ))}
-          </S.TechRow>
-          <CardActions>
-            <Button variant="ghost" href={p.link}>
-              View
-            </Button>
-          </CardActions>
-        </S.ProjectCard>
-      ))}
-    </S.ProjectsGrid>
+    <SectionWrapper id="projects" title="Selected projects">
+      <S.ProjectsGrid>
+        {projects.map((p) => (
+          <S.ProjectCard key={p.id}>
+            <h3>{p.name}</h3>
+            <Muted>{p.description}</Muted>
+            <S.TechRow>
+              {p.tech.map((t) => (
+                <S.Tag key={t}>{t}</S.Tag>
+              ))}
+            </S.TechRow>
+            <CardActions>
+              <Button variant="ghost" href={p.link}>
+                View
+              </Button>
+            </CardActions>
+          </S.ProjectCard>
+        ))}
+      </S.ProjectsGrid>
+    </SectionWrapper>
   );
 }
 
