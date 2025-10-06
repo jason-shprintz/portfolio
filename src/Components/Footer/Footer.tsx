@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import * as S from "./styles";
+import { SmallMuted } from "../../styles";
 
 /**
  * Renders the footer section of the website.
@@ -12,6 +13,21 @@ function Footer(): JSX.Element {
     <S.Footer>
       <S.FooterInner>
         <div>© {new Date().getFullYear()} Jason Shprintz</div>
+        <SmallMuted>
+          <a href="https://www.linkedin.com/in/jasonshprintz/">
+            <img
+              src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
+              alt="LinkedIn"
+            />
+          </a>
+          &nbsp;
+          <a href="https://github.com/jason-shprintz">
+            <img
+              src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
+              alt="GitHub"
+            />
+          </a>
+        </SmallMuted>
       </S.FooterInner>
     </S.Footer>
   );

@@ -54,7 +54,7 @@ function Hero(): JSX.Element {
           )}
           <S.Lead>
             I build production-grade applications with a focus on performance,
-            clarity, and developer experience.&nbsp;
+            clarity, and user experience.&nbsp;
           </S.Lead>
           <S.OpenRolesBadge>Currently open to new roles!</S.OpenRolesBadge>
           {isMobile && (
