@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 import * as S from "./styles";
 import { skills } from "../../data/skills";
+import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper";
 
 /**
  * Stock-ticker style continuous marquee for skills.
@@ -9,25 +10,27 @@ import { skills } from "../../data/skills";
  */
 function Skills(): JSX.Element {
   return (
-    <S.Ticker aria-label="Skills ticker" role="region" aria-live="off">
-      <S.TickerTrack>
-        <S.TickerGroup>
-          {skills.map((s, i) => (
-            <S.TickerItem key={`a-${s.alt}-${i}`}>
-              <img src={s.src} alt={s.alt} loading="lazy" />
-            </S.TickerItem>
-          ))}
-        </S.TickerGroup>
+    <SectionWrapper id="skills" title="Skills">
+      <S.Ticker aria-label="Skills ticker" role="region" aria-live="off">
+        <S.TickerTrack>
+          <S.TickerGroup>
+            {skills.map((s, i) => (
+              <S.TickerItem key={`a-${s.alt}-${i}`}>
+                <img src={s.src} alt={s.alt} loading="lazy" />
+              </S.TickerItem>
+            ))}
+          </S.TickerGroup>
 
-        <S.TickerGroup aria-hidden="true">
-          {skills.map((s, i) => (
-            <S.TickerItem key={`b-${s.alt}-${i}`}>
-              <img src={s.src} alt="" loading="lazy" />
-            </S.TickerItem>
-          ))}
-        </S.TickerGroup>
-      </S.TickerTrack>
-    </S.Ticker>
+          <S.TickerGroup aria-hidden="true">
+            {skills.map((s, i) => (
+              <S.TickerItem key={`b-${s.alt}-${i}`}>
+                <img src={s.src} alt="" loading="lazy" />
+              </S.TickerItem>
+            ))}
+          </S.TickerGroup>
+        </S.TickerTrack>
+      </S.Ticker>
+    </SectionWrapper>
   );
 }
 

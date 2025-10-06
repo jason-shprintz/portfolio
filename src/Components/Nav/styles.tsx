@@ -12,7 +12,7 @@ export const NavBar = styled.nav<{ open?: boolean }>`
     rgba(11, 18, 28, 0.6),
     rgba(11, 18, 28, 0.2)
   );
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 10;
 `;
 

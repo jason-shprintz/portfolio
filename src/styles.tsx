@@ -4,7 +4,7 @@ import { MEDIA_QUERIES } from "./constants";
 export const GlobalStyle = createGlobalStyle`
   :root {
     --bg: #0b1220;
-    --card: #08101a;
+    --card: #05090e;
     --muted: #9aa4b2;
     --accent: #646cff;
     --accent-2: #61dafb;
@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   a:hover { color: #535bf2 }
 `;
 
-export const AppContainer = styled.div`
+export const AppRoot = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -31,7 +31,7 @@ export const AppContainer = styled.div`
   background-color: #0b1220;
 `;
 
-export const AppRoot = styled.div`
+export const AppContainer = styled.div`
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -39,7 +39,6 @@ export const AppRoot = styled.div`
   background-color: #0b1220;
   box-sizing: border-box;
   font-size: 1rem;
-  border: 5px solid pink;
 
   ${MEDIA_QUERIES.desktop} {
     font-size: 2rem;

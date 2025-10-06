@@ -15,6 +15,7 @@ import useDeviceType from "../../hooks/useDeviceType";
  */
 function Hero(): JSX.Element {
   const isTablet: boolean = useDeviceType() === DEVICE_TYPES.tablet;
+  const isMobile: boolean = useDeviceType() === DEVICE_TYPES.mobile;
 
   return (
     <S.Hero id="home">
@@ -30,7 +31,10 @@ function Hero(): JSX.Element {
             <S.HeroMeta>
               <S.MetaName>Jason Shprintz</S.MetaName>
               <S.MetaRole>Senior Software Engineer</S.MetaRole>
-              <S.SmallLink href="/resume.pdf" download>
+              <S.SmallLink
+                href="src/assets/doc/Jason_Shprintz_Resume.pdf"
+                download
+              >
                 Download resume
               </S.SmallLink>
             </S.HeroMeta>
@@ -41,21 +45,23 @@ function Hero(): JSX.Element {
             <>
               <S.HeroTitle>Jason Shprintz</S.HeroTitle>
               <SharedS.Subtitle>
-                Software developer — building reliable, maintainable web apps
+                Software Developer — Building Reliable, Maintainable Web Apps
               </SharedS.Subtitle>
             </>
           )}
           <S.Lead>
             I build production-grade applications with a focus on performance,
             clarity, and developer experience.&nbsp;
-            <S.OpenRolesBadge>Currently open to new roles!</S.OpenRolesBadge>
           </S.Lead>
-          <S.HeroCtas>
-            {/* <Button variant="primary" href="#projects">
+          <S.OpenRolesBadge>Currently open to new roles!</S.OpenRolesBadge>
+          {isMobile && (
+            <S.HeroCtas>
+              {/* <Button variant="primary" href="#projects">
               See projects
             </Button> */}
-            <Button href="#contact">Contact me</Button>
-          </S.HeroCtas>
+              <Button href="#contact">Contact me</Button>
+            </S.HeroCtas>
+          )}
         </S.HeroCopy>
       </S.HeroInner>
     </S.Hero>

@@ -30,7 +30,7 @@ export const AvatarWrapper = styled(FlexCol)`
 `;
 
 export const Avatar = styled.img`
-  height: 86px;
+  height: 90px;
   border-radius: 10px;
 `;
 

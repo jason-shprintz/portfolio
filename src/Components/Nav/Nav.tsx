@@ -85,7 +85,7 @@ function Nav(): JSX.Element {
             <S.NavTitleContainer>
               <S.NavTitle>Jason Shprintz</S.NavTitle>
               <SharedS.Subtitle>
-                Software developer — building reliable, maintainable web apps
+                Software Developer — Building Reliable, Maintainable Web Apps
               </SharedS.Subtitle>
             </S.NavTitleContainer>
           )}

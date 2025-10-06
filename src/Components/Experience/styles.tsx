@@ -8,7 +8,7 @@ export const ExperienceList = styled.div`
 export const ExpItemContainer = styled.article`
   display: flex;
   gap: 1rem;
-  padding: 2px;
+  padding: 1px;
   background-image: linear-gradient(
     to top,
     #646cff,
@@ -22,7 +22,21 @@ export const ExpItemContainer = styled.article`
 
 export const ExpItem = styled.div`
   display: flex;
-  background-color: black;
+  background-image: linear-gradient(
+    to right bottom,
+    #0b1220,
+    #0f182b,
+    #141e36,
+    #1a2342,
+    #21284d,
+    #1f284c,
+    #1e284a,
+    #1c2849,
+    #14223a,
+    #101b2c,
+    #0c141d,
+    #05090e
+  );
   border-radius: 10px;
 `;
 
