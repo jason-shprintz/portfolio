@@ -9,19 +9,12 @@ export const HeroInner = styled.div`
   grid-template-columns: 1fr 320px;
   gap: 1.4rem;
   align-items: center;
-  @media (max-width: 880px) {
-    grid-template-columns: 1fr;
-  }
 `;
 
 export const HeroCopy = styled.div``;
 export const HeroTitle = styled.h1`
   margin: 0 0 0.2rem 0;
   font-size: 2.2rem;
-  @media (max-width: 720px) {
-    font-size: 1.6rem;
-    animation: fadeUp 560ms ease both;
-  }
 `;
 export const Subtitle = styled.p`
   color: var(--muted);
@@ -35,9 +28,6 @@ export const HeroCtas = styled.div`
   margin-top: 1.15rem;
   display: flex;
   gap: 0.6rem;
-  @media (max-width: 720px) {
-    flex-direction: column;
-  }
 `;
 
 export const Button = styled.a<{ asButton?: boolean }>`
@@ -61,11 +51,6 @@ export const Button = styled.a<{ asButton?: boolean }>`
   &:active {
     transform: translateY(1px);
   }
-  @media (max-width: 720px) {
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
 `;
 
 export const HeroCard = styled.div`
@@ -79,11 +64,6 @@ export const HeroCard = styled.div`
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  @media (max-width: 720px) {
-    justify-content: flex-start;
-    animation: fadeUp 680ms ease both;
-    animation-delay: 90ms;
-  }
 `;
 
 export const AvatarWrapper = styled.div`

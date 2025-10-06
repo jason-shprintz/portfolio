@@ -9,8 +9,4 @@ export const FooterInner = styled.div`
   display: flex;
   justify-content: space-between;
   color: var(--muted);
-  @media (max-width: 720px) {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
 `;

@@ -4,9 +4,6 @@ export const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  @media (max-width: 880px) {
-    grid-template-columns: 1fr;
-  }
 `;
 
 export const ProjectCard = styled.article`

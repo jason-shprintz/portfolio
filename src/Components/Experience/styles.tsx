@@ -18,10 +18,6 @@ export const ExpItemContainer = styled.article`
     #61dafb
   );
   border-radius: 10px;
-
-  @media (max-width: 720px) {
-    flex-direction: column;
-  }
 `;
 
 export const ExpItem = styled.div`
@@ -33,9 +29,6 @@ export const ExpItem = styled.div`
 export const ExpLeft = styled.div`
   width: 500px;
   padding: 5px;
-  @media (max-width: 720px) {
-    width: 420px;
-  }
 `;
 
 export const JobContainer = styled.div`
