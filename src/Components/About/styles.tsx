@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { MEDIA_QUERIES } from "../../constants";
 
-export const About = styled.header`
-  padding: 2.4rem 0;
-`;
-
 export const AboutInner = styled.div`
   display: flex;
   flex-direction: row;
@@ -39,15 +35,3 @@ export const AboutCtas = styled.div`
   gap: 0.6rem;
 `;
 
-export const AboutCard = styled.div`
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
-  );
-  padding: 1rem;
-  border-radius: 12px;
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-`;

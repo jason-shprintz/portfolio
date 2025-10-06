@@ -8,7 +8,7 @@ type Experience = {
 
 const experience: Experience[] = [
   {
-    imgSrc: "src/assets/sands.png",
+    imgSrc: "src/assets/images/sands.png",
     name: "Sands Digital Services",
     title: "Client Engineer",
     time: "Dec 2022 - Dec 2025",
@@ -19,7 +19,7 @@ const experience: Experience[] = [
     ],
   },
   {
-    imgSrc: "src/assets/alphaSights.png",
+    imgSrc: "src/assets/images/alphaSights.png",
     name: "AlphaSights",
     title: "Software Developer / Quality Assurance",
     time: "Oct 2020 - Dec 2022",
@@ -29,7 +29,7 @@ const experience: Experience[] = [
     ],
   },
   {
-    imgSrc: "src/assets/litService.png",
+    imgSrc: "src/assets/images/litService.png",
     name: "Litigation Services",
     title: "Quality Assurance Specialist",
     time: "Jun 2016 - Sep 2020",

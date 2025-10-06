@@ -38,7 +38,7 @@ export const AppContainer = styled.div`
   padding: 2rem;
   background-color: #0b1220;
   box-sizing: border-box;
-  font-size: 1rem;
+  font-size: 1.5rem;
 
   ${MEDIA_QUERIES.desktop} {
     font-size: 2rem;
