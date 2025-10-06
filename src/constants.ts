@@ -7,7 +7,7 @@ export const BREAKPOINTS = {
 export const MEDIA_QUERIES = {
   mobile: `@media (max-width: ${BREAKPOINTS.mobile}px)`,
   tablet: `@media (max-width: ${BREAKPOINTS.tablet}px)`,
-  desktop: `@media (max-width: ${BREAKPOINTS.desktop}px)`,
+  desktop: `@media (min-width: ${BREAKPOINTS.desktop}px)`,
 };
 
 export const DEVICE_TYPES = {
