@@ -14,19 +14,21 @@ type Orientation = "portrait" | "landscape";
  * console.log(orientation); // "landscape" or "portrait"
  */
 const useOrientation = (): Orientation => {
-  const [orientation, setOrientation] = useState<Orientation>(
-    window.innerWidth > window.innerHeight ? "landscape" : "portrait"
-  );
+  const [orientation, setOrientation] = useState<Orientation>("portrait");
 
   useEffect(() => {
+    const getOrientation = () =>
+      window.innerWidth > window.innerHeight ? "landscape" : "portrait";
+
     const handleResize = () => {
-      setOrientation(
-        window.innerWidth > window.innerHeight ? "landscape" : "portrait"
-      );
+      setOrientation(getOrientation());
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      setOrientation(getOrientation());
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   return orientation;
