@@ -80,7 +80,7 @@ export const FormActions = styled.div`
 
 export const Muted = styled.p`
   color: var(--muted);
-  margin-top: 0.35rem;
+  font-size: 1.1rem;
 `;
 
 export const SmallMuted = styled.small`

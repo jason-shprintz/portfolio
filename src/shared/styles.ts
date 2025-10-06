@@ -36,5 +36,4 @@ export const Avatar = styled.img`
 
 export const Subtitle = styled.p`
   color: var(--muted);
-  margin-top: 0.2rem;
 `;

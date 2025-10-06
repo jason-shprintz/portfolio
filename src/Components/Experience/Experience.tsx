@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import * as S from "./styles";
-import { Muted } from "../../styles";
+import { Muted, SmallMuted } from "../../styles";
 import { experience } from "../../data/experience";
 import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper";
 
@@ -27,7 +27,7 @@ function Experience(): JSX.Element {
                   </S.JobContainer>
 
                   <Muted>{job.title}</Muted>
-                  <Muted>{job.time}</Muted>
+                  <SmallMuted>{job.time}</SmallMuted>
                 </S.ExpLeft>
                 <S.ExpRight>
                   {job.description.map((des, idx) => {

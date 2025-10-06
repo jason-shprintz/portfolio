@@ -30,12 +30,12 @@ function Hero(): JSX.Element {
             </SharedS.AvatarWrapper>
             <S.HeroMeta>
               <S.MetaName>Jason Shprintz</S.MetaName>
-              <S.MetaRole>Senior Software Engineer</S.MetaRole>
+              <S.MetaRole>Senior Software Developer</S.MetaRole>
               <S.SmallLink
                 href="src/assets/doc/Jason_Shprintz_Resume.pdf"
                 download
               >
-                Download resume
+                Download Resume
               </S.SmallLink>
             </S.HeroMeta>
           </S.HeroCard>
@@ -45,7 +45,10 @@ function Hero(): JSX.Element {
             <>
               <S.HeroTitle>Jason Shprintz</S.HeroTitle>
               <SharedS.Subtitle>
-                Software Developer — Building Reliable, Maintainable Web Apps
+                Senior Software Developer&nbsp;
+                <span style={{ fontSize: "1rem" }}>
+                  — Building Reliable, Maintainable Web Apps
+                </span>
               </SharedS.Subtitle>
             </>
           )}

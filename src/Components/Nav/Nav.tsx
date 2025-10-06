@@ -85,7 +85,10 @@ function Nav(): JSX.Element {
             <S.NavTitleContainer>
               <S.NavTitle>Jason Shprintz</S.NavTitle>
               <SharedS.Subtitle>
-                Software Developer — Building Reliable, Maintainable Web Apps
+                Senior Software Developer&nbsp;
+                <span style={{ fontSize: "0.7rem" }}>
+                  — Building Reliable, Maintainable Web Apps
+                </span>
               </SharedS.Subtitle>
             </S.NavTitleContainer>
           )}

@@ -64,13 +64,25 @@ export const Button = styled.a<{ asButton?: boolean }>`
 `;
 
 export const HeroCard = styled.div`
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
+  min-width: 350px;
+  background-image: linear-gradient(
+    to right bottom,
+    #0b1220,
+    #0f182b,
+    #141e36,
+    #1a2342,
+    #21284d,
+    #1f284c,
+    #1e284a,
+    #1c2849,
+    #14223a,
+    #101b2c,
+    #0c141d,
+    #05090e
   );
   padding: 1rem;
   border-radius: 12px;
+  box-shadow: -1px 1px 2px 1px black;
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -90,6 +102,29 @@ export const MetaRole = styled.div`
 export const SmallLink = styled.a`
   color: var(--muted);
   font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease,
+    transform 120ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    outline: none;
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.16);
+    color: white;
+    transform: scale(0.97) translateY(1px);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  }
 `;
 
 export const OpenRolesBadge = styled.span`

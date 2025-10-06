@@ -29,6 +29,7 @@ export const Description = styled.p`
     font-size: 1.4rem;
   }
 `;
+
 export const AboutCtas = styled.div`
   margin-top: 1.15rem;
   display: flex;
