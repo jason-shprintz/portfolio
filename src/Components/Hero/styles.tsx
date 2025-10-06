@@ -94,7 +94,21 @@ export const SmallLink = styled.a`
 
 export const OpenRolesBadge = styled.span`
   padding: 3px 5px;
-  background-color: green;
+  background-image: linear-gradient(
+    to right top,
+    #057d16,
+    #068419,
+    #088b1c,
+    #0a9320,
+    #0b9a23,
+    #1f9b24,
+    #2b9c25,
+    #359d26,
+    #439825,
+    #4e9326,
+    #568e27,
+    #5c8929
+  );
   border-radius: 4px;
   font-size: 1.2rem;
   color: white;
