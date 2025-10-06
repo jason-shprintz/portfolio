@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   @keyframes fadeUp { from { opacity:0; transform: translateY(8px)} to { opacity:1; transform: translateY(0)} }
   @keyframes menuIn { from { opacity:0; transform: translateY(-6px)} to { opacity:1; transform: translateY(0)} }
 
-  html, body, #root { height: 100%; }
+  html, body, #root { height: 100%; max-width: 1100px; }
   body { margin:0; font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; line-height:1.5; background: var(--bg); color: rgba(255,255,255,0.87); -webkit-font-smoothing:antialiased }
   a { color: var(--accent); text-decoration: none }
   a:hover { color: #535bf2 }
@@ -24,6 +24,7 @@ export const AppRoot = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: #0b1220;
 `;
 
 export const Button = styled.a<{
