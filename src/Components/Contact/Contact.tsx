@@ -1,6 +1,6 @@
 import { useState, type JSX } from "react";
 import * as S from "./styles";
-import { Button, Muted } from "../../styles";
+import { Button } from "../../styles";
 import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper";
 
 /**
