@@ -31,7 +31,10 @@ function Hero(): JSX.Element {
             <S.HeroMeta>
               <S.MetaName>Jason Shprintz</S.MetaName>
               <S.MetaRole>Software Developer</S.MetaRole>
-              <S.SmallLink href="assets/doc/Jason_Shprintz_Resume.pdf" download>
+              <S.SmallLink
+                href="assets/documents/Jason_Shprintz_Resume.pdf"
+                download
+              >
                 Download Resume
               </S.SmallLink>
             </S.HeroMeta>
