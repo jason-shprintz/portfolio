@@ -11,10 +11,5 @@ export const NavSocialResumeLink = styled.a`
 
   &:hover {
     background: rgba(255, 255, 255, 0.02);
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    transform: translateY(1px);
   }
 `;
