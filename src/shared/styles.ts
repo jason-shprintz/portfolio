@@ -36,4 +36,6 @@ export const Avatar = styled.img`
 
 export const Subtitle = styled.p`
   color: var(--muted);
+  padding-right: 5px;
+  margin: 0;
 `;
