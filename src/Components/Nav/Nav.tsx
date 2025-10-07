@@ -88,12 +88,7 @@ function Nav(): JSX.Element {
           ) : (
             <S.NavTitleContainer>
               <S.NavTitle>Jason Shprintz</S.NavTitle>
-              <SharedS.Subtitle>
-                Senior Software Developer&nbsp;
-                <span style={{ fontSize: "0.7rem" }}>
-                  — Building Reliable, Maintainable Web Apps
-                </span>
-              </SharedS.Subtitle>
+              <SharedS.Subtitle>Software Developer</SharedS.Subtitle>
             </S.NavTitleContainer>
           )}
           {isTorM && (

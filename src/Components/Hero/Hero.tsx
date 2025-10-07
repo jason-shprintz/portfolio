@@ -30,7 +30,7 @@ function Hero(): JSX.Element {
             </SharedS.AvatarWrapper>
             <S.HeroMeta>
               <S.MetaName>Jason Shprintz</S.MetaName>
-              <S.MetaRole>Senior Software Developer</S.MetaRole>
+              <S.MetaRole>Software Developer</S.MetaRole>
               <S.SmallLink href="assets/doc/Jason_Shprintz_Resume.pdf" download>
                 Download Resume
               </S.SmallLink>
@@ -41,17 +41,12 @@ function Hero(): JSX.Element {
           {isTorM && (
             <>
               <S.HeroTitle>Jason Shprintz</S.HeroTitle>
-              <SharedS.Subtitle>
-                Senior Software Developer&nbsp;
-                <span style={{ fontSize: "1rem" }}>
-                  — Building Reliable, Maintainable Web Apps
-                </span>
-              </SharedS.Subtitle>
+              <SharedS.Subtitle>Software Developer</SharedS.Subtitle>
             </>
           )}
           <S.Lead>
             I build production-grade applications with a focus on performance,
-            clarity, and user experience.&nbsp;
+            clarity, and user experience.
           </S.Lead>
           <S.OpenRolesBadge>Currently open to new roles!</S.OpenRolesBadge>
         </S.HeroCopy>
