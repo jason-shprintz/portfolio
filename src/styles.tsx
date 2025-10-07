@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   @keyframes menuIn { from { opacity:0; transform: translateY(-6px)} to { opacity:1; transform: translateY(0)} }
 
   html, body, #root { height: 100%; width: 100%;}
-  body { margin:0; font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; line-height:1.5; background: var(--bg); color: rgba(255,255,255,0.87); -webkit-font-smoothing:antialiased }
+  body { margin:0; font-family: Tomorrow, system-ui, Avenir, Helvetica, Arial, sans-serif; line-height:1.5; background: var(--bg); color: rgba(255,255,255,0.87); -webkit-font-smoothing:antialiased }
   a { color: var(--accent); text-decoration: none; user-select: none; }
   a:hover { color: #535bf2 }
 `;
@@ -29,6 +29,7 @@ export const AppRoot = styled.div`
   align-items: flex-start;
   box-sizing: border-box;
   background-color: #0b1220;
+  user-select: none;
 `;
 
 export const AppContainer = styled.div`
@@ -46,11 +47,10 @@ export const AppContainer = styled.div`
 `;
 
 export const Button = styled.a<{
-  asButton?: boolean;
   variant?: "primary" | "ghost";
 }>`
   display: inline-block;
-  padding: 0.6rem 1rem;
+  padding: 0.2rem 1rem;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.04);
   background: transparent;

@@ -3,6 +3,7 @@ import * as S from "./styles";
 import * as SharedS from "../../shared/styles";
 import useDeviceType from "../../hooks/useDeviceType";
 import { DEVICE_TYPES } from "../../constants";
+import NavSocial from "./NavSocial/NavSocial";
 
 /**
  * Navigation bar component for the portfolio site.
@@ -62,22 +63,7 @@ function Nav(): JSX.Element {
     <S.NavBar ref={navRef}>
       <S.NavInner>
         <S.Brand>
-          {!isTorM && (
-            <S.NavSocial>
-              <S.NavSocialLink href="https://www.linkedin.com/in/jasonshprintz/">
-                <img
-                  src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
-                  alt="LinkedIn"
-                />
-              </S.NavSocialLink>
-              <S.NavSocialLink href="https://github.com/jason-shprintz">
-                <img
-                  src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
-                  alt="GitHub"
-                />
-              </S.NavSocialLink>
-            </S.NavSocial>
-          )}
+          {!isTorM && <NavSocial isTorM={isTorM} />}
           {isTorM ? (
             <SharedS.AvatarWrapper>
               <SharedS.Avatar
@@ -88,30 +74,10 @@ function Nav(): JSX.Element {
           ) : (
             <S.NavTitleContainer>
               <S.NavTitle>Jason Shprintz</S.NavTitle>
-              <SharedS.Subtitle>
-                Senior Software Developer&nbsp;
-                <span style={{ fontSize: "0.7rem" }}>
-                  — Building Reliable, Maintainable Web Apps
-                </span>
-              </SharedS.Subtitle>
+              <SharedS.Subtitle>Software Developer</SharedS.Subtitle>
             </S.NavTitleContainer>
           )}
-          {isTorM && (
-            <S.NavSocial>
-              <S.NavSocialLink href="https://www.linkedin.com/in/jasonshprintz/">
-                <img
-                  src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
-                  alt="LinkedIn"
-                />
-              </S.NavSocialLink>
-              <S.NavSocialLink href="https://github.com/jason-shprintz">
-                <img
-                  src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
-                  alt="GitHub"
-                />
-              </S.NavSocialLink>
-            </S.NavSocial>
-          )}
+          {isTorM && <NavSocial isTorM={isTorM} />}
         </S.Brand>
 
         <S.MobileToggle

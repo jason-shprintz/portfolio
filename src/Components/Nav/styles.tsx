@@ -146,7 +146,7 @@ export const CtaLink = styled.a`
 export const NavSocial = styled(FlexCol)`
   height: auto;
   align-items: flex-start;
-  margin-right: 25px;
+  margin: 0px 25px;
 `;
 
 export const NavSocialLink = styled.a`

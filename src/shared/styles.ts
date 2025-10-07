@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MEDIA_QUERIES } from "../constants";
 
 const Flex = styled.div`
   display: flex;
@@ -16,8 +17,8 @@ export const FlexRow = styled(Flex)`
 `;
 
 export const AvatarWrapper = styled(FlexCol)`
-  width: 83px;
-  height: 91px;
+  width: 140px;
+  height: 152px;
   border-radius: 10px;
   background-image: linear-gradient(
     to top,
@@ -27,10 +28,14 @@ export const AvatarWrapper = styled(FlexCol)`
     #00c5ff,
     #61dafb
   );
+
+  ${MEDIA_QUERIES.desktop} {
+    width: 180px;
+  }
 `;
 
 export const Avatar = styled.img`
-  height: 90px;
+  height: 150px;
   border-radius: 10px;
 `;
 
