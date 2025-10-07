@@ -156,6 +156,7 @@ export const NavSocialLink = styled.a`
 
 export const NavTitleContainer = styled(FlexCol)`
   align-items: flex-start;
+  height: 100px;
 `;
 
 export const NavTitle = styled.h1`
