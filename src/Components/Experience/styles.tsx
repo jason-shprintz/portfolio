@@ -17,6 +17,7 @@ export const ExpItemContainer = styled.article`
 
 export const ExpItem = styled.div`
   display: flex;
+  flex-direction: row;
   background-image: linear-gradient(
     to right bottom,
     #0b1220,
@@ -34,12 +35,20 @@ export const ExpItem = styled.div`
   );
   border-radius: 10px;
   box-shadow: -1px 1px 2px 1px black;
+
+  ${MEDIA_QUERIES.mobile} {
+    flex-direction: column;
+  }
 `;
 
 export const ExpLeft = styled(FlexCol)`
   width: 500px;
   padding: 5px;
   align-items: flex-start;
+
+  ${MEDIA_QUERIES.mobile} {
+    width: 325px;
+  }
 `;
 
 export const JobContainer = styled(FlexRow)`
@@ -63,7 +72,7 @@ export const JobImg = styled.img`
 `;
 
 export const ExpRight = styled.div`
-  width: 100%;
+  width: 95%;
   padding: 5px;
   border-radius: 10px;
   color: var(--muted);

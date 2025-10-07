@@ -1,7 +1,6 @@
 import { type JSX } from "react";
 import * as S from "./styles";
 import * as SharedS from "../../shared/styles";
-import { Button } from "../../styles";
 import { DEVICE_TYPES } from "../../constants";
 import useDeviceType from "../../hooks/useDeviceType";
 
@@ -16,11 +15,12 @@ import useDeviceType from "../../hooks/useDeviceType";
 function Hero(): JSX.Element {
   const isTablet: boolean = useDeviceType() === DEVICE_TYPES.tablet;
   const isMobile: boolean = useDeviceType() === DEVICE_TYPES.mobile;
+  const isTorM: boolean = isTablet || isMobile;
 
   return (
     <S.Hero id="home">
       <S.HeroInner>
-        {!isTablet && (
+        {!isTorM && (
           <S.HeroCard>
             <SharedS.AvatarWrapper>
               <SharedS.Avatar
@@ -38,7 +38,7 @@ function Hero(): JSX.Element {
           </S.HeroCard>
         )}
         <S.HeroCopy>
-          {isTablet && (
+          {isTorM && (
             <>
               <S.HeroTitle>Jason Shprintz</S.HeroTitle>
               <SharedS.Subtitle>
@@ -54,14 +54,6 @@ function Hero(): JSX.Element {
             clarity, and user experience.&nbsp;
           </S.Lead>
           <S.OpenRolesBadge>Currently open to new roles!</S.OpenRolesBadge>
-          {isMobile && (
-            <S.HeroCtas>
-              {/* <Button variant="primary" href="#projects">
-              See projects
-            </Button> */}
-              <Button href="#contact">Contact me</Button>
-            </S.HeroCtas>
-          )}
         </S.HeroCopy>
       </S.HeroInner>
     </S.Hero>

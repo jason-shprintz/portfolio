@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html, body, #root { height: 100%; width: 100%;}
   body { margin:0; font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; line-height:1.5; background: var(--bg); color: rgba(255,255,255,0.87); -webkit-font-smoothing:antialiased }
-  a { color: var(--accent); text-decoration: none }
+  a { color: var(--accent); text-decoration: none; user-select: none; }
   a:hover { color: #535bf2 }
 `;
 
@@ -81,6 +81,7 @@ export const FormActions = styled.div`
 export const Muted = styled.p`
   color: var(--muted);
   font-size: 1.1rem;
+  margin: 0;
 `;
 
 export const SmallMuted = styled.small`

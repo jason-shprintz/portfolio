@@ -19,6 +19,8 @@ function Nav(): JSX.Element {
   const navRef = useRef<HTMLElement | null>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
   const isTablet: boolean = useDeviceType() === DEVICE_TYPES.tablet;
+  const isMobile: boolean = useDeviceType() === DEVICE_TYPES.mobile;
+  const isTorM: boolean = isTablet || isMobile;
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -60,21 +62,23 @@ function Nav(): JSX.Element {
     <S.NavBar ref={navRef}>
       <S.NavInner>
         <S.Brand>
-          <S.NavSocial>
-            <S.NavSocialLink href="https://www.linkedin.com/in/jasonshprintz/">
-              <img
-                src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
-                alt="LinkedIn"
-              />
-            </S.NavSocialLink>
-            <S.NavSocialLink href="https://github.com/jason-shprintz">
-              <img
-                src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
-                alt="GitHub"
-              />
-            </S.NavSocialLink>
-          </S.NavSocial>
-          {isTablet ? (
+          {!isTorM && (
+            <S.NavSocial>
+              <S.NavSocialLink href="https://www.linkedin.com/in/jasonshprintz/">
+                <img
+                  src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
+                  alt="LinkedIn"
+                />
+              </S.NavSocialLink>
+              <S.NavSocialLink href="https://github.com/jason-shprintz">
+                <img
+                  src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
+                  alt="GitHub"
+                />
+              </S.NavSocialLink>
+            </S.NavSocial>
+          )}
+          {isTorM ? (
             <SharedS.AvatarWrapper>
               <SharedS.Avatar
                 src={"assets/images/headshot_cropped.png"}
@@ -92,7 +96,24 @@ function Nav(): JSX.Element {
               </SharedS.Subtitle>
             </S.NavTitleContainer>
           )}
+          {isTorM && (
+            <S.NavSocial>
+              <S.NavSocialLink href="https://www.linkedin.com/in/jasonshprintz/">
+                <img
+                  src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
+                  alt="LinkedIn"
+                />
+              </S.NavSocialLink>
+              <S.NavSocialLink href="https://github.com/jason-shprintz">
+                <img
+                  src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
+                  alt="GitHub"
+                />
+              </S.NavSocialLink>
+            </S.NavSocial>
+          )}
         </S.Brand>
+
         <S.MobileToggle
           onClick={() => setOpen((s) => !s)}
           open={open}
