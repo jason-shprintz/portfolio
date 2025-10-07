@@ -12,11 +12,7 @@ export const HeroInner = styled.div`
 `;
 
 export const HeroCopy = styled.div`
-  width: 60%;
-
-  ${MEDIA_QUERIES.desktop} {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 export const HeroTitle = styled.h1`
