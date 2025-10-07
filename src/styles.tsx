@@ -29,6 +29,7 @@ export const AppRoot = styled.div`
   align-items: flex-start;
   box-sizing: border-box;
   background-color: #0b1220;
+  user-select: none;
 `;
 
 export const AppContainer = styled.div`
