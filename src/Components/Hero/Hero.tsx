@@ -1,7 +1,6 @@
 import { type JSX } from "react";
 import * as S from "./styles";
 import * as SharedS from "../../shared/styles";
-import { Button } from "../../styles";
 import { DEVICE_TYPES } from "../../constants";
 import useDeviceType from "../../hooks/useDeviceType";
 
