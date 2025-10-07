@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "homepage": "https://jason-shprintz.github.io/portfolio",
   "scripts": {
@@ -9,7 +9,7 @@
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "lint": "eslint .",
-    "predeploy": "git branch -D gh-pages || true && npm run build",
+    "predeploy": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
