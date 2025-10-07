@@ -47,11 +47,10 @@ export const AppContainer = styled.div`
 `;
 
 export const Button = styled.a<{
-  asButton?: boolean;
   variant?: "primary" | "ghost";
 }>`
   display: inline-block;
-  padding: 0.6rem 1rem;
+  padding: 0.2rem 1rem;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.04);
   background: transparent;

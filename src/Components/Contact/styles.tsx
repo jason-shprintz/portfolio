@@ -12,6 +12,5 @@ export const ContactCard = styled.div`
 `;
 
 export const ContactRow = styled(FlexRow)`
-  margin-bottom: 1rem;
   justify-content: space-evenly;
 `;
