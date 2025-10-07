@@ -6,10 +6,10 @@
   "homepage": "https://jason-shprintz.github.io/portfolio",
   "scripts": {
     "build": "tsc -b && vite build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "lint": "eslint .",
-    "predeploy": "npm run build",
+    "predeploy": "git branch -D gh-pages || true && npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
