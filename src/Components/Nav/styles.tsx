@@ -33,9 +33,9 @@ export const Brand = styled(FlexRow)`
 export const MobileToggle = styled.button<{ open?: boolean }>`
   display: none;
   background: transparent;
-  border: 0;
-  padding: 0.35rem;
+  padding: 1rem 0.5rem;
   border-radius: 8px;
+  cursor: pointer;
 
   ${MEDIA_QUERIES.mobile} {
     display: inline-flex;
@@ -95,8 +95,8 @@ export const NavLinks = styled.ul<{ open?: boolean }>`
 
   ${MEDIA_QUERIES.mobile} {
     position: absolute;
-    right: 0;
-    top: 64px;
+    right: 30px;
+    top: 110px;
     background: linear-gradient(
       180deg,
       rgba(11, 18, 28, 0.98),
@@ -107,7 +107,7 @@ export const NavLinks = styled.ul<{ open?: boolean }>`
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-    min-width: 160px;
+    min-width: 200px;
     box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
     overflow: hidden;
     max-height: ${(p) => (p.open ? "360px" : "0")};

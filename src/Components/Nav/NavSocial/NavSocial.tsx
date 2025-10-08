@@ -7,6 +7,14 @@ interface INavSocialProps {
   isTorM: boolean;
 }
 
+/**
+ * Renders a set of social media links (LinkedIn, GitHub) as icons, and optionally a resume download link.
+ *
+ * @param props - Component props.
+ * @param props.isTorM - If true, displays the resume download link.
+ *
+ * @returns The navigation social links component.
+ */
 const NavSocial: React.FC<INavSocialProps> = ({ isTorM }) => {
   return (
     <S.NavSocial>
