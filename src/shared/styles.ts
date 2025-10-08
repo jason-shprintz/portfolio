@@ -61,7 +61,6 @@ const gradientDirections = [
   "to bottom left",
   "to left",
   "to top left",
-  "to top",
 ];
 
 // Gradient helper function
