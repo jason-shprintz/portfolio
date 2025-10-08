@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const NavSocialResumeLink = styled.a`
+  width: 70px;
   color: white;
   text-decoration: none;
   font-size: 0.7rem;
