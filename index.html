@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google Analytics: dynamically load tracking ID from config.json -->
+    <script>
+      fetch('/config.json')
+        .then(response => response.json())
+        .then(config => {
+          var trackingId = config.GA_TRACKING_ID;
+          if (!trackingId) return;
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+          document.head.appendChild(script);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', trackingId);
+        }).catch(error => {
+          console.error('Error loading GA tracking ID:', error);
+        });
+    </script>
     <meta charset="UTF-8" />
     <link
       rel="icon"
@@ -16,7 +37,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jason Shprintz — Software Developer</title>
-    <script type="module" crossorigin src="/portfolio/assets/index-BoJj1NAY.js"></script>
+    <script type="module" crossorigin src="/portfolio/assets/index-Bs6VZz-4.js"></script>
   </head>
   <body>
     <div id="root"></div>
