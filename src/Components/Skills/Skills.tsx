@@ -17,7 +17,7 @@ function Skills(): JSX.Element {
   useEffect(() => {
     let loaded = 0;
     skills.forEach((s) => {
-      const img = new window.Image();
+      const img = new Image();
       img.src = s.src;
       img.onload = img.onerror = () => {
         loaded += 1;
