@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { BREAKPOINTS } from "../constants";
-import useOrientation from "./useOrientation";
 
 type DeviceType = "mobile" | "tablet" | "desktop";
 
@@ -18,11 +17,8 @@ type DeviceType = "mobile" | "tablet" | "desktop";
  *   // Render mobile-specific UI
  * }
  */
-const useDeviceType = (): DeviceType => {
-  const orientation = useOrientation();
-  const defDeviceType: DeviceType =
-    orientation === "landscape" ? "desktop" : "mobile";
-  const [deviceType, setDeviceType] = useState<DeviceType>(defDeviceType);
+const useDeviceType = (): DeviceType | null => {
+  const [deviceType, setDeviceType] = useState<DeviceType | null>(null);
 
   useEffect(() => {
     const determineDeviceType = () => {
