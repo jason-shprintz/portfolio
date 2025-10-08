@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-LP9HZ16NDC"
-    ></script>
+    <!-- Google Analytics: dynamically load tracking ID from config.json -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+      fetch('/config.json')
+        .then(response => response.json())
+        .then(config => {
+          var trackingId = config.GA_TRACKING_ID;
+          if (!trackingId) return;
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+          document.head.appendChild(script);
 
-      gtag("config", "G-LP9HZ16NDC");
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', trackingId);
+        });
     </script>
     <meta charset="UTF-8" />
     <link
