@@ -8,17 +8,17 @@ export const Ticker = styled.div`
 
 export const TickerTrack = styled.div`
   display: flex;
-  gap: 1.2rem;
+  gap: 15px;
   align-items: center;
   will-change: transform;
-  animation: ticker 18s linear infinite;
+  animation: ticker 2s ease-in-out infinite;
 
   @keyframes ticker {
     from {
-      transform: translate3d(0, 0, 0);
+      transform: translateX(-115px);
     }
     to {
-      transform: translate3d(-50%, 0, 0);
+      transform: translateX(-230px);
     }
   }
 `;
@@ -28,29 +28,14 @@ export const TickerItem = styled.div`
   display: flex;
   align-items: center;
   img {
-    height: 28px;
-    width: auto;
+    height: 25px;
+    width: 100px;
     display: block;
   }
 `;
 
 export const TickerGroup = styled.div`
   display: flex;
-  gap: 1.2rem;
+  gap: 15px;
   align-items: center;
-`;
-
-// Back-compat small helpers
-export const SkillsGrid = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-`;
-
-export const Skill = styled.span`
-  background: var(--glass);
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
-  color: var(--muted);
-  font-weight: 600;
 `;
