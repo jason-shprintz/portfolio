@@ -39,11 +39,11 @@ function Contact(): JSX.Element {
     <SectionWrapper id="contact" title="Contact">
       <S.ContactCard>
         <S.ContactRow>
-          <Button variant="primary" href={`mailto:${email}`}>
+          <Button $variant="primary" href={`mailto:${email}`}>
             Email Me
           </Button>
           <Button
-            variant="ghost"
+            $variant="ghost"
             onClick={() => void copyEmail()}
             aria-label="Copy Email"
           >
