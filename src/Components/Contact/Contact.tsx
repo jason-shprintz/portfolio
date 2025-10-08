@@ -2,6 +2,7 @@ import { useState, type JSX } from "react";
 import * as S from "./styles";
 import { Button } from "../../styles";
 import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper";
+import { LINKS } from "../../constants";
 
 /**
  * Contact component displays contact information and options for reaching out.
@@ -23,7 +24,7 @@ import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrappe
  */
 function Contact(): JSX.Element {
   const [copied, setCopied] = useState(false);
-  const email = "jshprintz@gmail.com";
+  const email = LINKS.email.replace("mailto:", "");
   async function copyEmail() {
     try {
       await navigator.clipboard.writeText(email);

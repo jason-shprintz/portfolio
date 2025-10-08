@@ -144,9 +144,20 @@ export const CtaLink = styled.a`
 `;
 
 export const NavSocial = styled(FlexCol)`
-  height: auto;
+  height: 50px;
   align-items: flex-start;
-  margin: 0px 25px;
+  justify-content: space-between;
+  margin: 0px 25px 0px 5px;
+
+  ${MEDIA_QUERIES.mobile} {
+    margin: 0px 5px 0px 5px;
+    height: 100px;
+  }
+
+  ${MEDIA_QUERIES.tablet} {
+    margin: 0px 5px 0px 5px;
+    height: 100px;
+  }
 `;
 
 export const NavSocialLink = styled.a`

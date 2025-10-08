@@ -15,3 +15,9 @@ export const DEVICE_TYPES = {
   tablet: "tablet",
   desktop: "desktop",
 };
+
+export const LINKS = {
+  github: "https://github.com/jason-shprintz",
+  linkedin: "https://www.linkedin.com/in/jasonshprintz/",
+  email: "mailto:jshprintz@gmail.com",
+};

@@ -1,7 +1,15 @@
+import type { JSX } from "react";
 import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper";
 import * as S from "./styles";
 
-const About = () => {
+/**
+ * Renders the About section of the portfolio, including a personal story about the developer's passion for programming
+ * and a summary of their professional experience in web development and quality assurance.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered About section.
+ */
+const About = (): JSX.Element => {
   return (
     <SectionWrapper id="about" title="About">
       <S.Description>
@@ -15,7 +23,7 @@ const About = () => {
       </S.Description>
       <S.Description>
         With over 3 years of professional web development experience and over 6
-        years of quality assurance experience, I am uniquely qualified with
+        years of quality assurance experience, I am uniquely qualified with both
         knowledge of the latest tech and a keen eye for detail.
       </S.Description>
     </SectionWrapper>
