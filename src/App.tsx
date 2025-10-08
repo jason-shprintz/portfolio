@@ -8,6 +8,8 @@ import Experience from "./Components/Experience/Experience";
 import type { JSX } from "react";
 import { GlobalStyle, AppContainer, AppRoot } from "../src/styles";
 import About from "./Components/About/About";
+import Loading from "./shared/Components/Loading/Loading";
+import useDeviceType from "./hooks/useDeviceType";
 
 /**
  * The main application component that renders the portfolio site layout.
@@ -18,6 +20,19 @@ import About from "./Components/About/About";
  * @returns {JSX.Element} The root JSX element for the portfolio application.
  */
 function App(): JSX.Element {
+  const isLoaded: boolean = useDeviceType() !== null;
+
+  if (!isLoaded) {
+    return (
+      <AppRoot>
+        <AppContainer>
+          <GlobalStyle />
+          <Loading />
+        </AppContainer>
+      </AppRoot>
+    );
+  }
+
   return (
     <AppRoot>
       <AppContainer>
