@@ -19,5 +19,5 @@ export const DEVICE_TYPES = {
 export const LINKS = {
   github: "https://github.com/jason-shprintz",
   linkedin: "https://www.linkedin.com/in/jasonshprintz/",
-  email: "mailto:jasonshprintz@gmail.com",
+  email: "mailto:jshprintz@gmail.com",
 };
