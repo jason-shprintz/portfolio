@@ -52,7 +52,9 @@ function Hero(): JSX.Element {
             clarity, and user experience.
           </S.Lead>
           <SharedS.FlexRow>
-            <S.OpenRolesBadge>Currently open to new roles!</S.OpenRolesBadge>
+            <SharedS.OpenRolesBadge href="#contact">
+              Currently open to new roles!
+            </SharedS.OpenRolesBadge>
           </SharedS.FlexRow>
         </S.HeroCopy>
       </S.HeroInner>
