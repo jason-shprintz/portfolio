@@ -45,9 +45,11 @@ export const ExpLeft = styled(FlexCol)`
   width: 500px;
   padding: 5px;
   align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
 
   ${MEDIA_QUERIES.mobile} {
-    width: 325px;
+    width: 100%;
   }
 `;
 
