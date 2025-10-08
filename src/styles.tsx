@@ -49,6 +49,7 @@ export const AppContainer = styled.div`
 export const Button = styled.a<{
   variant?: "primary" | "ghost";
 }>`
+  width: 100px;
   display: inline-block;
   padding: 0.2rem 1rem;
   border-radius: 8px;
@@ -56,6 +57,7 @@ export const Button = styled.a<{
   background: transparent;
   color: inherit;
   text-decoration: none;
+  text-align: center;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
   ${(p) =>
     p.variant === "primary" &&
