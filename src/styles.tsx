@@ -47,7 +47,7 @@ export const AppContainer = styled.div`
 `;
 
 export const Button = styled.a<{
-  variant?: "primary" | "ghost";
+  $variant?: "primary" | "ghost";
 }>`
   width: 100px;
   display: inline-block;
@@ -60,10 +60,10 @@ export const Button = styled.a<{
   text-align: center;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
   ${(p) =>
-    p.variant === "primary" &&
+    p.$variant === "primary" &&
     `background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #061226; border: none;`}
   ${(p) =>
-    p.variant === "ghost" &&
+    p.$variant === "ghost" &&
     `background: transparent; border: 1px solid rgba(255,255,255,0.04);`}
   &:active {
     transform: translateY(1px);

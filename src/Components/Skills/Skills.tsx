@@ -11,8 +11,25 @@ import { useEffect, useState } from "react";
  */
 function Skills(): JSX.Element {
   const [tickerSkills, setTickerSkills] = useState(skills);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload all skill images before rendering the ticker
+  useEffect(() => {
+    let loaded = 0;
+    skills.forEach((s) => {
+      const img = new window.Image();
+      img.src = s.src;
+      img.onload = img.onerror = () => {
+        loaded += 1;
+        if (loaded === skills.length) {
+          setImagesLoaded(true);
+        }
+      };
+    });
+  }, []);
 
   useEffect(() => {
+    if (!imagesLoaded) return;
     const interval = setInterval(() => {
       setTickerSkills((prev) => {
         if (prev.length === 0) return prev;
@@ -21,7 +38,15 @@ function Skills(): JSX.Element {
       });
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [imagesLoaded]);
+
+  if (!imagesLoaded) {
+    return (
+      <SectionWrapper id="skills" title="Skills">
+        <div>Loading skills...</div>
+      </SectionWrapper>
+    );
+  }
 
   return (
     <SectionWrapper id="skills" title="Skills">

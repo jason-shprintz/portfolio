@@ -28,7 +28,7 @@ function Projects(): JSX.Element {
               ))}
             </S.TechRow>
             <CardActions>
-              <Button variant="ghost" href={p.link}>
+              <Button $variant="ghost" href={p.link}>
                 View
               </Button>
             </CardActions>
