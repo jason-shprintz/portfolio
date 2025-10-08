@@ -18,6 +18,8 @@
           window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', trackingId);
+        }).catch(error => {
+          console.error('Error loading GA tracking ID:', error);
         });
     </script>
     <meta charset="UTF-8" />
