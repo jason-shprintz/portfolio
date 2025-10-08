@@ -3,23 +3,27 @@
   <head>
     <!-- Google Analytics: dynamically load tracking ID from config.json -->
     <script>
-      fetch('/config.json')
-        .then(response => response.json())
-        .then(config => {
+      fetch("./config.json")
+        .then((response) => response.json())
+        .then((config) => {
           var trackingId = config.GA_TRACKING_ID;
           if (!trackingId) return;
-          var script = document.createElement('script');
+          var script = document.createElement("script");
           script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+          script.src =
+            "https://www.googletagmanager.com/gtag/js?id=" + trackingId;
           document.head.appendChild(script);
 
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag() {
+            dataLayer.push(arguments);
+          }
           window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', trackingId);
-        }).catch(error => {
-          console.error('Error loading GA tracking ID:', error);
+          gtag("js", new Date());
+          gtag("config", trackingId);
+        })
+        .catch((error) => {
+          console.error("Error loading GA tracking ID:", error);
         });
     </script>
     <meta charset="UTF-8" />
