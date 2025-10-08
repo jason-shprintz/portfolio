@@ -28,7 +28,7 @@ export const AvatarWrapper = styled(FlexCol)`
     #00c5ff,
     #61dafb
   );
-  animation: gradientShift 1s ease-in-out infinite;
+  animation: gradientShift 4s ease-in-out infinite;
 
   @keyframes gradientShift {
     0% {
