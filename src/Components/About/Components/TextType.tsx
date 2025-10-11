@@ -31,6 +31,34 @@ interface TextTypeProps {
   reverseMode?: boolean;
 }
 
+/**
+ * Animated typing effect component for displaying text as if being typed and deleted.
+ *
+ * Supports multiple sentences, looping, variable typing/deleting speeds, color cycling, cursor customization,
+ * reverse typing, and visibility-triggered animation. Can be rendered as any HTML element via the `as` prop.
+ *
+ * @param text - The text or array of texts to animate.
+ * @param as - The HTML element or React component to render as (default: "div").
+ * @param typingSpeed - Typing speed in milliseconds per character (default: 10).
+ * @param initialDelay - Delay before typing starts in milliseconds (default: 0).
+ * @param pauseDuration - Pause duration after typing/deleting a sentence in milliseconds (default: 2000).
+ * @param deletingSpeed - Deleting speed in milliseconds per character (default: 30).
+ * @param loop - Whether to loop through the texts (default: true).
+ * @param className - Additional class names for the container.
+ * @param showCursor - Whether to show the blinking cursor (default: true).
+ * @param hideCursorWhileTyping - Hide the cursor while typing or deleting (default: false).
+ * @param cursorCharacter - Character to use as the cursor (default: "|").
+ * @param cursorClassName - Additional class names for the cursor.
+ * @param cursorBlinkDuration - Cursor blink duration in seconds (default: 0.5).
+ * @param textColors - Array of colors to cycle through for each sentence.
+ * @param variableSpeed - Optional object to randomize typing speed, with `min` and `max` in ms.
+ * @param onSentenceComplete - Callback invoked when a sentence is fully deleted.
+ * @param startOnVisible - Start animation only when component is visible in viewport (default: false).
+ * @param reverseMode - Type sentences in reverse order (default: false).
+ * @param props - Additional HTML attributes for the container element.
+ *
+ * @returns A React element rendering the animated typing effect.
+ */
 const TextType = ({
   text,
   as: Component = "div",
