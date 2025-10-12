@@ -13,7 +13,7 @@ const experience: Experience[] = [
     title: "Client Engineer",
     time: "Dec 2022 - Dec 2025",
     description: [
-      "Leveraged technologies such as React, TypeScript, mobx state management, and gRPC to build internal tools",
+      "Leveraged technologies such as React, TypeScript, MobX state management, and gRPC to build internal tools",
       "Created clean, reusable React components for various applications, improving code efficiency",
       "Collaborated with cross-functional teams to ensure tools met user needs and expectations",
     ],
