@@ -9,43 +9,6 @@ import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrappe
  * - Pauses animation if the user prefers reduced motion.
  */
 function Skills(): JSX.Element {
-  // const [tickerSkills, setTickerSkills] = useState(skills);
-  // const [imagesLoaded, setImagesLoaded] = useState(false);
-
-  // // Preload all skill images before rendering the ticker
-  // useEffect(() => {
-  //   let loaded = 0;
-  //   skills.forEach((s) => {
-  //     const img = new Image();
-  //     img.src = s.src;
-  //     img.onload = img.onerror = () => {
-  //       loaded += 1;
-  //       if (loaded === skills.length) {
-  //         setImagesLoaded(true);
-  //       }
-  //     };
-  //   });
-  // }, []);
-
-  // useEffect(() => {
-  //   if (!imagesLoaded) return;
-  //   const interval = setInterval(() => {
-  //     setTickerSkills((prev) => {
-  //       if (prev.length === 0) return prev;
-  //       const [first, ...rest] = prev;
-  //       return [...rest, first];
-  //     });
-  //   }, 2000);
-  //   return () => clearInterval(interval);
-  // }, [imagesLoaded]);
-
-  // if (!imagesLoaded) {
-  //   return (
-  //     <SectionWrapper id="skills" title="Skills">
-  //       <div>Loading skills...</div>
-  //     </SectionWrapper>
-  //   );
-  // }
 
   return (
     <SectionWrapper id="skills" title="Skills">
