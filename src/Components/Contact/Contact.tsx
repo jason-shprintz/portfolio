@@ -31,7 +31,7 @@ function Contact(): JSX.Element {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      console.error("Failed to copy email");
+      // clipboard write failed
     }
   }
 
