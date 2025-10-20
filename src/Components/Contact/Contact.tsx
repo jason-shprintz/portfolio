@@ -31,7 +31,7 @@ function Contact(): JSX.Element {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      console.error("Failed to copy email");
+      // clipboard write failed
     }
   }
 
@@ -44,7 +44,11 @@ function Contact(): JSX.Element {
           </Button>
           <Button
             $variant="ghost"
-            onClick={() => void copyEmail()}
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              void copyEmail();
+            }}
             aria-label="Copy Email"
           >
             {copied ? "Copied!" : "Copy Email"}

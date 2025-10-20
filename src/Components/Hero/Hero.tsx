@@ -24,7 +24,7 @@ function Hero(): JSX.Element {
           <S.HeroCard>
             <SharedS.AvatarWrapper>
               <SharedS.Avatar
-                src={"assets/images/headshot_cropped.png"}
+                src={"assets/images/headshot_cropped.jpg"}
                 alt="Jason Shprintz headshot"
               />
             </SharedS.AvatarWrapper>
