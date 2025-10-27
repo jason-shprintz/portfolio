@@ -35,4 +35,3 @@ export const AboutCtas = styled.div`
   display: flex;
   gap: 0.6rem;
 `;
-
