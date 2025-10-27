@@ -15,7 +15,6 @@ const Loading = (): JSX.Element => {
     <SharedS.FlexCol>
       <S.SpinnerWrapper>
         <S.Spinner />
-        <span>Loading...</span>
       </S.SpinnerWrapper>
     </SharedS.FlexCol>
   );
