@@ -1,15 +1,18 @@
-import Footer from "./Components/Footer/Footer";
-import Contact from "./Components/Contact/Contact";
+import { lazy, Suspense } from "react";
 import Nav from "./Components/Nav/Nav";
 import Hero from "./Components/Hero/Hero";
-import Skills from "./Components/Skills/Skills";
-// import Projects from "./Components/Projects/Projects";
-import Experience from "./Components/Experience/Experience";
 import type { JSX } from "react";
 import { GlobalStyle, AppContainer, AppRoot } from "../src/styles";
-import About from "./Components/About/About";
 import Loading from "./shared/Components/Loading/Loading";
 import useDeviceType from "./hooks/useDeviceType";
+
+// Lazy load components that are below the fold
+const About = lazy(() => import("./Components/About/About"));
+const Skills = lazy(() => import("./Components/Skills/Skills"));
+const Experience = lazy(() => import("./Components/Experience/Experience"));
+const Contact = lazy(() => import("./Components/Contact/Contact"));
+const Footer = lazy(() => import("./Components/Footer/Footer"));
+// const Projects = lazy(() => import("./Components/Projects/Projects"));
 
 /**
  * The main application component that renders the portfolio site layout.
@@ -40,13 +43,25 @@ function App(): JSX.Element {
         <Nav />
         <main>
           <Hero />
-          <About />
-          <Skills />
-          {/* <Projects /> */}
-          <Experience />
-          <Contact />
+          <Suspense fallback={<Loading />}>
+            <About />
+          </Suspense>
+          <Suspense fallback={<Loading />}>
+            <Skills />
+          </Suspense>
+          {/* <Suspense fallback={<Loading />}>
+            <Projects />
+          </Suspense> */}
+          <Suspense fallback={<Loading />}>
+            <Experience />
+          </Suspense>
+          <Suspense fallback={<Loading />}>
+            <Contact />
+          </Suspense>
         </main>
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Footer />
+        </Suspense>
       </AppContainer>
     </AppRoot>
   );
