@@ -94,7 +94,7 @@ export const AvatarWrapper = styled(FlexCol)`
   height: 152px;
   border-radius: 10px;
   background-image: ${getGradient("to top", avatarGradientColors)};
-  animation: avatarGradientShift 2s ease-in-out infinite;
+  animation: avatarGradientShift 1s ease-in-out infinite;
 
   @keyframes avatarGradientShift {
     ${avatarKeyframes}
