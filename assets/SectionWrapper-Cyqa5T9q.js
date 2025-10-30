@@ -1,4 +1,4 @@
-import{M as s,c as e,j as i}from"./index-CDP7B4b1.js";import{d as n}from"./styled-components-BbSwOMHb.js";const r=n.section`
+import{M as s,c as e,j as i}from"./index-DMGESyvC.js";import{d as n}from"./styled-components-BbSwOMHb.js";const r=n.section`
   padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 `,o=n.h2`

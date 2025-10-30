@@ -1,4 +1,4 @@
-import{c as o,j as l}from"./index-CDP7B4b1.js";import{d as s}from"./styled-components-BbSwOMHb.js";import{S as t}from"./SectionWrapper-Cf_aozzs.js";import"./react-vendor-_g6xLlVr.js";import"./react-icons-Dvehu7pp.js";const e=s.div`
+import{c as o,j as l}from"./index-DMGESyvC.js";import{d as s}from"./styled-components-BbSwOMHb.js";import{S as t}from"./SectionWrapper-Cyqa5T9q.js";import"./react-vendor-_g6xLlVr.js";import"./react-icons-Dvehu7pp.js";const e=s.div`
   overflow: wrap;
   width: 100%;
   padding: 0.5rem 0;

@@ -1,6 +1,6 @@
 // Simple service worker for caching static assets
 const CACHE_NAME = "portfolio-v1";
-const BASE_URL = "/portfolio/"; // Match the base URL from vite.config.ts
+const BASE_URL = "/"; // Updated for Cloudflare Pages deployment
 const urlsToCache = [
   BASE_URL,
   BASE_URL + "assets/fonts/tomorrow.css",

@@ -1,4 +1,4 @@
-import{c as e,j as o,L as t,S as s}from"./index-CDP7B4b1.js";import{d as i}from"./styled-components-BbSwOMHb.js";import"./react-vendor-_g6xLlVr.js";import"./react-icons-Dvehu7pp.js";const n=i.footer`
+import{c as e,j as o,L as t,S as s}from"./index-DMGESyvC.js";import{d as i}from"./styled-components-BbSwOMHb.js";import"./react-vendor-_g6xLlVr.js";import"./react-icons-Dvehu7pp.js";const n=i.footer`
   padding: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 0.9rem;

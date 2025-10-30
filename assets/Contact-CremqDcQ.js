@@ -1,4 +1,4 @@
-import{a as e,c as t,L as a,j as r,B as o}from"./index-CDP7B4b1.js";import{d as i,r as n}from"./styled-components-BbSwOMHb.js";import{S as c}from"./SectionWrapper-Cf_aozzs.js";import"./react-vendor-_g6xLlVr.js";import"./react-icons-Dvehu7pp.js";const s=i.div`
+import{a as e,c as t,L as a,j as r,B as o}from"./index-DMGESyvC.js";import{d as i,r as n}from"./styled-components-BbSwOMHb.js";import{S as c}from"./SectionWrapper-Cyqa5T9q.js";import"./react-vendor-_g6xLlVr.js";import"./react-icons-Dvehu7pp.js";const s=i.div`
   padding: 1rem;
   border-radius: 10px;
   background: linear-gradient(

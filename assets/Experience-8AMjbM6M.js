@@ -1,4 +1,4 @@
-import{M as e,F as i,a as t,c as a,j as r,b as s,S as n}from"./index-CDP7B4b1.js";import{d as o}from"./styled-components-BbSwOMHb.js";import{S as c}from"./SectionWrapper-Cf_aozzs.js";import"./react-vendor-_g6xLlVr.js";import"./react-icons-Dvehu7pp.js";const d=o.div`
+import{M as e,F as i,a as t,c as a,j as r,b as s,S as n}from"./index-DMGESyvC.js";import{d as o}from"./styled-components-BbSwOMHb.js";import{S as c}from"./SectionWrapper-Cyqa5T9q.js";import"./react-vendor-_g6xLlVr.js";import"./react-icons-Dvehu7pp.js";const d=o.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
