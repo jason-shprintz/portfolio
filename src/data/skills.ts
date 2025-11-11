@@ -20,6 +20,10 @@ const skills = [
     alt: "Node.js",
   },
   {
+    src: "https://img.shields.io/badge/Pixi.js-FF6B6B?logo=pixijs&logoColor=fff",
+    alt: "Pixi.js",
+  },
+  {
     src: "https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB",
     alt: "React",
   },
@@ -28,8 +32,16 @@ const skills = [
     alt: "Redux",
   },
   {
+    src: "https://img.shields.io/badge/MobX-FF9955?logo=mobx&logoColor=fff",
+    alt: "MobX",
+  },
+  {
     src: "https://img.shields.io/badge/Selenium-43B02A?logo=selenium&logoColor=fff",
     alt: "Selenium",
+  },
+  {
+    src: "https://custom-icon-badges.demolab.com/badge/Playwright-2EAD33?logo=playwright&logoColor=fff",
+    alt: "Playwright",
   },
   {
     src: "https://img.shields.io/badge/styled--components-DB7093?logo=styledcomponents&logoColor=fff",
@@ -82,6 +94,14 @@ const skills = [
   {
     src: "https://img.shields.io/badge/YAML-CB171E?logo=yaml&logoColor=fff",
     alt: "YAML",
+  },
+  {
+    src: "https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white",
+    alt: "MongoDB",
+  },
+  {
+    src: "https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white",
+    alt: "Postgres",
   },
 ];
 
