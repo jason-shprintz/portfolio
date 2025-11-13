@@ -5,7 +5,7 @@ import compression from "vite-plugin-compression";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
-  base: "/", // Changed for Cloudflare Pages deployment
+  base: "/", // Correct for Cloudflare Pages deployment
   plugins: [
     react({
       // Enable React Compiler for better optimization

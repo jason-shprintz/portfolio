@@ -3,7 +3,6 @@
   "private": true,
   "version": "1.5.0",
   "type": "module",
-  "homepage": "https://jason-shprintz.github.io/portfolio",
   "scripts": {
     "build": "tsc -b && vite build",
     "deploy": "gh-pages -d dist",
