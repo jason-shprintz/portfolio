@@ -51,11 +51,11 @@ function Hero(): JSX.Element {
             I build production-grade applications with a focus on performance,
             clarity, and user experience.
           </S.Lead>
-          <SharedS.FlexRow>
+          {/* <SharedS.FlexRow>
             <SharedS.OpenRolesBadge href="#contact">
               Currently open to new roles!
             </SharedS.OpenRolesBadge>
-          </SharedS.FlexRow>
+          </SharedS.FlexRow> */}
         </S.HeroCopy>
       </S.HeroInner>
     </S.Hero>
