@@ -18,10 +18,11 @@ function SectionWrapper({
   title: string;
   children: React.ReactNode;
 }) {
+  const titleId = `${id}-title`;
   return (
-    <S.Section id={id}>
+    <S.Section id={id} aria-labelledby={titleId}>
       <div className="section-inner">
-        <S.SectionTitle>{title}</S.SectionTitle>
+        <S.SectionTitle id={titleId}>{title}</S.SectionTitle>
         {children}
       </div>
     </S.Section>

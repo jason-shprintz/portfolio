@@ -60,7 +60,7 @@ function Nav(): JSX.Element {
   }, [open]);
 
   return (
-    <S.NavBar ref={navRef}>
+    <S.NavBar ref={navRef} aria-label="Main navigation">
       <S.NavInner>
         <S.Brand>
           {!isTorM && <NavSocial isTorM={isTorM} />}
