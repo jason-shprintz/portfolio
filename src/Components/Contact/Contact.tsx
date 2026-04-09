@@ -44,12 +44,12 @@ function Contact(): JSX.Element {
           </Button>
           <Button
             $variant="ghost"
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
+            as="button"
+            type="button"
+            onClick={() => {
               void copyEmail();
             }}
-            aria-label="Copy Email"
+            aria-label="Copy email address"
           >
             {copied ? "Copied!" : "Copy Email"}
           </Button>

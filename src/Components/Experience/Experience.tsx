@@ -22,7 +22,7 @@ function Experience(): JSX.Element {
               <S.ExpItem>
                 <S.ExpLeft>
                   <S.JobContainer>
-                    <S.JobImg src={job.imgSrc} alt={job.name} />
+                    <S.JobImg src={job.imgSrc} alt={`${job.name} logo`} />
                     <strong>{job.name}</strong>
                   </S.JobContainer>
 

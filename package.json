@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "1.5.0",
+  "version": "1.6.0",
   "type": "module",
   "scripts": {
     "build": "tsc -b && vite build",
@@ -9,7 +9,8 @@
     "dev": "vite",
     "lint": "eslint .",
     "predeploy": "npm run build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean:appledouble": "find . -type f -name '._*' -delete"
   },
   "dependencies": {
     "gsap": "^3.13.0",

@@ -41,7 +41,7 @@ function App(): JSX.Element {
       <AppContainer>
         <GlobalStyle />
         <Nav />
-        <main>
+        <main aria-label="Portfolio content">
           <Hero />
           <Suspense fallback={<Loading />}>
             <About />
