@@ -45,6 +45,7 @@ function Contact(): JSX.Element {
           <Button
             $variant="ghost"
             as="button"
+            type="button"
             onClick={() => {
               void copyEmail();
             }}
