@@ -49,22 +49,29 @@ export const AppContainer = styled.div`
 export const Button = styled.a<{
   $variant?: "primary" | "ghost";
 }>`
-  width: 100px;
   display: inline-block;
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   background: transparent;
   color: inherit;
   text-decoration: none;
   text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
   ${(p) =>
     p.$variant === "primary" &&
     `background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #061226; border: none;`}
   ${(p) =>
     p.$variant === "ghost" &&
-    `background: transparent; border: 1px solid rgba(255,255,255,0.04);`}
+    `background: transparent; border: 1px solid rgba(255,255,255,0.35);`}
+  &:hover {
+    opacity: 0.85;
+  }
   &:active {
     transform: translateY(1px);
   }
