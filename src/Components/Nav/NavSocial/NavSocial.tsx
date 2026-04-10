@@ -31,7 +31,7 @@ const NavSocial: React.FC<INavSocialProps> = ({ isTorM }) => {
       </a>
       {isTorM && (
         <a
-          href="assets/documents/Jason_Shprintz_Resume.pdf"
+          href="/assets/documents/Jason_Shprintz_Resume.pdf"
           download
           className={styles.navSocialResumeLink}
         >

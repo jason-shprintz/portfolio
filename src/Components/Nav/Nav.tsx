@@ -54,7 +54,8 @@ function Nav(): JSX.Element {
     }
     return () => {
       document.removeEventListener("keydown", onKey);
-      if (!open && previouslyFocused.current) previouslyFocused.current.focus();
+      // Restore focus when transitioning from open → closed
+      if (open && previouslyFocused.current) previouslyFocused.current.focus();
     };
   }, [open]);
 
@@ -81,6 +82,7 @@ function Nav(): JSX.Element {
         </div>
 
         <button
+          type="button"
           className={styles.mobileToggle}
           onClick={() => setOpen((s) => !s)}
           aria-label="Toggle menu"

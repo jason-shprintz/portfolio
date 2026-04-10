@@ -65,7 +65,7 @@ const ogImage = "https://jasonshprintz.com/assets/images/headshot_cropped.jpg";
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta
-  property="twitter:description"
+  name="twitter:description"
   content="Jason Shprintz is a software developer specializing in high-performance web applications."
 />
 <meta name="twitter:image" content={ogImage} />
@@ -109,7 +109,7 @@ const ogImage = "https://jasonshprintz.com/assets/images/headshot_cropped.jpg";
 // ...existing code...
 
 <!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
+<script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
     "@type": "Person",
