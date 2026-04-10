@@ -1,0 +1,204 @@
+---
+---
+
+<header id="home" class="hero">
+  <div class="hero-inner">
+    <!-- Desktop: avatar card (hidden on mobile/tablet via CSS) -->
+    <div class="hero-card desktop-only">
+      <div class="avatar-wrapper">
+        <img
+          src="assets/images/headshot_cropped.jpg"
+          alt="Jason Shprintz headshot"
+          class="avatar"
+        />
+      </div>
+      <div class="hero-meta">
+        <div class="meta-name">Jason Shprintz</div>
+        <div class="meta-role">Software Developer</div>
+        <a
+          href="assets/documents/Jason_Shprintz_Resume.pdf"
+          download
+          class="small-link"
+        >
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-copy">
+      <!-- Mobile/Tablet: title + subtitle (hidden on desktop via CSS) -->
+      <h1 class="hero-title mobile-only">Jason Shprintz</h1>
+      <p class="subtitle mobile-only">Software Developer</p>
+
+      <p class="lead">
+        I build production-grade applications with a focus on performance,
+        clarity, and user experience.
+      </p>
+    </div>
+  </div>
+</header>
+
+<style>
+  .hero {
+    padding: 2.4rem 0;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-title {
+    margin: 0 0 0.2rem 0;
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    padding-right: 5px;
+    margin: 0;
+  }
+
+  .lead {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: 1200px) {
+    .lead {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* Avatar wrapper with gradient animation */
+  .avatar-wrapper {
+    width: 140px;
+    height: 152px;
+    border-radius: 10px;
+    background-image: linear-gradient(to top, #646cff, #0091ff, #00adff, #00c5ff, #61dafb);
+    animation: avatarGradientShift 1s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  @keyframes avatarGradientShift {
+    0% { background-image: linear-gradient(to top, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+    12% { background-image: linear-gradient(to top right, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+    25% { background-image: linear-gradient(to right, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+    37% { background-image: linear-gradient(to bottom right, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+    50% { background-image: linear-gradient(to bottom, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+    62% { background-image: linear-gradient(to bottom left, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+    75% { background-image: linear-gradient(to left, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+    87% { background-image: linear-gradient(to top left, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+    100% { background-image: linear-gradient(to top, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+  }
+
+  @media (min-width: 1200px) {
+    .avatar-wrapper {
+      width: 180px;
+    }
+  }
+
+  .avatar {
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  /* Hero card */
+  .hero-card {
+    min-width: 350px;
+    background-image: linear-gradient(
+      to right bottom,
+      #0b1220,
+      #0f182b,
+      #141e36,
+      #1a2342,
+      #21284d,
+      #1f284c,
+      #1e284a,
+      #1c2849,
+      #14223a,
+      #101b2c,
+      #0c141d,
+      #05090e
+    );
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: -1px 1px 2px 1px black;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .hero-meta {
+    color: white;
+  }
+
+  .meta-name {
+    font-weight: 700;
+  }
+
+  .meta-role {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+  }
+
+  .small-link {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease,
+      transform 120ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+  }
+
+  .small-link:hover,
+  .small-link:focus {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    outline: none;
+  }
+
+  .small-link:active {
+    background: rgba(255, 255, 255, 0.16);
+    color: white;
+    transform: scale(0.97) translateY(1px);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive visibility */
+  .desktop-only {
+    display: flex;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    .desktop-only {
+      display: none;
+    }
+
+    .mobile-only {
+      display: block;
+    }
+  }
+</style>

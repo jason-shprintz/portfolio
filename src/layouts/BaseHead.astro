@@ -1,0 +1,124 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Jason Shprintz — Software Developer",
+  description = "Jason Shprintz is a software developer with 3+ years of React and TypeScript experience, building fast, accessible web applications.",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = "https://jasonshprintz.com/assets/images/headshot_cropped.jpg";
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content="Jason Shprintz" />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+<link rel="shortcut icon" href="/favicon.ico?v=2" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+<link rel="manifest" href="/manifest.json?v=2" />
+
+<!-- Fonts -->
+<link rel="stylesheet" href="/assets/fonts/tomorrow.css" />
+<link
+  rel="preload"
+  href="/assets/fonts/tomorrow-400-normal-latin.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/assets/fonts/tomorrow-500-normal-latin.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/assets/fonts/tomorrow-700-normal-latin.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta
+  property="og:description"
+  content="Jason Shprintz is a software developer specializing in high-performance web applications."
+/>
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta
+  property="twitter:description"
+  content="Jason Shprintz is a software developer specializing in high-performance web applications."
+/>
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Performance -->
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<meta name="theme-color" content="#000000" />
+
+<!-- Google Analytics -->
+<script>
+  fetch("/config.json")
+    .then((response) => response.json())
+    .then((config) => {
+      const trackingId = config.GA_TRACKING_ID;
+      if (!trackingId) return;
+      const script = document.createElement("script");
+      script.async = true;
+      script.src =
+        "https://www.googletagmanager.com/gtag/js?id=" + trackingId;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: unknown[]) {
+        window.dataLayer.push(args);
+      }
+      window.gtag = gtag;
+      gtag("js", new Date());
+      gtag("config", trackingId);
+    })
+    .catch(() => {
+      // Failed to load config.json or GA_TRACKING_ID not found
+    });
+</script>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jason Shprintz",
+    "jobTitle": "Software Developer",
+    "url": "https://jasonshprintz.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/jasonshprintz/",
+      "https://github.com/jason-shprintz"
+    ],
+    "description": "Software developer with 3+ years of web development experience and 6+ years in QA, specializing in high-performance React applications.",
+    "knowsAbout": [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Web Development",
+      "Quality Assurance"
+    ]
+  }
+</script>
