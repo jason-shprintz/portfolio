@@ -1,0 +1,147 @@
+---
+import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper.astro";
+import { experience } from "../../data/experience";
+---
+
+<SectionWrapper id="experience" title="Experience">
+  <div class="experience-list">
+    {
+      experience.map((job) => (
+        <article class="exp-item-container">
+          <div class="exp-item">
+            <div class="exp-left">
+              <div class="job-container">
+                <img
+                  src={job.imgSrc}
+                  alt={`${job.name} logo`}
+                  class="job-img"
+                />
+                <strong>{job.name}</strong>
+              </div>
+              <p class="muted">{job.title}</p>
+              <small class="small-muted">{job.time}</small>
+            </div>
+            <div class="exp-right">
+              {job.description.map((des) => (
+                <p>* {des}</p>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</SectionWrapper>
+
+<style>
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .exp-item-container {
+    display: flex;
+    gap: 1rem;
+    padding: 1px;
+    border-radius: 10px;
+  }
+
+  .exp-item {
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(
+      to right bottom,
+      #0b1220,
+      #0f182b,
+      #141e36,
+      #1a2342,
+      #21284d,
+      #1f284c,
+      #1e284a,
+      #1c2849,
+      #14223a,
+      #101b2c,
+      #0c141d,
+      #05090e
+    );
+    border-radius: 10px;
+    box-shadow: -1px 1px 2px 1px black;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    .exp-item {
+      flex-direction: column;
+    }
+  }
+
+  .exp-left {
+    width: 500px;
+    padding: 5px;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 720px) {
+    .exp-left {
+      width: 100%;
+    }
+  }
+
+  .job-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 1200px) {
+    .job-container {
+      font-size: 1.6rem;
+    }
+  }
+
+  .job-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 5px;
+  }
+
+  .exp-right {
+    width: 95%;
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: 1200px) {
+    .exp-right {
+      font-size: 1.4rem;
+    }
+  }
+
+  .muted {
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .small-muted {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>

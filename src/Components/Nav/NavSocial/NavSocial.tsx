@@ -1,6 +1,5 @@
 import { LINKS } from "../../../constants";
-import * as S from "../styles";
-import * as NavS from "./styles";
+import styles from "../Nav.module.css";
 import { RiFilePaper2Line } from "react-icons/ri";
 
 interface INavSocialProps {
@@ -17,29 +16,30 @@ interface INavSocialProps {
  */
 const NavSocial: React.FC<INavSocialProps> = ({ isTorM }) => {
   return (
-    <S.NavSocial>
-      <S.NavSocialLink href={LINKS.linkedin}>
+    <div className={styles.navSocial}>
+      <a href={LINKS.linkedin} aria-label="LinkedIn profile" className={styles.navSocialLink}>
         <img
           src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
-          alt="LinkedIn"
+          alt=""
         />
-      </S.NavSocialLink>
-      <S.NavSocialLink href={LINKS.github}>
+      </a>
+      <a href={LINKS.github} aria-label="GitHub profile" className={styles.navSocialLink}>
         <img
           src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
-          alt="GitHub"
+          alt=""
         />
-      </S.NavSocialLink>
+      </a>
       {isTorM && (
-        <NavS.NavSocialResumeLink
-          href="assets/documents/Jason_Shprintz_Resume.pdf"
+        <a
+          href="/assets/documents/Jason_Shprintz_Resume.pdf"
           download
+          className={styles.navSocialResumeLink}
         >
           <RiFilePaper2Line />
           &nbsp; Resume
-        </NavS.NavSocialResumeLink>
+        </a>
       )}
-    </S.NavSocial>
+    </div>
   );
 };
 export default NavSocial;

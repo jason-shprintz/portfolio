@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, type JSX } from "react";
-import * as S from "./styles";
-import * as SharedS from "../../shared/styles";
+import styles from "./Nav.module.css";
 import useDeviceType from "../../hooks/useDeviceType";
 import { DEVICE_TYPES } from "../../constants";
 import NavSocial from "./NavSocial/NavSocial";
@@ -55,68 +54,95 @@ function Nav(): JSX.Element {
     }
     return () => {
       document.removeEventListener("keydown", onKey);
-      if (!open && previouslyFocused.current) previouslyFocused.current.focus();
+      // Restore focus when transitioning from open → closed
+      if (open && previouslyFocused.current) previouslyFocused.current.focus();
     };
   }, [open]);
 
   return (
-    <S.NavBar ref={navRef} aria-label="Main navigation">
-      <S.NavInner>
-        <S.Brand>
+    <nav ref={navRef} className={styles.navBar} aria-label="Main navigation">
+      <div className={styles.navInner}>
+        <div className={styles.brand}>
           {!isTorM && <NavSocial isTorM={isTorM} />}
           {isTorM ? (
-            <SharedS.AvatarWrapper>
-              <SharedS.Avatar
+            <div className={styles.avatarWrapper}>
+              <img
                 src={"assets/images/headshot_cropped.jpg"}
                 alt="Jason Shprintz headshot"
+                className={styles.avatar}
               />
-            </SharedS.AvatarWrapper>
+            </div>
           ) : (
-            <S.NavTitleContainer>
-              <S.NavTitle>Jason Shprintz</S.NavTitle>
-              <SharedS.Subtitle>Software Developer</SharedS.Subtitle>
-            </S.NavTitleContainer>
+            <div className={styles.navTitleContainer}>
+              <h1 className={styles.navTitle}>Jason Shprintz</h1>
+              <p className={styles.subtitle}>Software Developer</p>
+            </div>
           )}
           {isTorM && <NavSocial isTorM={isTorM} />}
-        </S.Brand>
+        </div>
 
-        <S.MobileToggle
+        <button
+          type="button"
+          className={styles.mobileToggle}
           onClick={() => setOpen((s) => !s)}
-          open={open}
           aria-label="Toggle menu"
           aria-expanded={open}
         >
-          <span className="hamburger" />
-        </S.MobileToggle>
-        <S.NavLinks open={open}>
+          <span
+            className={`${styles.hamburger} ${open ? styles.hamburgerOpen : ""}`}
+          />
+        </button>
+        <ul
+          className={`${styles.navLinks} ${open ? styles.navLinksOpen : ""}`}
+        >
           <li>
-            <S.NavLink href="#about" onClick={() => setOpen(false)}>
+            <a
+              href="#about"
+              className={styles.navLink}
+              onClick={() => setOpen(false)}
+            >
               About
-            </S.NavLink>
+            </a>
           </li>
           <li>
-            <S.NavLink href="#skills" onClick={() => setOpen(false)}>
+            <a
+              href="#skills"
+              className={styles.navLink}
+              onClick={() => setOpen(false)}
+            >
               Skills
-            </S.NavLink>
+            </a>
           </li>
           {/* <li>
-            <S.NavLink href="#projects" onClick={() => setOpen(false)}>
+            <a
+              href="#projects"
+              className={styles.navLink}
+              onClick={() => setOpen(false)}
+            >
               Projects
-            </S.NavLink>
+            </a>
           </li> */}
           <li>
-            <S.NavLink href="#experience" onClick={() => setOpen(false)}>
+            <a
+              href="#experience"
+              className={styles.navLink}
+              onClick={() => setOpen(false)}
+            >
               Experience
-            </S.NavLink>
+            </a>
           </li>
           <li>
-            <S.CtaLink href="#contact" onClick={() => setOpen(false)}>
+            <a
+              href="#contact"
+              className={styles.ctaLink}
+              onClick={() => setOpen(false)}
+            >
               Contact
-            </S.CtaLink>
+            </a>
           </li>
-        </S.NavLinks>
-      </S.NavInner>
-    </S.NavBar>
+        </ul>
+      </div>
+    </nav>
   );
 }
 
