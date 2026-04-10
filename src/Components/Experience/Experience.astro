@@ -22,8 +22,8 @@ import { experience } from "../../data/experience";
               <small class="small-muted">{job.time}</small>
             </div>
             <div class="exp-right">
-              {job.description.map((des, idx) => (
-                <p key={idx}>* {des}</p>
+              {job.description.map((des) => (
+                <p>* {des}</p>
               ))}
             </div>
           </div>

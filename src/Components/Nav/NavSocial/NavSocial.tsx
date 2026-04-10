@@ -17,16 +17,16 @@ interface INavSocialProps {
 const NavSocial: React.FC<INavSocialProps> = ({ isTorM }) => {
   return (
     <div className={styles.navSocial}>
-      <a href={LINKS.linkedin} className={styles.navSocialLink}>
+      <a href={LINKS.linkedin} aria-label="LinkedIn profile" className={styles.navSocialLink}>
         <img
           src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
-          alt="LinkedIn"
+          alt=""
         />
       </a>
-      <a href={LINKS.github} className={styles.navSocialLink}>
+      <a href={LINKS.github} aria-label="GitHub profile" className={styles.navSocialLink}>
         <img
           src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
-          alt="GitHub"
+          alt=""
         />
       </a>
       {isTorM && (

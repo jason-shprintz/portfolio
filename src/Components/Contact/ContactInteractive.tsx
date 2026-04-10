@@ -24,12 +24,13 @@ function ContactInteractive(): JSX.Element {
   return (
     <div className={styles.contactCard}>
       <div className={styles.contactRow}>
-        <a
+        <button
           className={`${styles.button} ${styles.buttonPrimary}`}
-          href={`mailto:${email}`}
+          type="button"
+          onClick={() => { window.location.href = `mailto:${email}`; }}
         >
           Email Me
-        </a>
+        </button>
         <button
           className={`${styles.button} ${styles.buttonGhost}`}
           type="button"
