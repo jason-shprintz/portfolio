@@ -8,6 +8,27 @@ type Experience = {
 
 const experience: Experience[] = [
   {
+    imgSrc: "assets/images/caesars.jpg",
+    name: "Caesars Sportsbook",
+    title: "Software Engineer",
+    time: "Dec 2025 - Present",
+    description: [
+      "Developed and maintained features for the Caesars Sportsbook platform using React and TypeScript",
+      "Collaborated with cross-functional teams to deliver high-quality user experiences for sports betting",
+      "Increased SEO in the national Sportsbook app and marketing landing page by introducing more targeted metadata descriptions, titles, and HTML elements",
+    ],
+  },
+  {
+    imgSrc: "assets/images/toastbyte.png",
+    name: "Toastbyte Studios",
+    title: "Founder",
+    time: "Nov 2025 - Present",
+    description: [
+      "Founded an independent software studio focused on building web and mobile applications",
+      "Architected and developed full-stack projects leveraging React, TypeScript, and modern web technologies",
+    ],
+  },
+  {
     imgSrc: "assets/images/sands.jpg",
     name: "Sands Digital Services",
     title: "Client Engineer",
