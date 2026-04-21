@@ -24,7 +24,7 @@ const experience: Experience[] = [
     title: "Founder",
     time: "Nov 2025 - Present",
     description: [
-      "Founded an independent software studio focused on building web and mobile applications.",
+      "Founded an independent software studio focused on building web and mobile applications",
       "Architected and developed full-stack projects leveraging React, TypeScript, and modern web technologies",
     ],
   },
