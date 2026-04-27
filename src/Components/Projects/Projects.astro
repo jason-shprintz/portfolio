@@ -9,7 +9,7 @@ import { projects } from "../../data/projects";
       projects.map((p) => (
         <article class="project-card">
           <div class="card-img-wrapper">
-            <img src={p.imgSrc} alt={`${p.name} preview`} class="card-img" />
+            <img src={p.imgSrc} alt={`${p.name} preview`} class="card-img" loading="lazy" decoding="async" />
           </div>
           <div class="card-body">
             <h3>{p.name}</h3>
