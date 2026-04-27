@@ -40,7 +40,7 @@
   color: inherit;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .mobileToggle {
     display: inline-flex;
     align-items: center;
@@ -98,7 +98,7 @@
   align-items: center;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .navLinks {
     position: absolute;
     right: 30px;
@@ -140,7 +140,7 @@
   color: var(--accent);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .navLink {
     padding: 0.5rem 0.75rem;
     width: 100%;
@@ -162,7 +162,7 @@
   color: white;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .ctaLink {
     display: block;
     text-align: center;
@@ -181,7 +181,7 @@
   margin: 0 25px 0 5px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .navSocial {
     margin: 0 5px;
     height: 100px;
