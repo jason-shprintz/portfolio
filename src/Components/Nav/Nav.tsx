@@ -113,7 +113,7 @@ function Nav(): JSX.Element {
               Skills
             </a>
           </li>
-          {/* <li>
+          <li>
             <a
               href="#projects"
               className={styles.navLink}
@@ -121,7 +121,7 @@ function Nav(): JSX.Element {
             >
               Projects
             </a>
-          </li> */}
+          </li>
           <li>
             <a
               href="#experience"

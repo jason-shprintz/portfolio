@@ -3,24 +3,29 @@ import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrappe
 import { projects } from "../../data/projects";
 ---
 
-<SectionWrapper id="projects" title="Selected projects">
+<SectionWrapper id="projects" title="Projects">
   <div class="projects-grid">
     {
       projects.map((p) => (
         <article class="project-card">
-          <h3>{p.name}</h3>
-          <p class="muted">{p.description}</p>
-          <div class="tech-row">
-            {p.tech.map((t) => (
-              <span class="tag">{t}</span>
-            ))}
+          <div class="card-img-wrapper">
+            <img src={p.imgSrc} alt={`${p.name} preview`} class="card-img" loading="lazy" decoding="async" />
           </div>
-          <div class="card-actions">
-            {p.link && (
-              <a href={p.link} class="button button-ghost" aria-label={`View ${p.name}`}>
-                View
-              </a>
-            )}
+          <div class="card-body">
+            <h3>{p.name}</h3>
+            <p class="muted">{p.description}</p>
+            <div class="tech-row">
+              {p.tech.map((t) => (
+                <span class="tag">{t}</span>
+              ))}
+            </div>
+            <div class="card-actions">
+              {p.link && (
+                <a href={p.link} target="_blank" rel="noopener noreferrer" class="button button-ghost" aria-label={`View ${p.name}`}>
+                  View Project
+                </a>
+              )}
+            </div>
           </div>
         </article>
       ))
@@ -47,14 +52,44 @@ import { projects } from "../../data/projects";
       rgba(255, 255, 255, 0.02),
       rgba(255, 255, 255, 0.01)
     );
-    padding: 1rem;
     border-radius: 10px;
+    overflow: hidden;
     transition: transform 220ms ease, box-shadow 220ms ease;
+    display: flex;
+    flex-direction: column;
   }
 
   .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 30px rgba(2, 6, 23, 0.6);
+  }
+
+  .card-img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 160px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .card-body h3 {
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+    height: 8rem;
   }
 
   .muted {
@@ -78,7 +113,8 @@ import { projects } from "../../data/projects";
   }
 
   .card-actions {
-    margin-top: 0.6rem;
+    margin-top: auto;
+    padding-top: 0.6rem;
     display: flex;
     gap: 0.5rem;
   }

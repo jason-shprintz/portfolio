@@ -2,6 +2,7 @@ type Project = {
   id: string;
   name: string;
   description: string;
+  imgSrc: string;
   tech: string[];
   link?: string;
 };
@@ -9,27 +10,30 @@ type Project = {
 const projects: Project[] = [
   {
     id: "p1",
-    name: "Project Atlas",
+    name: "Toastbyte Studio",
     description:
-      "A full-stack platform for managing developer portfolios, with fast search and deploy workflows.",
-    tech: ["TypeScript", "React", "Node", "Postgres"],
-    link: "#",
+      "An independent software studio focused on building modern web and mobile applications. Architected and developed full-stack products leveraging React, TypeScript, and cutting-edge web technologies.",
+    imgSrc: "assets/images/toastbyte.png",
+    tech: ["React", "TypeScript", "Node", "Full-Stack"],
+    link: "https://toastbyte.studio",
   },
   {
     id: "p2",
-    name: "Realtime Chat",
+    name: "Alley Admin",
     description:
-      "Scalable WebSocket chat with presence, rooms and moderation tools.",
-    tech: ["React", "WebSocket", "Redis"],
-    link: "#",
+      "A comprehensive admin management platform for bowling alley operations, streamlining scheduling, lane management, and customer tracking for operators.",
+    imgSrc: "assets/images/alleyadmin.png",
+    tech: ["React", "TypeScript", "Node", "Postgres"],
+    link: "https://alleyadmin.app",
   },
   {
     id: "p3",
-    name: "Design System",
+    name: "Dynastiest League",
     description:
-      "A component library and token system used across multiple products.",
-    tech: ["React", "Storybook", "CSS Modules"],
-    link: "#",
+      "A dynasty fantasy sports league platform providing tools for league management, player tracking, trade analysis, and long-term roster building.",
+    imgSrc: "assets/images/dynastiest.png",
+    tech: ["React", "TypeScript", "Node", "Sports Data API"],
+    link: "https://dynastiestleague.com",
   },
 ];
 
