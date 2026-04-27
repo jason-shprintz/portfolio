@@ -10,7 +10,7 @@ type Project = {
 const projects: Project[] = [
   {
     id: "p1",
-    name: "Toastbyte.studio",
+    name: "Toastbyte Studio",
     description:
       "An independent software studio focused on building modern web and mobile applications. Architected and developed full-stack products leveraging React, TypeScript, and cutting-edge web technologies.",
     imgSrc: "assets/images/toastbyte.png",
@@ -19,7 +19,7 @@ const projects: Project[] = [
   },
   {
     id: "p2",
-    name: "Alleyadmin.app",
+    name: "Alley Admin",
     description:
       "A comprehensive admin management platform for bowling alley operations, streamlining scheduling, lane management, and customer tracking for operators.",
     imgSrc: "assets/images/alleyadmin.png",
@@ -28,10 +28,10 @@ const projects: Project[] = [
   },
   {
     id: "p3",
-    name: "Dynastiestleague.com",
+    name: "Dynastiest League",
     description:
       "A dynasty fantasy sports league platform providing tools for league management, player tracking, trade analysis, and long-term roster building.",
-    imgSrc: "assets/images/dynasties.png",
+    imgSrc: "assets/images/dynastiest.png",
     tech: ["React", "TypeScript", "Node", "Sports Data API"],
     link: "https://dynastiestleague.com",
   },
