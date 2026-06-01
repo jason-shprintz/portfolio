@@ -19,12 +19,12 @@ const projects: Project[] = [
   },
   {
     id: "p2",
-    name: "Alley Admin",
+    name: "GitAll",
     description:
-      "A comprehensive admin management platform for bowling alley operations, streamlining scheduling, lane management, and customer tracking for operators.",
-    imgSrc: "assets/images/alleyadmin.png",
-    tech: ["React", "TypeScript", "Node", "Postgres"],
-    link: "https://alleyadmin.app",
+      "A unified contribution heatmap viewer that aggregates activity from GitHub, GitLab, Bitbucket, and Gitea/Forgejo into a single side-by-side or merged view, with per-platform stats and optional OAuth for private contribution data.",
+    imgSrc: "assets/images/gitall.svg",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    link: "https://gitall.app",
   },
   {
     id: "p3",
