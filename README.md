@@ -4,6 +4,8 @@
 
 Welcome to my portfolio! I'm a passionate software developer with experience in building web applications, APIs, and automation tools. I enjoy working with modern technologies and am always eager to learn and take on new challenges.
 
+[![GitAll contributions](https://gitall.app/embed/jason-shprintz.svg?github=jason-shprintz&gitlab=jshprintz&bitbucket=jason-shprintz)](https://gitall.app?utm_source=embed&utm_medium=referral&utm_campaign=heatmap)
+
 ### 📫 Contact
 
 - [LinkedIn](https://www.linkedin.com/in/jasonshprintz)
