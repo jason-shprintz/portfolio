@@ -34,6 +34,21 @@
         I build production-grade applications with a focus on performance,
         clarity, and user experience.
       </p>
+
+      <div class="hero-activity">
+        <a
+          href="https://gitall.app?utm_source=embed&amp;utm_medium=referral&amp;utm_campaign=heatmap"
+          class="activity-link"
+          aria-label="View Jason Shprintz's contribution activity on GitAll"
+        >
+          <img
+            src="https://gitall.app/embed/jason-shprintz.svg?github=jason-shprintz&amp;gitlab=jshprintz&amp;bitbucket=jason-shprintz"
+            alt="Jason Shprintz contribution activity heatmap"
+            class="activity-image"
+            loading="lazy"
+          />
+        </a>
+      </div>
     </div>
   </div>
 </header>
@@ -68,6 +83,25 @@
     margin-top: 1rem;
     color: var(--muted);
     font-size: 1.1rem;
+  }
+
+  .hero-activity {
+    margin-top: 1.5rem;
+    max-width: 560px;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .activity-link {
+    display: block;
+  }
+
+  .activity-image {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   @media (min-width: 1200px) {
@@ -193,6 +227,10 @@
   }
 
   @media (max-width: 1024px) {
+    .hero-activity {
+      padding: 0.5rem;
+    }
+
     .desktop-only {
       display: none;
     }
