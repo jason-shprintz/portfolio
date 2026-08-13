@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <header id="home" class="hero">
@@ -37,17 +38,16 @@
 
       <div class="hero-activity">
         <a
-          href="https://gitall.app?utm_source=embed&amp;utm_medium=referral&amp;utm_campaign=heatmap"
+          href="https://gitall.app/u/jason-shprintz?utm_source=embed&utm_medium=referral&utm_campaign=heatmap"
           class="activity-link"
           aria-label="View Jason Shprintz's contribution activity on GitAll"
-        >
-          <img
-            src="https://gitall.app/embed/jason-shprintz.svg?github=jason-shprintz&amp;gitlab=jshprintz&amp;bitbucket=jason-shprintz"
-            alt="Jason Shprintz contribution activity heatmap"
+          ><img
+            src="https://gitall.app/embed/u/jason-shprintz.svg"
+            alt="Contribution heatmap"
             class="activity-image"
             decoding="async"
-          />
-        </a>
+          /></a
+        >
       </div>
     </div>
   </div>
@@ -116,7 +116,14 @@
     width: 140px;
     height: 152px;
     border-radius: 10px;
-    background-image: linear-gradient(to top, #646cff, #0091ff, #00adff, #00c5ff, #61dafb);
+    background-image: linear-gradient(
+      to top,
+      #646cff,
+      #0091ff,
+      #00adff,
+      #00c5ff,
+      #61dafb
+    );
     animation: avatarGradientShift 1s ease-in-out infinite;
     display: flex;
     align-items: center;
@@ -125,15 +132,96 @@
   }
 
   @keyframes avatarGradientShift {
-    0% { background-image: linear-gradient(to top, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
-    12% { background-image: linear-gradient(to top right, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
-    25% { background-image: linear-gradient(to right, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
-    37% { background-image: linear-gradient(to bottom right, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
-    50% { background-image: linear-gradient(to bottom, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
-    62% { background-image: linear-gradient(to bottom left, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
-    75% { background-image: linear-gradient(to left, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
-    87% { background-image: linear-gradient(to top left, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
-    100% { background-image: linear-gradient(to top, #646cff, #0091ff, #00adff, #00c5ff, #61dafb); }
+    0% {
+      background-image: linear-gradient(
+        to top,
+        #646cff,
+        #0091ff,
+        #00adff,
+        #00c5ff,
+        #61dafb
+      );
+    }
+    12% {
+      background-image: linear-gradient(
+        to top right,
+        #646cff,
+        #0091ff,
+        #00adff,
+        #00c5ff,
+        #61dafb
+      );
+    }
+    25% {
+      background-image: linear-gradient(
+        to right,
+        #646cff,
+        #0091ff,
+        #00adff,
+        #00c5ff,
+        #61dafb
+      );
+    }
+    37% {
+      background-image: linear-gradient(
+        to bottom right,
+        #646cff,
+        #0091ff,
+        #00adff,
+        #00c5ff,
+        #61dafb
+      );
+    }
+    50% {
+      background-image: linear-gradient(
+        to bottom,
+        #646cff,
+        #0091ff,
+        #00adff,
+        #00c5ff,
+        #61dafb
+      );
+    }
+    62% {
+      background-image: linear-gradient(
+        to bottom left,
+        #646cff,
+        #0091ff,
+        #00adff,
+        #00c5ff,
+        #61dafb
+      );
+    }
+    75% {
+      background-image: linear-gradient(
+        to left,
+        #646cff,
+        #0091ff,
+        #00adff,
+        #00c5ff,
+        #61dafb
+      );
+    }
+    87% {
+      background-image: linear-gradient(
+        to top left,
+        #646cff,
+        #0091ff,
+        #00adff,
+        #00c5ff,
+        #61dafb
+      );
+    }
+    100% {
+      background-image: linear-gradient(
+        to top,
+        #646cff,
+        #0091ff,
+        #00adff,
+        #00c5ff,
+        #61dafb
+      );
+    }
   }
 
   @media (min-width: 1200px) {
@@ -196,7 +284,10 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(255, 255, 255, 0.02);
     cursor: pointer;
-    transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease,
+    transition:
+      background 160ms ease,
+      color 160ms ease,
+      box-shadow 160ms ease,
       transform 120ms cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
     margin-top: 0.5rem;
