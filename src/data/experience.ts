@@ -19,7 +19,7 @@ const experience: Experience[] = [
     ],
   },
   {
-    imgSrc: "assets/images/toastbyte.png",
+    imgSrc: "assets/images/toastbyte-logo.jpg",
     name: "Toastbyte Studios",
     title: "Founder",
     time: "Nov 2025 - Present",

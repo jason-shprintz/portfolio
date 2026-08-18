@@ -1,53 +1,72 @@
 ---
-import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper.astro";
-import { skills } from "../../data/skills";
+import { skillGroups } from "../../data/skills";
 ---
 
-<SectionWrapper id="skills" title="Skills">
-  <div class="ticker" aria-label="Skills ticker" role="region" aria-live="off">
-    <div class="ticker-track">
-      <div class="ticker-group">
-        {
-          skills.map((s) => (
-            <div class="ticker-item">
-              <img src={s.src} alt={s.alt} loading="lazy" />
-            </div>
-          ))
-        }
-      </div>
-    </div>
+<div class="hr"></div>
+
+<section id="skills" class="cols">
+  <div>
+    <div class="kick" style="margin-bottom: 14px;">02 — Skills</div>
+    <h2 class="heading">Tools of the trade</h2>
   </div>
-</SectionWrapper>
+  <div class="rows">
+    {
+      skillGroups.map((g) => (
+        <div class="row">
+          <div class="kick label">{g.label}</div>
+          <p class="items">{g.items.join(" · ")}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
 
 <style>
-  .ticker {
-    overflow: hidden;
-    width: 100%;
-    padding: 0.5rem 0;
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr 1.9fr;
+    gap: 64px;
+    padding: 72px 0;
   }
 
-  .ticker-track {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    flex-wrap: wrap;
+  .heading {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
   }
 
-  .ticker-item {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
+  .rows {
+    display: grid;
+    gap: 0;
   }
 
-  .ticker-item img {
-    height: 25px;
-    display: block;
+  .row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 28px;
+    padding: 20px 0;
+    border-top: 1px solid var(--color-divider);
   }
 
-  .ticker-group {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    flex-wrap: wrap;
+  .label {
+    padding-top: 4px;
+  }
+
+  .items {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .cols {
+      grid-template-columns: 1fr;
+    }
+
+    .row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
   }
 </style>
