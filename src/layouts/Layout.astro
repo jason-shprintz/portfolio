@@ -1,5 +1,6 @@
 ---
 import BaseHead from "./BaseHead.astro";
+import { THEME_STORAGE_KEY } from "../constants";
 import "../styles/global.css";
 
 interface Props {
@@ -14,11 +15,11 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <script is:inline>
+    <script is:inline define:vars={{ themeStorageKey: THEME_STORAGE_KEY }}>
       (function () {
         var saved = null;
         try {
-          saved = localStorage.getItem("js-portfolio-theme");
+          saved = localStorage.getItem(themeStorageKey);
         } catch (e) {}
         var prefersDark =
           window.matchMedia &&

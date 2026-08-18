@@ -1,16 +1,16 @@
-import { useEffect, useState, type JSX } from "react";
+import { useState, type JSX } from "react";
 import { THEME_STORAGE_KEY } from "../../constants";
 import styles from "./ThemeToggle.module.css";
 
 type Theme = "light" | "dark";
 
 function ThemeToggle(): JSX.Element {
-  const [theme, setTheme] = useState<Theme>("light");
-
-  useEffect(() => {
-    const current = document.documentElement.getAttribute("data-theme");
-    setTheme(current === "dark" ? "dark" : "light");
-  }, []);
+  const [theme, setTheme] = useState<Theme>(() =>
+    typeof document !== "undefined" &&
+    document.documentElement.getAttribute("data-theme") === "dark"
+      ? "dark"
+      : "light",
+  );
 
   function toggleTheme() {
     const next: Theme = theme === "dark" ? "light" : "dark";
