@@ -1,48 +1,39 @@
-import { useState, type JSX } from "react";
-import styles from "./Contact.module.css";
+import { useState, useRef, useEffect, type JSX } from "react";
 import { LINKS } from "../../constants";
 
-/**
- * Contact interactive component — handles clipboard copy and provides contact CTA buttons.
- *
- * @returns {JSX.Element} The rendered contact card UI.
- */
 function ContactInteractive(): JSX.Element {
   const [copied, setCopied] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(
+    undefined
+  );
   const email = LINKS.email.replace("mailto:", "");
+
+  useEffect(() => {
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
 
   async function copyEmail() {
     try {
       await navigator.clipboard.writeText(email);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => setCopied(false), 2000);
     } catch {
       // clipboard write failed
     }
   }
 
   return (
-    <div className={styles.contactCard}>
-      <div className={styles.contactRow}>
-        <button
-          className={`${styles.button} ${styles.buttonPrimary}`}
-          type="button"
-          onClick={() => { window.location.href = `mailto:${email}`; }}
-        >
-          Email Me
-        </button>
-        <button
-          className={`${styles.button} ${styles.buttonGhost}`}
-          type="button"
-          onClick={() => {
-            void copyEmail();
-          }}
-          aria-label="Copy email address"
-        >
-          {copied ? "Copied!" : "Copy Email"}
-        </button>
-      </div>
-    </div>
+    <button
+      type="button"
+      className="btn btn-secondary"
+      onClick={() => {
+        void copyEmail();
+      }}
+      aria-label="Copy email address"
+    >
+      {copied ? "Copied" : "Copy address"}
+    </button>
   );
 }
 

@@ -5,41 +5,36 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <div class="footer-inner">
-    <div>© {year} Jason Shprintz</div>
-    <small class="small-muted">
-      <a href={LINKS.linkedin} aria-label="LinkedIn profile">
-        <img
-          src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
-          alt=""
-        />
-      </a>
-      &nbsp;
-      <a href={LINKS.github} aria-label="GitHub profile">
-        <img
-          src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
-          alt=""
-        />
-      </a>
-    </small>
-  </div>
+  <span class="num">© {year} Jason Shprintz</span>
+  <span class="links">
+    <a href={LINKS.github} target="_blank" rel="noopener">GitHub</a>
+    <a href={LINKS.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+    <a href={LINKS.toastbyte} target="_blank" rel="noopener"
+      >Toastbyte Studios</a
+    >
+  </span>
 </footer>
 
 <style>
   .footer {
-    padding: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.9rem;
-  }
-
-  .footer-inner {
     display: flex;
     justify-content: space-between;
-    color: var(--muted);
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-divider);
+    font-size: 14px;
+    color: color-mix(in srgb, var(--color-text) 62%, transparent);
   }
 
-  .small-muted {
-    color: var(--muted);
-    font-size: 0.9rem;
+  .links {
+    display: flex;
+    gap: 22px;
+  }
+
+  .links a {
+    color: inherit;
   }
 </style>

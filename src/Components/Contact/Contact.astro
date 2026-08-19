@@ -1,8 +1,53 @@
 ---
-import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper.astro";
 import ContactInteractive from "./ContactInteractive";
+import { LINKS } from "../../constants";
 ---
 
-<SectionWrapper id="contact" title="Contact">
-  <ContactInteractive client:load />
-</SectionWrapper>
+<div class="hr"></div>
+
+<section id="contact" class="contact">
+  <div class="kick">06 — Contact</div>
+  <h2 class="heading">Have something worth building?</h2>
+  <p class="copy">
+    Open to product engineering roles and a small number of contract builds
+    each year. Tell me the scope and the timeline and I will tell you
+    honestly whether it fits.
+  </p>
+  <div class="actions">
+    <a href={LINKS.email} class="btn btn-primary">Email me</a>
+    <ContactInteractive client:load />
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 72px 0 0;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 22px;
+  }
+
+  .heading {
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    max-width: 22ch;
+  }
+
+  .copy {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 50ch;
+  }
+
+  .actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+  }
+</style>

@@ -1,19 +1,77 @@
----
-import SectionWrapper from "../../shared/Components/SectionWrapper/SectionWrapper.astro";
-import TextType from "./Components/TextType";
----
+<div class="hr"></div>
 
-<SectionWrapper id="about" title="About">
-  <TextType
-    client:visible
-    text={`My passion for programming was sparked when I was in high school. I created a game called "Perfect Pump" on the TI-83+ calculator. The game had a number displayed in currency, and the goal was to press a button and stop it perfectly on $20. The game was simple, but everyone really enjoyed it, and I vividly remember loving the feeling of making a program that everyone else used. I went on to take courses in C++ and Java, but didn't pursue it as a career until much later in life. 
-        
-With over 3 years of professional web development experience and over 6 years of quality assurance experience, I am uniquely qualified with both knowledge of the latest tech and a keen eye for detail.`}
-    typingSpeed={25}
-    pauseDuration={1000000000}
-    showCursor={true}
-    cursorCharacter="|"
-    startOnVisible={true}
-    deletingSpeed={15}
-  />
-</SectionWrapper>
+<section id="about" class="cols">
+  <div>
+    <div class="kick" style="margin-bottom: 14px;">01 — About</div>
+    <h2 class="heading">Where it started</h2>
+  </div>
+  <div>
+    <p class="prose">
+      My passion for programming was sparked when I was in high school. I
+      created a game called "Perfect Pump" on the TI-83+ calculator. The game
+      had a number displayed in currency, and the goal was to press a button
+      and stop it perfectly on $20. The game was simple, but everyone really
+      enjoyed it, and I vividly remember loving the feeling of making a
+      program that everyone else used.
+    </p>
+    <dl class="facts">
+      <div>
+        <dt class="kick" style="margin-bottom: 8px;">Experience</dt>
+        <dd class="num fact-value">3+ years</dd>
+      </div>
+      <div>
+        <dt class="kick" style="margin-bottom: 8px;">Focus</dt>
+        <dd class="fact-value">React · TS</dd>
+      </div>
+      <div>
+        <dt class="kick" style="margin-bottom: 8px;">Also</dt>
+        <dd class="fact-value">Founder</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<style>
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr 1.9fr;
+    gap: 64px;
+    padding: 72px 0;
+  }
+
+  .heading {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .prose {
+    font-size: 18px;
+    line-height: 1.75;
+    text-align: justify;
+    hyphens: auto;
+    margin: 0 0 32px;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin: 0;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-divider);
+  }
+
+  .fact-value {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 30px;
+  }
+
+  @media (max-width: 900px) {
+    .cols {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

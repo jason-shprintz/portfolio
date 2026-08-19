@@ -1,0 +1,45 @@
+---
+import ThemeToggle from "./ThemeToggle";
+---
+
+<header class="header">
+  <a href="#top" class="brand">Jason Shprintz</a>
+  <nav class="nav">
+    <a href="#about" class="kick nav-link">About</a>
+    <a href="#skills" class="kick nav-link">Skills</a>
+    <a href="#work" class="kick nav-link">Work</a>
+    <a href="#experience" class="kick nav-link">Experience</a>
+    <a href="#contact" class="kick nav-link">Contact</a>
+    <ThemeToggle client:load />
+  </nav>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 28px 0 20px;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .brand {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+  }
+</style>

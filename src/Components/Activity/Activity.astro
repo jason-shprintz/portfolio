@@ -1,0 +1,89 @@
+---
+import { SHOW_HEATMAP } from "../../constants";
+---
+
+{
+  SHOW_HEATMAP && (
+    <>
+      <div class="hr" />
+      <section class="cols">
+        <div>
+          <div class="kick" style="margin-bottom: 14px;">
+            05 — Activity
+          </div>
+          <h2 class="heading">Every commit, merged</h2>
+          <p class="copy">
+            Contributions across GitHub, GitLab, Bitbucket and Gitea,
+            aggregated by{" "}
+            <a href="https://gitall.app" target="_blank" rel="noopener">
+              GitAll
+            </a>{" "}
+            — a tool I built for exactly this.
+          </p>
+        </div>
+        <a
+          href="https://gitall.app/u/jason-shprintz?utm_source=embed&utm_medium=referral&utm_campaign=heatmap"
+          target="_blank"
+          rel="noopener"
+          class="heatmap-link"
+        >
+          <span class="plate heatmap-plate">
+            <img
+              src="https://gitall.app/embed/u/jason-shprintz.svg"
+              alt="Contribution heatmap"
+              loading="lazy"
+              data-lightmat
+              loading="lazy"
+              decoding="async"
+              class="heatmap-img"
+            />
+          </span>
+        </a>
+      </section>
+    </>
+  )
+}
+
+<style>
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr 1.9fr;
+    gap: 64px;
+    padding: 72px 0;
+    align-items: start;
+  }
+
+  .heading {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+  }
+
+  .copy {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .heatmap-link {
+    display: block;
+  }
+
+  .heatmap-plate {
+    display: block;
+  }
+
+  .heatmap-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 900px) {
+    .cols {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
