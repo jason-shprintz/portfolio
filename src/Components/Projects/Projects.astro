@@ -19,14 +19,14 @@ import { LINKS } from '../../constants';
     {
       projects.map((p) => (
         <article class="item">
-          <div class={`plate img-plate${p.id === 'p1' ? ' img-plate--gitall' : ''}`}>
+          <div class={`plate img-plate${p.imageVariant === 'gitall' ? ' img-plate--gitall' : ''}`}>
             <img
               src={p.imgSrc}
               alt={p.name}
               loading="lazy"
               decoding="async"
-              data-lightmat
-              class={`img${p.id === 'p1' ? ' img--gitall' : ''}`}
+              {...(p.imageVariant !== 'gitall' ? { 'data-lightmat': true } : {})}
+              class={`img${p.imageVariant === 'gitall' ? ' img--gitall' : ''}`}
             />
           </div>
           <div>
