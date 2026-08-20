@@ -1,0 +1,78 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 160 160"
+  width="160"
+  height="160"
+  role="img"
+  aria-label="Alley Admin retro bowling scoreboard"
+>
+  <defs>
+    <radialGradient id="aaBackdrop" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#241a14" />
+      <stop offset="100%" stop-color="#16100d" />
+    </radialGradient>
+    <radialGradient id="aaMarble">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="50%" stop-color="#c2410c" />
+      <stop offset="100%" stop-color="#7c2d12" />
+    </radialGradient>
+  </defs>
+
+  <rect width="160" height="160" fill="url(#aaBackdrop)" />
+
+  <g transform="translate(0 10)">
+    <!-- Scoreboard frame -->
+    <rect
+      x="10"
+      y="10"
+      width="140"
+      height="120"
+      rx="8"
+      fill="#2d1f16"
+      stroke="#d4a574"
+      stroke-width="3"
+    />
+
+    <!-- Inner frame accent -->
+    <rect
+      x="20"
+      y="20"
+      width="120"
+      height="100"
+      rx="4"
+      fill="none"
+      stroke="#d4a574"
+      stroke-width="1"
+      opacity="0.5"
+    />
+
+    <!-- Bowling pins, arranged in a triangle -->
+    <g fill="#f5f1e8" stroke="#d4a574" stroke-width="1.5">
+      <circle cx="55" cy="50" r="5" />
+      <circle cx="70" cy="50" r="5" />
+      <circle cx="85" cy="50" r="5" />
+      <circle cx="100" cy="50" r="5" />
+      <circle cx="62" cy="62" r="5" />
+      <circle cx="78" cy="62" r="5" />
+      <circle cx="93" cy="62" r="5" />
+      <circle cx="70" cy="74" r="5" />
+      <circle cx="85" cy="74" r="5" />
+      <circle cx="77.5" cy="86" r="5.5" stroke-width="2" />
+    </g>
+
+    <!-- Bowling ball -->
+    <g>
+      <circle cx="80" cy="105" r="12" fill="url(#aaMarble)" />
+      <circle cx="76" cy="100" r="2" fill="#1a1410" />
+      <circle cx="83" cy="99" r="2" fill="#1a1410" />
+      <circle cx="79.5" cy="107" r="2" fill="#1a1410" />
+      <circle cx="75" cy="99" r="3" fill="#ffffff" opacity="0.3" />
+    </g>
+
+    <!-- Strike lights -->
+    <g fill="#d97706" opacity="0.8">
+      <circle cx="35" cy="35" r="3" />
+      <circle cx="125" cy="35" r="3" />
+    </g>
+  </g>
+</svg>
