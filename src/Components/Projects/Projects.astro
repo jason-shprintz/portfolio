@@ -19,14 +19,18 @@ import { LINKS } from '../../constants';
     {
       projects.map((p) => (
         <article class="item">
-          <div class="plate img-plate">
+          <div
+            class={`plate img-plate${p.imageVariant === 'gitall' ? ' img-plate--gitall' : ''}`}
+          >
             <img
               src={p.imgSrc}
               alt={p.name}
               loading="lazy"
               decoding="async"
-              data-lightmat
-              class="img"
+              {...(p.imageVariant !== 'gitall'
+                ? { 'data-lightmat': true }
+                : {})}
+              class={`img${p.imageVariant === 'gitall' ? ' img--gitall' : ''}`}
             />
           </div>
           <div>
@@ -96,14 +100,35 @@ import { LINKS } from '../../constants';
 
   .img-plate {
     background: var(--color-surface);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
   }
 
   .img {
     display: block;
     width: 100%;
-    height: 200px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .img--gitall {
     object-fit: contain;
-    background: var(--color-bg);
+    padding: 10%;
+  }
+
+  :global(html[data-theme='dark']) .img-plate--gitall {
+    background: #0d1117;
+  }
+
+  :global(html[data-theme='light']) .img-plate--gitall,
+  .img-plate--gitall {
+    background: #ffffff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .img-plate--gitall {
+      background: #0d1117;
+    }
   }
 
   .title-row {

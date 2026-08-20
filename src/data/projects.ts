@@ -7,6 +7,7 @@ type Project = {
   imgSrc: string;
   tech: string[];
   link: string;
+  imageVariant?: 'gitall';
 };
 
 const projects: Project[] = [
@@ -18,6 +19,7 @@ const projects: Project[] = [
     description:
       'A unified contribution heatmap viewer that aggregates activity from GitHub, GitLab, Bitbucket, and Gitea/Forgejo into a single side-by-side or merged view. Implements OAuth 2.0 with PKCE across four providers without a library, with AES-GCM encrypted session cookies, and serves embeddable SVG heatmaps for READMEs.',
     imgSrc: 'assets/images/gitall.svg',
+    imageVariant: 'gitall',
     tech: [
       'Next.js',
       'React',
