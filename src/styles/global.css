@@ -25,13 +25,13 @@
   --color-accent-800: #5a3b0a;
   --color-accent-900: #3a270d;
 
-  --font-heading: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Lora", Georgia, serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Lora', Georgia, serif;
 
   --radius-sm: 4px;
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --color-bg: #161513;
   --color-surface: #221f1d;
   --color-text: #ebe7e1;
@@ -59,7 +59,7 @@ html[data-theme="dark"] {
   --color-accent-900: #fbecd4;
 }
 
-html[data-theme="dark"] img[data-lightmat] {
+html[data-theme='dark'] img[data-lightmat] {
   background: #f3f2f2;
 }
 
@@ -130,12 +130,12 @@ img {
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
   color: color-mix(in srgb, var(--color-text) 55%, transparent);
 }
 
 .num {
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
 }
 
 /* — rule — */

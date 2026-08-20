@@ -1,7 +1,7 @@
 ---
-import BaseHead from "./BaseHead.astro";
-import { THEME_STORAGE_KEY } from "../constants";
-import "../styles/global.css";
+import BaseHead from './BaseHead.astro';
+import { THEME_STORAGE_KEY } from '../constants';
+import '../styles/global.css';
 
 interface Props {
   title?: string;
@@ -25,9 +25,9 @@ const { title, description } = Astro.props;
         }
         const prefersDark =
           window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const theme = saved || (prefersDark ? "dark" : "light");
-        document.documentElement.setAttribute("data-theme", theme);
+          window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
   </head>

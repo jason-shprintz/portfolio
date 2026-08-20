@@ -1,12 +1,12 @@
-import { useState, useRef, useEffect, type JSX } from "react";
-import { LINKS } from "../../constants";
+import { useState, useRef, useEffect, type JSX } from 'react';
+import { LINKS } from '../../constants';
 
 function ContactInteractive(): JSX.Element {
   const [copied, setCopied] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(
-    undefined
+    undefined,
   );
-  const email = LINKS.email.replace("mailto:", "");
+  const email = LINKS.email.replace('mailto:', '');
 
   useEffect(() => {
     return () => clearTimeout(timeoutRef.current);
@@ -32,7 +32,7 @@ function ContactInteractive(): JSX.Element {
       }}
       aria-label="Copy email address"
     >
-      {copied ? "Copied" : "Copy address"}
+      {copied ? 'Copied' : 'Copy address'}
     </button>
   );
 }

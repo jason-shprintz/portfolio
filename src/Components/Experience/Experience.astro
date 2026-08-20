@@ -1,5 +1,5 @@
 ---
-import { experience } from "../../data/experience";
+import { experience } from '../../data/experience';
 ---
 
 <div class="hr"></div>
@@ -18,7 +18,9 @@ import { experience } from "../../data/experience";
             <span class="company">{job.name}</span>
           </div>
           <div class="title">{job.title}</div>
-          <div class="kick num" style="margin-top: 8px;">{job.time}</div>
+          <div class="kick num" style="margin-top: 8px;">
+            {job.time}
+          </div>
         </div>
         <ul class="bullets">
           {job.description.map((d) => (
