@@ -39,7 +39,7 @@ const projects: Project[] = [
     domain: 'alleyadmin.app',
     description:
       'Web-based bowling league management replacing the aging desktop software league secretaries rely on. Rosters, digital scorekeeping, USBC-compliant handicap calculation, standings, scheduling, and tournament brackets in one browser app. Currently live as a marketing and waitlist site backed by a Cloudflare Worker and D1.',
-    imgSrc: 'assets/images/alleyadmin.png',
+    imgSrc: 'assets/images/alleyadmin.svg',
     tech: [
       'Astro',
       'TypeScript',
@@ -56,7 +56,7 @@ const projects: Project[] = [
     domain: 'dynastiestleague.com',
     description:
       'A dynasty fantasy football league platform with an AI trade analyzer at its core: a scheduled Cloudflare Worker polls the Sleeper API every five minutes, generates grades and commentary for new trades via the Anthropic API, and caches them in D1 keyed on transaction ID so every visitor sees one consistent analysis.',
-    imgSrc: 'assets/images/dynastiest.png',
+    imgSrc: 'assets/images/dynastiest.webp',
     tech: [
       'React',
       'TypeScript',
