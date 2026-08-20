@@ -19,13 +19,17 @@ import { LINKS } from '../../constants';
     {
       projects.map((p) => (
         <article class="item">
-          <div class={`plate img-plate${p.imageVariant === 'gitall' ? ' img-plate--gitall' : ''}`}>
+          <div
+            class={`plate img-plate${p.imageVariant === 'gitall' ? ' img-plate--gitall' : ''}`}
+          >
             <img
               src={p.imgSrc}
               alt={p.name}
               loading="lazy"
               decoding="async"
-              {...(p.imageVariant !== 'gitall' ? { 'data-lightmat': true } : {})}
+              {...(p.imageVariant !== 'gitall'
+                ? { 'data-lightmat': true }
+                : {})}
               class={`img${p.imageVariant === 'gitall' ? ' img--gitall' : ''}`}
             />
           </div>
