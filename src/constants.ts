@@ -11,19 +11,19 @@ export const MEDIA_QUERIES = {
 };
 
 export const DEVICE_TYPES = {
-  mobile: "mobile",
-  tablet: "tablet",
-  desktop: "desktop",
+  mobile: 'mobile',
+  tablet: 'tablet',
+  desktop: 'desktop',
 };
 
 export const LINKS = {
-  github: "https://github.com/jason-shprintz",
-  linkedin: "https://www.linkedin.com/in/jasonshprintz/",
-  email: "mailto:jshprintz@gmail.com",
-  toastbyte: "https://toastbyte.studio",
-  gitall: "https://gitall.app",
+  github: 'https://github.com/jason-shprintz',
+  linkedin: 'https://www.linkedin.com/in/jasonshprintz/',
+  email: 'mailto:jshprintz@gmail.com',
+  toastbyte: 'https://toastbyte.studio',
+  gitall: 'https://gitall.app',
 };
 
-export const THEME_STORAGE_KEY = "js-portfolio-theme";
+export const THEME_STORAGE_KEY = 'js-portfolio-theme';
 
 export const SHOW_HEATMAP = true;

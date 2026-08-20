@@ -1,23 +1,23 @@
 ---
-import { SHOW_HEATMAP } from "../../constants";
+import { SHOW_HEATMAP } from '../../constants';
 ---
 
 {
   SHOW_HEATMAP && (
     <>
       <div class="hr" />
-      <section class="cols">
+      <section id="activity" class="cols">
         <div>
           <div class="kick" style="margin-bottom: 14px;">
             05 — Activity
           </div>
           <h2 class="heading">Every commit, merged</h2>
           <p class="copy">
-            Contributions across GitHub, GitLab, Bitbucket and Gitea,
-            aggregated by{" "}
+            Contributions across GitHub, GitLab, Bitbucket and Gitea, aggregated
+            by{' '}
             <a href="https://gitall.app" target="_blank" rel="noopener">
               GitAll
-            </a>{" "}
+            </a>{' '}
             — a tool I built for exactly this.
           </p>
         </div>
@@ -32,9 +32,8 @@ import { SHOW_HEATMAP } from "../../constants";
               src="https://gitall.app/embed/u/jason-shprintz.svg"
               alt="Contribution heatmap"
               loading="lazy"
-              data-lightmat
-              loading="lazy"
               decoding="async"
+              data-lightmat
               class="heatmap-img"
             />
           </span>
