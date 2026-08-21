@@ -29,12 +29,21 @@ jobs:
           const { execSync } = require('child_process');
           const fs = require('fs');
 
-          const headVersion = JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
+          const headPackageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          const headVersion = headPackageJson.version;
+          const headLockVersion = JSON.parse(fs.readFileSync('package-lock.json', 'utf8')).version;
+
+          if (headLockVersion !== headVersion) {
+            console.error(
+              `package-lock.json version (${headLockVersion}) must match package.json version (${headVersion}).`,
+            );
+            process.exit(1);
+          }
+
           const basePackageJson = execSync(`git show origin/${process.env.BASE_REF}:package.json`, {
             encoding: 'utf8',
           });
           const baseVersion = JSON.parse(basePackageJson).version;
-
           if (headVersion === baseVersion) {
             console.error(
               `package.json version must be bumped on PRs to main. Current PR version (${headVersion}) matches ${process.env.BASE_REF}.`,
