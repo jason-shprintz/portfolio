@@ -75,7 +75,7 @@ const projects: Project[] = [
     domain: 'toastbyte.studio',
     description:
       'An independent software studio building web and mobile products end to end — from React Native apps to Cloudflare-hosted web platforms and Model Context Protocol services.',
-    imgSrc: 'assets/images/toastbyte-logo.jpg',
+    imgSrc: 'assets/images/toastbyte-logo.webp',
     tech: ['React', 'TypeScript', 'Vite', 'styled-components'],
     link: 'https://toastbyte.studio',
   },
