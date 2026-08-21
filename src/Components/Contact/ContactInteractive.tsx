@@ -30,7 +30,9 @@ function ContactInteractive(): JSX.Element {
       onClick={() => {
         void copyEmail();
       }}
-      aria-label="Copy email address"
+      aria-label={
+        copied ? 'Copied. Email address copied' : 'Copy address to clipboard'
+      }
     >
       {copied ? 'Copied' : 'Copy address'}
     </button>
