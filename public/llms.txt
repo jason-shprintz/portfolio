@@ -2,56 +2,28 @@
 
 > Personal portfolio of Jason Shprintz, a software developer in Las Vegas, Nevada building production-grade web applications in React and TypeScript, with a focus on performance, clarity and the details users feel but rarely name.
 
-## What This Site Is
-
-jasonshprintz.com is a single-page portfolio covering:
-
-- Background and how he approaches building software
-- Technical skills across frontend, backend and infrastructure
-- Selected work — shipped products, with the engineering problem each one solves
-- Professional experience
-- Open-source contribution activity across GitHub, GitLab, Bitbucket and Gitea
-- Contact details for roles and contract work
+Open to product engineering roles and a small number of contract builds each year. Also runs [Toastbyte Studios](https://toastbyte.studio), an independent software studio building web and mobile products end to end.
 
 ## Selected Work
 
-### GitAll (https://gitall.app)
+- [GitAll](https://gitall.app): A unified contribution heatmap viewer aggregating activity from GitHub, GitLab, Bitbucket and Gitea/Forgejo into a single side-by-side or merged view. Implements OAuth 2.0 with PKCE across four providers without a library, with AES-GCM encrypted session cookies, and serves embeddable SVG heatmaps for READMEs. Next.js, React, TypeScript, Tailwind CSS, Cloudflare Workers, D1, Vitest.
+- [Alley Admin](https://alleyadmin.app): Web-based bowling league management replacing the aging desktop software league secretaries rely on. Rosters, digital scorekeeping, USBC-compliant handicap calculation, standings, scheduling and tournament brackets in one browser app. Astro, TypeScript, Cloudflare Workers, D1, Cloudflare Pages.
+- [Dynastiest League](https://dynastiestleague.com): A dynasty fantasy football platform with an AI trade analyzer at its core. A scheduled Cloudflare Worker polls the Sleeper API every five minutes, generates grades and commentary for new trades via the Anthropic API, and caches them in D1 keyed on transaction ID so every visitor sees one consistent analysis. React, TypeScript, MobX, Vite, Cloudflare Workers, D1, Anthropic API.
+- [Toastbyte Studios](https://toastbyte.studio): An independent software studio building web and mobile products end to end, from React Native apps to Cloudflare-hosted web platforms and Model Context Protocol services.
 
-A unified contribution heatmap viewer that aggregates activity from GitHub, GitLab, Bitbucket and Gitea/Forgejo into a single side-by-side or merged view. Implements OAuth 2.0 with PKCE across four providers without a library, with AES-GCM encrypted session cookies, and serves embeddable SVG heatmaps for READMEs. Built with Next.js, React, TypeScript, Tailwind CSS, Cloudflare Workers, D1 and Vitest.
+## Skills
 
-### Alley Admin (https://alleyadmin.app)
+- Frontend: React, TypeScript, Next.js, Astro, MobX, Vite, Tailwind CSS, styled-components
+- Backend and infrastructure: Cloudflare Workers, D1, Cloudflare Pages, OAuth 2.0, Node.js
+- Practices: performance and Core Web Vitals, accessibility, automated CI, end-to-end delivery
 
-Web-based bowling league management replacing the aging desktop software league secretaries rely on. Rosters, digital scorekeeping, USBC-compliant handicap calculation, standings, scheduling and tournament brackets in one browser app. Currently live as a marketing and waitlist site backed by a Cloudflare Worker and D1. Built with Astro, TypeScript, Cloudflare Workers, D1 and Cloudflare Pages.
+## Contact
 
-### Dynastiest League (https://dynastiestleague.com)
+- [Email](mailto:jshprintz@gmail.com): jshprintz@gmail.com
+- [GitHub](https://github.com/jason-shprintz): Open-source work and contribution history
+- [LinkedIn](https://www.linkedin.com/in/jasonshprintz): Professional background and experience
 
-A dynasty fantasy football league platform with an AI trade analyzer at its core: a scheduled Cloudflare Worker polls the Sleeper API every five minutes, generates grades and commentary for new trades via the Anthropic API, and caches them in D1 keyed on transaction ID so every visitor sees one consistent analysis. Built with React, TypeScript, MobX, Vite, Cloudflare Workers, D1 and the Anthropic API.
+## Optional
 
-### Toastbyte Studios (https://toastbyte.studio)
-
-An independent software studio building web and mobile products end to end — from React Native apps to Cloudflare-hosted web platforms and Model Context Protocol services.
-
-## Frequently Asked Questions
-
-### Who is Jason Shprintz?
-
-A software developer based in Las Vegas, Nevada, building production-grade web applications in React and TypeScript. He also runs Toastbyte Studios, an independent software studio.
-
-### What technologies does he work with?
-
-Primarily React, TypeScript, Next.js and Astro on the frontend, with Cloudflare Workers and D1 for backend and infrastructure. Recent projects also use MobX, Vite, Tailwind CSS and the Anthropic API.
-
-### Is he available for work?
-
-He is open to product engineering roles and takes on a small number of contract builds each year.
-
-### How do I get in touch?
-
-Email jshprintz@gmail.com, or reach him on LinkedIn at https://www.linkedin.com/in/jasonshprintz and GitHub at https://github.com/jason-shprintz.
-
-## Links
-
-- Portfolio: https://jasonshprintz.com
-- GitHub: https://github.com/jason-shprintz
-- LinkedIn: https://www.linkedin.com/in/jasonshprintz
-- Toastbyte Studios: https://toastbyte.studio
+- [Contribution activity](https://gitall.app/u/jason-shprintz): Commits across GitHub, GitLab, Bitbucket and Gitea, aggregated in one heatmap
+- [Résumé (PDF)](https://jasonshprintz.com/assets/documents/Jason_Shprintz_Resume.pdf): Full work history and experience
