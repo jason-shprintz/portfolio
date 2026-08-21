@@ -1,0 +1,55 @@
+name: Require version bump
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  require-version-bump:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Ensure package version changed from main
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          git fetch origin "${BASE_REF}" --depth=1
+
+          node <<'NODE'
+          const { execSync } = require('child_process');
+          const fs = require('fs');
+
+          const headPackageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          const headVersion = headPackageJson.version;
+          const headLockVersion = JSON.parse(fs.readFileSync('package-lock.json', 'utf8')).version;
+
+          if (headLockVersion !== headVersion) {
+            console.error(
+              `package-lock.json version (${headLockVersion}) must match package.json version (${headVersion}).`,
+            );
+            process.exit(1);
+          }
+
+          const basePackageJson = execSync(`git show origin/${process.env.BASE_REF}:package.json`, {
+            encoding: 'utf8',
+          });
+          const baseVersion = JSON.parse(basePackageJson).version;
+          if (headVersion === baseVersion) {
+            console.error(
+              `package.json version must be bumped on PRs to main. Current PR version (${headVersion}) matches ${process.env.BASE_REF}.`,
+            );
+            process.exit(1);
+          }
+
+          console.log(`package.json version bump detected: ${baseVersion} -> ${headVersion}`);
+          NODE
