@@ -7,7 +7,7 @@ type Project = {
   imgSrc: string;
   tech: string[];
   link: string;
-  imageVariant?: 'gitall';
+  imageVariant?: 'gitall' | 'alleyadmin';
 };
 
 const projects: Project[] = [
@@ -40,6 +40,7 @@ const projects: Project[] = [
     description:
       'Web-based bowling league management replacing the aging desktop software league secretaries rely on. Rosters, digital scorekeeping, USBC-compliant handicap calculation, standings, scheduling, and tournament brackets in one browser app. Currently live as a marketing and waitlist site backed by a Cloudflare Worker and D1.',
     imgSrc: 'assets/images/alleyadmin.svg',
+    imageVariant: 'alleyadmin',
     tech: [
       'Astro',
       'TypeScript',
