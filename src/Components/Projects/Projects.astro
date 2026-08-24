@@ -20,17 +20,15 @@ import { LINKS } from '../../constants';
       projects.map((p) => (
         <article class="item">
           <div
-            class={`plate img-plate${p.imageVariant === 'gitall' ? ' img-plate--gitall' : ''}`}
+            class={`plate img-plate${p.imageVariant ? ` img-plate--${p.imageVariant}` : ''}`}
           >
             <img
               src={p.imgSrc}
               alt={p.name}
               loading="lazy"
               decoding="async"
-              {...(p.imageVariant !== 'gitall'
-                ? { 'data-lightmat': true }
-                : {})}
-              class={`img${p.imageVariant === 'gitall' ? ' img--gitall' : ''}`}
+              {...(!p.imageVariant ? { 'data-lightmat': true } : {})}
+              class={`img${p.imageVariant ? ' img--logo' : ''}`}
             />
           </div>
           <div>
@@ -111,23 +109,47 @@ import { LINKS } from '../../constants';
     object-fit: cover;
   }
 
-  .img--gitall {
+  /*
+   * Logo plates. These images are marks rather than screenshots, so they get
+   * contained with breathing room and sit on a plate whose color follows the
+   * theme — rather than the data-lightmat treatment, which paints a light
+   * backdrop behind a screenshot in dark mode.
+   *
+   * Each variant declares its own pair; the resolution below is shared.
+   */
+  .img--logo {
     object-fit: contain;
     padding: 10%;
   }
 
-  :global(html[data-theme='dark']) .img-plate--gitall {
-    background: #0d1117;
-  }
-
-  :global(html[data-theme='light']) .img-plate--gitall,
   .img-plate--gitall {
-    background: #ffffff;
+    --plate-light: #ffffff;
+    --plate-dark: #0d1117;
   }
 
+  .img-plate--alleyadmin {
+    --plate-light: #fbf7f0;
+    --plate-dark: #141210;
+  }
+
+  .img-plate--gitall,
+  .img-plate--alleyadmin {
+    background: var(--plate-light);
+  }
+
+  :global(html[data-theme='dark']) .img-plate--gitall,
+  :global(html[data-theme='dark']) .img-plate--alleyadmin {
+    background: var(--plate-dark);
+  }
+
+  /*
+   * No-JS fallback. Scoped so an explicit light choice still wins, since the
+   * theme is driven by the data attribute rather than the media query.
+   */
   @media (prefers-color-scheme: dark) {
-    .img-plate--gitall {
-      background: #0d1117;
+    :global(html:not([data-theme='light'])) .img-plate--gitall,
+    :global(html:not([data-theme='light'])) .img-plate--alleyadmin {
+      background: var(--plate-dark);
     }
   }
 
