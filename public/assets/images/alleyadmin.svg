@@ -1,78 +1,31 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 160 160"
-  width="160"
-  height="160"
+  viewBox="0 0 64 64"
+  width="64"
+  height="64"
   role="img"
-  aria-label="Alley Admin retro bowling scoreboard"
+  aria-label="Alley Admin logo"
 >
-  <defs>
-    <radialGradient id="aaBackdrop" cx="50%" cy="45%" r="75%">
-      <stop offset="0%" stop-color="#241a14" />
-      <stop offset="100%" stop-color="#16100d" />
-    </radialGradient>
-    <radialGradient id="aaMarble">
-      <stop offset="0%" stop-color="#ea580c" />
-      <stop offset="50%" stop-color="#c2410c" />
-      <stop offset="100%" stop-color="#7c2d12" />
-    </radialGradient>
-  </defs>
+  <!--
+    Bowling pins 1-7 and 10 racked into a letter "A", ball at the apex.
+    Pins 8 and 9 are omitted so the outer pins read as the letter's legs;
+    the 4/5/6 row stands in for the crossbar.
 
-  <rect width="160" height="160" fill="url(#aaBackdrop)" />
+    Colors are fixed rather than theme-aware on purpose. This is loaded via
+    <img>, so an internal prefers-color-scheme block would follow the OS and
+    ignore the site's manual theme toggle. These two values hold contrast on
+    both the light and dark plate instead.
+  -->
+  <circle cx="32" cy="10" r="6.5" fill="#c8443c" />
 
-  <g transform="translate(0 10)">
-    <!-- Scoreboard frame -->
-    <rect
-      x="10"
-      y="10"
-      width="140"
-      height="120"
-      rx="8"
-      fill="#2d1f16"
-      stroke="#d4a574"
-      stroke-width="3"
-    />
-
-    <!-- Inner frame accent -->
-    <rect
-      x="20"
-      y="20"
-      width="120"
-      height="100"
-      rx="4"
-      fill="none"
-      stroke="#d4a574"
-      stroke-width="1"
-      opacity="0.5"
-    />
-
-    <!-- Bowling pins, arranged in a triangle -->
-    <g fill="#f5f1e8" stroke="#d4a574" stroke-width="1.5">
-      <circle cx="55" cy="50" r="5" />
-      <circle cx="70" cy="50" r="5" />
-      <circle cx="85" cy="50" r="5" />
-      <circle cx="100" cy="50" r="5" />
-      <circle cx="62" cy="62" r="5" />
-      <circle cx="78" cy="62" r="5" />
-      <circle cx="93" cy="62" r="5" />
-      <circle cx="70" cy="74" r="5" />
-      <circle cx="85" cy="74" r="5" />
-      <circle cx="77.5" cy="86" r="5.5" stroke-width="2" />
-    </g>
-
-    <!-- Bowling ball -->
-    <g>
-      <circle cx="80" cy="105" r="12" fill="url(#aaMarble)" />
-      <circle cx="76" cy="100" r="2" fill="#1a1410" />
-      <circle cx="83" cy="99" r="2" fill="#1a1410" />
-      <circle cx="79.5" cy="107" r="2" fill="#1a1410" />
-      <circle cx="75" cy="99" r="3" fill="#ffffff" opacity="0.3" />
-    </g>
-
-    <!-- Strike lights -->
-    <g fill="#d97706" opacity="0.8">
-      <circle cx="35" cy="35" r="3" />
-      <circle cx="125" cy="35" r="3" />
-    </g>
+  <g fill="#0e7c77">
+    <circle cx="32" cy="23.5" r="4" />
+    <circle cx="24" cy="34.5" r="4" />
+    <circle cx="40" cy="34.5" r="4" />
+    <circle cx="16" cy="45.5" r="4" />
+    <circle cx="32" cy="45.5" r="4" />
+    <circle cx="48" cy="45.5" r="4" />
+    <circle cx="8" cy="56.5" r="4" />
+    <circle cx="56" cy="56.5" r="4" />
   </g>
 </svg>
