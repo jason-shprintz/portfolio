@@ -58,38 +58,13 @@ const ogImage = 'https://jasonshprintz.com/assets/images/headshot_cropped.jpg';
 <meta http-equiv="x-dns-prefetch-control" content="on" />
 <meta name="theme-color" content="#000000" />
 
-<!-- Google Analytics -->
-<script>
-  fetch('/config.json')
-    .then((response) => response.json())
-    .then((config) => {
-      const trackingId = config.GA_TRACKING_ID;
-      if (!trackingId) return;
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
-      document.head.appendChild(script);
-
-      type GAWindow = Window &
-        typeof globalThis & {
-          dataLayer: unknown[][];
-          gtag: (...args: unknown[]) => void;
-        };
-
-      const gaWindow = window as GAWindow;
-
-      gaWindow.dataLayer = gaWindow.dataLayer || [];
-      function gtag(...args: unknown[]) {
-        gaWindow.dataLayer.push(args);
-      }
-      gaWindow.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', trackingId);
-    })
-    .catch(() => {
-      // Failed to load config.json or GA_TRACKING_ID not found
-    });
-</script>
+<!--
+  Analytics is loaded by Cloudflare Zaraz at the edge, not from this file.
+  Zaraz injects the GA4 tag into the response as it passes through the
+  proxy, so there is no snippet to maintain here and no measurement ID in
+  the bundle. Configured in the Cloudflare dashboard under the zone's
+  Zaraz → Tools.
+-->
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json" is:inline>
