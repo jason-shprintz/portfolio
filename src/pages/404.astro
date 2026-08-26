@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../Components/Header/Header.astro';
+import Footer from '../Components/Footer/Footer.astro';
+---
+
+<Layout
+  title="Page not found — Jason Shprintz"
+  description="That page does not exist."
+>
+  <Header />
+  <main class="notfound" aria-label="Page not found">
+    <span class="code">404</span>
+    <h1>That page does not exist</h1>
+    <p>
+      The link may be out of date, or the address may have a typo in it.
+      Everything on this site lives on the home page.
+    </p>
+    <a class="back" href="/">Back to the home page</a>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .notfound {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 96px 0 40px;
+    max-width: 46ch;
+  }
+
+  .code {
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, monospace;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: color-mix(in srgb, var(--color-text) 42%, transparent);
+  }
+
+  h1 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  p {
+    margin: 0;
+    color: color-mix(in srgb, var(--color-text) 72%, transparent);
+    line-height: 1.6;
+  }
+
+  .back {
+    margin-top: 8px;
+    color: var(--color-text);
+  }
+</style>
