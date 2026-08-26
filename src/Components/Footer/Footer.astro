@@ -1,40 +1,126 @@
 ---
 import { LINKS } from '../../constants';
+import pkg from '../../../package.json';
 
 const year = new Date().getFullYear();
+const { version } = pkg;
 ---
 
 <footer class="footer">
-  <span class="num">© {year} Jason Shprintz</span>
-  <span class="links">
-    <a href={LINKS.github} target="_blank" rel="noopener">GitHub</a>
-    <a href={LINKS.linkedin} target="_blank" rel="noopener">LinkedIn</a>
-    <a href={LINKS.toastbyte} target="_blank" rel="noopener"
-      >Toastbyte Studios</a
-    >
-  </span>
+  <div class="masthead">
+    <span class="name">Jason Shprintz</span>
+    <span class="role">Software Developer · Las Vegas, Nevada</span>
+  </div>
+
+  <nav class="columns" aria-label="Footer">
+    <div class="column">
+      <span class="label">Elsewhere</span>
+      <a href={LINKS.github} target="_blank" rel="noopener">GitHub</a>
+      <a href={LINKS.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+      <a href={LINKS.toastbyte} target="_blank" rel="noopener"
+        >Toastbyte Studios</a
+      >
+    </div>
+
+    <div class="column">
+      <span class="label">This site</span>
+      <a href="/#work">Work</a>
+      <a href="/#contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <div class="colophon">
+    <span>© {year} Jason Shprintz</span>
+    <span class="version">v{version}</span>
+  </div>
 </footer>
 
 <style>
   .footer {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 80px;
-    padding-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px 64px;
+    margin-top: 96px;
+    padding-top: 32px;
     border-top: 1px solid var(--color-divider);
     font-size: 14px;
     color: color-mix(in srgb, var(--color-text) 62%, transparent);
   }
 
-  .links {
+  .masthead {
     display: flex;
-    gap: 22px;
+    flex-direction: column;
+    gap: 6px;
   }
 
-  .links a {
+  .name {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+  }
+
+  .columns {
+    display: flex;
+    gap: 64px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Deliberately not the global .kick: that class is tuned for the numbered
+     section eyebrows at their size, and reusing it here would drag along a
+     margin meant for a much larger heading. */
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-text) 42%, transparent);
+  }
+
+  .column a {
     color: inherit;
+    text-decoration: none;
+  }
+
+  .column a:hover,
+  .column a:focus-visible {
+    color: var(--color-text);
+  }
+
+  .colophon {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-divider);
+    font-size: 13px;
+  }
+
+  .version {
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: color-mix(in srgb, var(--color-text) 42%, transparent);
+  }
+
+  @media (max-width: 760px) {
+    .footer {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 72px;
+    }
+
+    .columns {
+      gap: 40px;
+    }
   }
 </style>
