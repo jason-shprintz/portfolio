@@ -1,11 +1,10 @@
 # Portfolio
 
 The source for **[jasonshprintz.com](https://jasonshprintz.com)** — a static
-personal site built with Astro, deployed to GitHub Pages on every push to
+personal site built with Astro, deployed to Cloudflare Pages on every push to
 `main`.
 
 [![CI](https://github.com/jason-shprintz/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/jason-shprintz/portfolio/actions/workflows/ci.yml)
-[![Deploy](https://github.com/jason-shprintz/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/jason-shprintz/portfolio/actions/workflows/deploy.yml)
 
 ## Stack
 
@@ -14,7 +13,7 @@ personal site built with Astro, deployed to GitHub Pages on every push to
 | Framework  | [Astro](https://astro.build) with the React integration |
 | Language   | TypeScript                                              |
 | Styling    | Scoped `<style>` blocks + CSS custom properties         |
-| Hosting    | GitHub Pages (custom domain via `public/CNAME`)         |
+| Hosting    | Cloudflare Pages, built from `main` on every push       |
 | Formatting | Prettier + ESLint, both enforced in CI                  |
 
 Astro ships zero JavaScript by default, so most of the site is static HTML.
@@ -94,8 +93,9 @@ The repo follows the workflow conventions shared across
 2. **Bump `version` in `package.json`.** A PR whose version matches `main` is
    rejected by the `require-version-bump` check.
 3. Open a PR. CI runs lint, format check, and build.
-4. On merge, `main` is tagged `v<version>`, a draft release is generated, and
-   the site is deployed automatically.
+4. On merge, `main` is tagged `v<version>` and a draft release is generated.
+   Cloudflare Pages rebuilds from `main` on its own, through Cloudflare's Git
+   integration rather than through Actions.
 
 Deployment is fully automated — there is no manual publish step.
 
