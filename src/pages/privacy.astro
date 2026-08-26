@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../Components/Header/Header.astro';
+import Footer from '../Components/Footer/Footer.astro';
+import { LINKS } from '../constants';
+
+const updated = 'August 26, 2026';
+---
+
+<Layout
+  title="Privacy — Jason Shprintz"
+  description="What jasonshprintz.com collects, who receives it, and how to avoid it."
+>
+  <Header />
+  <main class="policy" aria-label="Privacy policy">
+    <span class="kicker">Privacy</span>
+    <h1>What this site collects</h1>
+    <p class="lede">
+      This policy covers <strong>jasonshprintz.com</strong> and nothing else. It is
+      my personal site. Projects linked from here — GitAll, Alley Admin, Dynastiest
+      League, Toastbyte Studios — are separate and have their own terms.
+    </p>
+    <p class="updated">Last updated {updated}</p>
+
+    <h2>The short version</h2>
+    <p>
+      There are no accounts, no forms, no newsletter and no ads. I do not sell
+      anything and I do not sell data. The site measures how many people visit
+      and which pages they read, and that is the extent of it.
+    </p>
+
+    <h2>Analytics</h2>
+    <p>
+      The site uses Google Analytics 4, loaded through Cloudflare Zaraz. Zaraz
+      injects the tag at Cloudflare's edge rather than from a script in the
+      page, so the requests are first-party, but the data still goes to Google.
+    </p>
+    <p>What that records on a visit:</p>
+    <ul>
+      <li>which pages you opened, when, and how long you stayed</li>
+      <li>the page or search that referred you</li>
+      <li>
+        an approximate location — usually country and region — derived from your
+        IP address
+      </li>
+      <li>your browser, operating system and rough screen size</li>
+    </ul>
+    <p>
+      Google Analytics 4 does not store your full IP address. It sets a
+      first-party cookie so that a second visit from the same browser is counted
+      as a returning visitor rather than a new one.
+    </p>
+
+    <h3>How long it is kept</h3>
+    <p>
+      The detailed record of a visit — the individual events and their
+      parameters — is deleted by Google after <strong>two months</strong>. The
+      user-level record, the thing that lets two visits from the same browser be
+      recognised as one returning visitor, is deleted after
+      <strong>fourteen months</strong>.
+    </p>
+    <p>
+      One honest caveat: those windows govern the detailed and user-level data.
+      Aggregate totals — how many people read a page in a given month — sit in
+      Google's standard reports and are not deleted on that schedule.
+    </p>
+    <p>
+      None of this tells me who you are. I see counts and patterns, not people.
+    </p>
+
+    <h2>Hosting</h2>
+    <p>
+      The site is served by Cloudflare Pages. Cloudflare processes every request
+      to deliver the page and to protect the site from abuse, which involves
+      handling your IP address and may involve setting its own cookies for bot
+      detection. That happens at the network level, before anything I control.
+      Cloudflare's handling is governed by its own privacy terms.
+    </p>
+    <p>
+      Cloudflare also rewrites the email addresses on this site to make them
+      harder for scrapers to harvest, which is why the contact links look
+      unusual in the page source.
+    </p>
+
+    <h2>Things loaded from elsewhere</h2>
+    <p>
+      Two parts of this page are fetched from other servers, and those servers
+      see your IP address as a consequence of serving the request:
+    </p>
+    <ul>
+      <li>
+        <strong>Google Fonts</strong> — the typefaces are loaded from Google's font
+        servers
+      </li>
+      <li>
+        <strong>GitAll</strong> — the contribution heatmap is an image served from
+        gitall.app, a tool I built and run
+      </li>
+    </ul>
+
+    <h2>If you email me</h2>
+    <p>
+      Then I have your email address and whatever you wrote, in my inbox, for as
+      long as I keep the message. That is ordinary correspondence rather than
+      anything the site collected.
+    </p>
+
+    <h2>Avoiding the analytics</h2>
+    <p>
+      Any content blocker or privacy-focused browser will stop the analytics
+      from loading, as will Google's official opt-out browser add-on. The site
+      works normally without it.
+    </p>
+    <p>
+      Worth being straight about the limits of asking me instead: the analytics
+      data is not linked to a name or an email, so I have no reliable way to
+      find your records and delete them on request. Blocking it is the remedy
+      that actually works. If you want to ask anyway, write to me and I will
+      tell you what I can.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      If what the site collects changes, this page changes with it and the date
+      above moves. There is no mailing list to notify.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about any of this go to&nbsp;
+      <a href={LINKS.email}>jshprintz@gmail.com</a>.
+    </p>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .policy {
+    max-width: 68ch;
+    padding: 72px 0 24px;
+  }
+
+  .kicker {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-text) 42%, transparent);
+  }
+
+  h1 {
+    margin: 12px 0 24px;
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 600;
+    line-height: 1.12;
+  }
+
+  h2 {
+    margin: 48px 0 12px;
+    font-family: var(--font-heading);
+    font-size: 21px;
+    font-weight: 600;
+  }
+
+  h3 {
+    margin: 28px 0 12px;
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .lede {
+    font-size: 17px;
+  }
+
+  .updated {
+    font-family:
+      ui-monospace,
+      SFMono-Regular,
+      SF Mono,
+      Menlo,
+      monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: color-mix(in srgb, var(--color-text) 42%, transparent);
+  }
+
+  p,
+  li {
+    line-height: 1.65;
+    color: color-mix(in srgb, var(--color-text) 78%, transparent);
+  }
+
+  p {
+    margin: 0 0 16px;
+  }
+
+  ul {
+    margin: 0 0 16px;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+</style>
