@@ -49,9 +49,21 @@ const updated = 'August 26, 2026';
     <p>
       Google Analytics 4 does not store your full IP address. It sets a
       first-party cookie so that a second visit from the same browser is counted
-      as a returning visitor rather than a new one. Google retains this data
-      according to the retention window set on the property, which is either two
-      or fourteen months, after which it is deleted.
+      as a returning visitor rather than a new one.
+    </p>
+
+    <h3>How long it is kept</h3>
+    <p>
+      The detailed record of a visit — the individual events and their
+      parameters — is deleted by Google after <strong>two months</strong>. The
+      user-level record, the thing that lets two visits from the same browser be
+      recognised as one returning visitor, is deleted after
+      <strong>fourteen months</strong>.
+    </p>
+    <p>
+      One honest caveat: those windows govern the detailed and user-level data.
+      Aggregate totals — how many people read a page in a given month — sit in
+      Google's standard reports and are not deleted on that schedule.
     </p>
     <p>
       None of this tells me who you are. I see counts and patterns, not people.
@@ -104,8 +116,8 @@ const updated = 'August 26, 2026';
       Worth being straight about the limits of asking me instead: the analytics
       data is not linked to a name or an email, so I have no reliable way to
       find your records and delete them on request. Blocking it is the remedy
-      that actually works. If you want to ask anyway, or ask what the current
-      retention setting is, write to me and I will tell you what I can.
+      that actually works. If you want to ask anyway, write to me and I will
+      tell you what I can.
     </p>
 
     <h2>Changes</h2>
@@ -149,6 +161,13 @@ const updated = 'August 26, 2026';
     margin: 48px 0 12px;
     font-family: var(--font-heading);
     font-size: 21px;
+    font-weight: 600;
+  }
+
+  h3 {
+    margin: 28px 0 12px;
+    font-family: var(--font-heading);
+    font-size: 17px;
     font-weight: 600;
   }
 
