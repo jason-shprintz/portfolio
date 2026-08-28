@@ -28,6 +28,42 @@ declare global {
 // The consent cookie is deliberately NOT HttpOnly: the banner must read it to
 // know whether to show, and write it when clicked.
 
+function cookieExists(name: string): boolean {
+  if (typeof document === 'undefined') {
+    return false;
+  }
+
+  const prefix = `${name}=`;
+  return document.cookie
+    .split(';')
+    .some((part) => part.trim().startsWith(prefix));
+}
+
+/**
+ * Cookie names Zaraz has been seen to use for its own consent record. The name
+ * is configurable per zone and the documented default (`cf_consent`) is not
+ * always what actually ships — `alleyadmin.app` writes `zaraz-consent` — so
+ * both are checked.
+ *
+ * Only PRESENCE is ever checked. The contents are an undocumented format keyed
+ * by per-zone random purpose IDs and must not be parsed.
+ */
+const ZARAZ_CONSENT_COOKIES = ['cf_consent', 'zaraz-consent'];
+
+/**
+ * Whether Zaraz has already recorded a consent choice for this visitor.
+ *
+ * Do NOT implement this with `zaraz.consent.getAll()`. That returns the consent
+ * status of every CONFIGURED purpose regardless of whether the visitor has
+ * answered — on a fresh session with one purpose it returns
+ * `{ <purposeId>: false }`. Counting its keys therefore reports "answered" for
+ * every visitor alive and permanently suppresses the banner. Cloudflare's own
+ * documented example checks the consent cookie for exactly this reason.
+ */
+export function hasZarazConsentRecord(): boolean {
+  return ZARAZ_CONSENT_COOKIES.some(cookieExists);
+}
+
 function readConsentCookie(): ConsentValue | null {
   if (typeof document === 'undefined') {
     return null;
@@ -89,7 +125,6 @@ export function setAnalyticsConsent(granted: boolean) {
   // this it would keep sending to GA4 regardless of the cookie above.
   try {
     window.zaraz?.consent?.setAll?.(granted);
-    window.zaraz?.set?.('consent', { analytics: granted });
   } catch {
     // no-op
   }
