@@ -89,7 +89,7 @@ export function setAnalyticsConsent(granted: boolean) {
   // this it would keep sending to GA4 regardless of the cookie above.
   try {
     window.zaraz?.consent?.setAll?.(granted);
-    window.zaraz?.set?.('consent', { analytics: granted, ads: granted });
+    window.zaraz?.set?.('consent', { analytics: granted });
   } catch {
     // no-op
   }

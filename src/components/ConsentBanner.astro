@@ -205,7 +205,11 @@
     // Re-check once the Zaraz Consent API is ready in case a returning visitor
     // already recorded a choice before this banner shipped.
     const hideIfAnswered = () => {
-      if (readAnalyticsConsent() !== null) {
+      const zarazAnswered =
+        window.zaraz?.consent?.APIReady === true &&
+        window.zaraz?.consent?.getAll !== undefined &&
+        Object.keys(window.zaraz.consent.getAll()).length > 0;
+      if (readAnalyticsConsent() !== null || zarazAnswered) {
         banner.hidden = true;
       }
     };
