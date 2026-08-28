@@ -161,6 +161,7 @@
 
 <script>
   import {
+    hasZarazConsentRecord,
     readAnalyticsConsent,
     setAnalyticsConsent,
   } from '../../lib/analytics-client';
@@ -204,12 +205,13 @@
 
     // Re-check once the Zaraz Consent API is ready in case a returning visitor
     // already recorded a choice before this banner shipped.
+    //
+    // This deliberately checks for Zaraz's consent COOKIE rather than counting
+    // the keys of `zaraz.consent.getAll()`. getAll() returns an entry for every
+    // configured purpose whether or not the visitor has answered, so counting
+    // its keys hid this banner from everybody.
     const hideIfAnswered = () => {
-      const zarazAnswered =
-        window.zaraz?.consent?.APIReady === true &&
-        window.zaraz?.consent?.getAll !== undefined &&
-        Object.keys(window.zaraz.consent.getAll()).length > 0;
-      if (readAnalyticsConsent() !== null || zarazAnswered) {
+      if (readAnalyticsConsent() !== null || hasZarazConsentRecord()) {
         banner.hidden = true;
       }
     };
@@ -217,9 +219,7 @@
     document.addEventListener('zarazConsentAPIReady', hideIfAnswered, {
       once: true,
     });
-    document.addEventListener('zarazConsentChoicesUpdated', hideIfAnswered, {
-      once: true,
-    });
+    document.addEventListener('zarazConsentChoicesUpdated', hideIfAnswered);
 
     // Footer "Cookie settings" link re-opens the banner so a choice can be
     // withdrawn as easily as it was given.
