@@ -29,11 +29,17 @@ const consentRequired = getAnalyticsConsentRequirement();
       <a href="/#work">Work</a>
       <a href="/#contact">Contact</a>
       <a href="/privacy">Privacy</a>
-      {consentRequired && (
-        <button type="button" class="cookie-settings" id="cookie-settings-btn">
-          Cookie settings
-        </button>
-      )}
+      {
+        consentRequired && (
+          <button
+            type="button"
+            class="cookie-settings"
+            id="cookie-settings-btn"
+          >
+            Cookie settings
+          </button>
+        )
+      }
     </div>
   </nav>
 
@@ -159,13 +165,11 @@ const consentRequired = getAnalyticsConsentRequirement();
   }
 </style>
 
-{consentRequired && (
-  <script>
-    const btn = document.getElementById('cookie-settings-btn');
-    if (btn) {
-      btn.addEventListener('click', () => {
-        document.dispatchEvent(new CustomEvent('consent:reopen'));
-      });
-    }
-  </script>
-)}
+<script>
+  const btn = document.getElementById('cookie-settings-btn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      document.dispatchEvent(new CustomEvent('consent:reopen'));
+    });
+  }
+</script>
