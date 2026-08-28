@@ -4,7 +4,7 @@ import Header from '../Components/Header/Header.astro';
 import Footer from '../Components/Footer/Footer.astro';
 import { LINKS } from '../constants';
 
-const updated = 'August 26, 2026';
+const updated = 'August 28, 2026';
 ---
 
 <Layout
@@ -37,9 +37,41 @@ const updated = 'August 26, 2026';
       and the site works exactly the same either way.
     </p>
     <p>
+      Nothing analytics-related loads until you answer. If you close the page
+      without choosing, that counts as a decline and no analytics cookie is
+      set.
+    </p>
+    <p>
       Your choice is stored in a cookie named <code>analytics-consent</code>,
       valid for one year. To change your mind at any time, use the{' '}
-      <strong>Cookie settings</strong> link in the footer.
+      <strong>Cookie settings</strong> link in the footer. A new choice replaces
+      the old one immediately.
+    </p>
+
+    <h3>The cookies involved</h3>
+    <ul>
+      <li>
+        <code>analytics-consent</code> — set by this site, records whether you
+        accepted or declined, kept for one year
+      </li>
+      <li>
+        a Cloudflare consent cookie — Cloudflare's tag manager keeps its own
+        record of the same decision, so that it knows whether it is allowed to
+        run the analytics tag
+      </li>
+      <li>
+        <code>cfz_google-analytics_v4</code> and{' '}
+        <code>cfzs_google-analytics_v4</code> — the Google Analytics
+        identifiers. These are set <strong>only if you accept</strong>. If you
+        decline, they never appear.
+      </li>
+    </ul>
+    <p>
+      If you go looking, there is no <code>_ga</code> cookie on this site. That
+      is the name Google Analytics normally uses, but because the tag runs at
+      Cloudflare's edge rather than in your browser, the equivalent identifiers
+      are the <code>cfz_</code> pair above. Its absence does not mean analytics
+      is switched off.
     </p>
 
     <h2>Analytics</h2>
@@ -59,9 +91,9 @@ const updated = 'August 26, 2026';
       <li>your browser, operating system and rough screen size</li>
     </ul>
     <p>
-      Google Analytics 4 does not store your full IP address. It sets a
-      first-party cookie so that a second visit from the same browser is counted
-      as a returning visitor rather than a new one.
+      Google Analytics 4 does not store your full IP address. It sets the
+      first-party cookies named above so that a second visit from the same
+      browser is counted as a returning visitor rather than a new one.
     </p>
 
     <h3>How long it is kept</h3>
@@ -102,14 +134,30 @@ const updated = 'August 26, 2026';
     </p>
     <ul>
       <li>
-        <strong>Google Fonts</strong> — the typefaces are loaded from Google's font
-        servers
+        <strong>Google Fonts</strong> — the two typefaces this site uses,
+        Cormorant Garamond and Lora, are requested from{' '}
+        <code>fonts.googleapis.com</code> and <code>fonts.gstatic.com</code>.
+        Google receives your IP address and basic request details as part of
+        serving them.
       </li>
       <li>
         <strong>GitAll</strong> — the contribution heatmap is an image served from
         gitall.app, a tool I built and run
       </li>
     </ul>
+    <p>
+      Neither of these sets a cookie, which is why neither is covered by the
+      consent banner. That distinction is worth stating plainly rather than
+      leaving you to infer it: <strong
+        >declining analytics does not stop the font requests</strong
+      >. They happen on every page load, before any choice is made, and they go
+      to Google regardless of what you chose.
+    </p>
+    <p>
+      A content blocker will stop them. So would my serving the fonts from this
+      domain instead of Google's, which removes the third party from the picture
+      entirely — that is on my list to do.
+    </p>
 
     <h2>If you email me</h2>
     <p>
@@ -127,7 +175,9 @@ const updated = 'August 26, 2026';
     <p>
       Any content blocker or privacy-focused browser will also stop the
       analytics from loading, as will Google's official opt-out browser add-on.
-      The site works normally without it.
+      The site works normally without it. A blocker has the added effect of
+      stopping the font requests described above, which the consent banner does
+      not govern.
     </p>
     <p>
       Worth being straight about the limits of asking me instead: the analytics
