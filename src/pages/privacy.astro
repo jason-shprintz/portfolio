@@ -29,6 +29,19 @@ const updated = 'August 26, 2026';
       and which pages they read, and that is the extent of it.
     </p>
 
+    <h2>Cookie consent</h2>
+    <p>
+      Because Google Analytics 4 sets a non-essential cookie, the site asks for
+      your permission before it loads. A banner appears the first time you
+      visit. You can accept or decline — both choices are given equal weight,
+      and the site works exactly the same either way.
+    </p>
+    <p>
+      Your choice is stored in a cookie named <code>analytics-consent</code>,
+      valid for one year. To change your mind at any time, use the{' '}
+      <strong>Cookie settings</strong> link in the footer.
+    </p>
+
     <h2>Analytics</h2>
     <p>
       The site uses Google Analytics 4, loaded through Cloudflare Zaraz. Zaraz
@@ -107,9 +120,14 @@ const updated = 'August 26, 2026';
 
     <h2>Avoiding the analytics</h2>
     <p>
-      Any content blocker or privacy-focused browser will stop the analytics
-      from loading, as will Google's official opt-out browser add-on. The site
-      works normally without it.
+      Decline in the consent banner and no analytics cookie is set. The{' '}
+      <strong>Cookie settings</strong> link in the footer lets you change that choice
+      at any time.
+    </p>
+    <p>
+      Any content blocker or privacy-focused browser will also stop the
+      analytics from loading, as will Google's official opt-out browser add-on.
+      The site works normally without it.
     </p>
     <p>
       Worth being straight about the limits of asking me instead: the analytics
@@ -208,5 +226,18 @@ const updated = 'August 26, 2026';
   strong {
     color: var(--color-text);
     font-weight: 600;
+  }
+
+  code {
+    font-family:
+      ui-monospace,
+      SFMono-Regular,
+      SF Mono,
+      Menlo,
+      monospace;
+    font-size: 0.875em;
+    background: var(--color-surface);
+    padding: 1px 5px;
+    border-radius: var(--radius-sm);
   }
 </style>

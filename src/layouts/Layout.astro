@@ -1,5 +1,6 @@
 ---
 import BaseHead from './BaseHead.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
 import { THEME_STORAGE_KEY } from '../constants';
 import '../styles/global.css';
 
@@ -36,6 +37,7 @@ const { title, description } = Astro.props;
       <div class="app-container">
         <slot />
       </div>
+      <ConsentBanner />
     </div>
   </body>
 </html>
