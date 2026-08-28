@@ -1,9 +1,11 @@
 ---
 import { LINKS } from '../../constants';
+import { getAnalyticsConsentRequirement } from '../../lib/analytics-client';
 import pkg from '../../../package.json';
 
 const year = new Date().getFullYear();
 const { version } = pkg;
+const consentRequired = getAnalyticsConsentRequirement();
 ---
 
 <footer class="footer">
@@ -27,6 +29,11 @@ const { version } = pkg;
       <a href="/#work">Work</a>
       <a href="/#contact">Contact</a>
       <a href="/privacy">Privacy</a>
+      {consentRequired && (
+        <button type="button" class="cookie-settings" id="cookie-settings-btn">
+          Cookie settings
+        </button>
+      )}
     </div>
   </nav>
 
@@ -93,6 +100,28 @@ const { version } = pkg;
     color: var(--color-text);
   }
 
+  .cookie-settings {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .cookie-settings:hover,
+  .cookie-settings:focus-visible {
+    color: var(--color-text);
+  }
+
+  .cookie-settings:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
   .colophon {
     grid-column: 1 / -1;
     display: flex;
@@ -129,3 +158,14 @@ const { version } = pkg;
     }
   }
 </style>
+
+{consentRequired && (
+  <script>
+    const btn = document.getElementById('cookie-settings-btn');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        document.dispatchEvent(new CustomEvent('consent:reopen'));
+      });
+    }
+  </script>
+)}
