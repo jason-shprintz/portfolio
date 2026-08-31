@@ -44,8 +44,8 @@ const updated = 'August 28, 2026';
     <p>
       Your choice is stored in a cookie named <code>analytics-consent</code>,
       valid for one year. To change your mind at any time, use the{' '}
-      <strong>Cookie settings</strong> link in the footer. A new choice replaces
-      the old one immediately.
+      <strong>Cookie settings</strong> button in the footer. A new choice
+      replaces the old one immediately.
     </p>
 
     <h3>The cookies involved</h3>
@@ -55,15 +55,15 @@ const updated = 'August 28, 2026';
         accepted or declined, kept for one year
       </li>
       <li>
-        a Cloudflare consent cookie — Cloudflare's tag manager keeps its own
-        record of the same decision, so that it knows whether it is allowed to
-        run the analytics tag
+        <code>cf_consent</code> or <code>zaraz-consent</code> — Cloudflare's
+        tag manager keeps its own record of the same decision, so that it knows
+        whether it is allowed to run the analytics tag
       </li>
       <li>
         <code>cfz_google-analytics_v4</code> and{' '}
         <code>cfzs_google-analytics_v4</code> — the Google Analytics
         identifiers. These are set <strong>only if you accept</strong>. If you
-        decline, they never appear.
+        decline before accepting, they are not set.
       </li>
     </ul>
     <p>
@@ -148,10 +148,9 @@ const updated = 'August 28, 2026';
     <p>
       Neither of these sets a cookie, which is why neither is covered by the
       consent banner. That distinction is worth stating plainly rather than
-      leaving you to infer it: <strong
-        >declining analytics does not stop the font requests</strong
-      >. They happen on every page load, before any choice is made, and they go
-      to Google regardless of what you chose.
+      leaving you to infer it: <strong>declining analytics does not stop the
+      font requests</strong>. They happen on every page load, before any choice
+      is made, and they go to Google regardless of what you chose.
     </p>
     <p>
       A content blocker will stop them. So would my serving the fonts from this
@@ -169,8 +168,8 @@ const updated = 'August 28, 2026';
     <h2>Avoiding the analytics</h2>
     <p>
       Decline in the consent banner and no analytics cookie is set. The{' '}
-      <strong>Cookie settings</strong> link in the footer lets you change that choice
-      at any time.
+      <strong>Cookie settings</strong> button in the footer lets you change
+      that choice at any time.
     </p>
     <p>
       Any content blocker or privacy-focused browser will also stop the
