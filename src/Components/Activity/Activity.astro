@@ -1,5 +1,15 @@
 ---
 import { SHOW_HEATMAP } from '../../constants';
+
+const HEATMAP_SRC = 'https://gitall.app/embed/u/jason-shprintz.svg';
+
+/*
+ * The embed's default theme follows the OS colour scheme, which an SVG inside
+ * <img> can see but the site's theme toggle can't reach. Both renderings are
+ * in the page and the data-theme attribute decides which shows; the hidden
+ * one is display: none, so its lazy load never fires.
+ */
+const HEATMAP_THEMES = ['light', 'dark'] as const;
 ---
 
 {
@@ -28,16 +38,17 @@ import { SHOW_HEATMAP } from '../../constants';
           class="heatmap-link"
         >
           <span class="plate heatmap-plate">
-            <img
-              src="https://gitall.app/embed/u/jason-shprintz.svg"
-              alt="Contribution heatmap"
-              width="719"
-              height="129"
-              loading="lazy"
-              decoding="async"
-              data-lightmat
-              class="heatmap-img"
-            />
+            {HEATMAP_THEMES.map((theme) => (
+              <img
+                src={`${HEATMAP_SRC}?theme=${theme}`}
+                alt="Contribution heatmap"
+                width="719"
+                height="129"
+                loading="lazy"
+                decoding="async"
+                class={`heatmap-img heatmap-img--${theme}`}
+              />
+            ))}
           </span>
         </a>
       </section>
@@ -80,6 +91,32 @@ import { SHOW_HEATMAP } from '../../constants';
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  .heatmap-img--dark {
+    display: none;
+  }
+
+  :global(html[data-theme='dark']) .heatmap-img--light {
+    display: none;
+  }
+
+  :global(html[data-theme='dark']) .heatmap-img--dark {
+    display: block;
+  }
+
+  /*
+   * No-JS fallback. Scoped so an explicit light choice still wins, since the
+   * theme is driven by the data attribute rather than the media query.
+   */
+  @media (prefers-color-scheme: dark) {
+    :global(html:not([data-theme='light'])) .heatmap-img--light {
+      display: none;
+    }
+
+    :global(html:not([data-theme='light'])) .heatmap-img--dark {
+      display: block;
+    }
   }
 
   @media (max-width: 900px) {
