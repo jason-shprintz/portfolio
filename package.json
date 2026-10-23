@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "1.23.10",
+  "version": "1.23.11",
   "type": "module",
   "scripts": {
     "build": "astro check && astro build",
